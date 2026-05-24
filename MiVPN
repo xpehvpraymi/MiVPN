@@ -32,7 +32,6 @@ sniffer:
 tun:
   enable: true
   stack: gvisor
-  auto-route: true
   auto-detect-interface: false
   dns-hijack:
     - any:53
