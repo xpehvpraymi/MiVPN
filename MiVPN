@@ -27,16 +27,7 @@ sniffer:
     TLS:
       ports:
         - 443
-        - 8443
-
-tun:
-  enable: true
-  stack: gvisor
-  auto-detect-interface: false
-  dns-hijack:
-    - any:53
-  strict-route: true
-  mtu: 1500
+        - 844
 
 dns:
   enable: true
