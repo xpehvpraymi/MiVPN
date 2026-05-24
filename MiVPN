@@ -27,7 +27,7 @@ sniffer:
     TLS:
       ports:
         - 443
-        - 844
+        - 8443
 
 tun:
   enable: true
