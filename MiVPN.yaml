@@ -1402,7 +1402,7 @@ proxies:
       public-key: EG3q0J7gCoc9d0eHDfXX86OhQT27rQk3flGdiZPXmQ8
       short-id: ""
     client-fingerprint: firefox
-  - name: "📱 Мобильный интернет 6(7)"
+  - name: "📱 Мобильный интернет 6"
     type: vless
     server: 51.250.47.184
     port: 443
@@ -1417,7 +1417,7 @@ proxies:
       public-key: KIQq5i23S4on9Sd4P74IlS2quA1RFj_tbyK2TWqZ4UM
       short-id: "18b88f1e725a44ad"
     client-fingerprint: chrome
-  - name: "📱 Мобильный интернет (6)7"
+  - name: "📱 Мобильный интернет 7"
     type: vless
     server: 84.201.148.196
     port: 80
@@ -1649,8 +1649,8 @@ proxy-groups:
       - "📱 Мобильный интернет 3"
       - "📱 Мобильный интернет 4"
       - "📱 Мобильный интернет 5"
-      - "📱 Мобильный интернет 6(7)"
-      - "📱 Мобильный интернет (6)7"
+      - "📱 Мобильный интернет 6"
+      - "📱 Мобильный интернет 7"
       - "📱 Мобильный интернет 8"
       - "📱 Мобильный интернет 9"
       - "📱 Мобильный интернет 10"
