@@ -130,6 +130,22 @@ proxies:
       short-id: 00bca5982f82d083
     client-fingerprint: chrome
 
+  - name: "🇧🇬 Болгария 3"
+    type: vless
+    server: tt8.svoy.run
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6f6fefad-9554-4965-9357-346283ddb778
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.cloudflare.com
+    reality-opts:
+      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
+      short-id: a150dff4
+    client-fingerprint: firefox
+
   - name: "🇧🇷 Бразилия 1"
     type: vless
     server: br.cdn-global.pro
@@ -459,6 +475,22 @@ proxies:
       short-id: 00bca5982f82d083
     client-fingerprint: qq
 
+  - name: "🇩🇪 Германия 16"
+    type: vless
+    server: node57.svoy.run
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6f6fefad-9554-4965-9357-346283ddb778
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.cloudflare.com
+    reality-opts:
+      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
+      short-id: a150dff4
+    client-fingerprint: firefox
+
   - name: "🇬🇷 Греция 1"
     type: vless
     server: 217.12.194.249
@@ -569,6 +601,86 @@ proxies:
       grpc-service-name: grpc
     client-fingerprint: firefox
 
+  - name: "🇪🇺 Европа 6"
+    type: vless
+    server: gaming.koexp.ru
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 6fc7a1f7-5ac7-409c-9d74-682748d6bd20
+    tls: true
+    servername: gaming.koexp.ru
+    reality-opts:
+      public-key: -yJaCCGsucUDEnTTn6VJJyF0R5ZLlJAVNeIXFJYSGn8
+      short-id: 361c68748712c743
+    grpc-opts:
+      grpc-service-name: grpc
+    client-fingerprint: chrome
+
+  - name: "🇪🇺 Европа 7"
+    type: vless
+    server: scandinavia.koexp.ru
+    port: 4443
+    network: grpc
+    udp: true
+    uuid: 6fc7a1f7-5ac7-409c-9d74-682748d6bd20
+    tls: true
+    servername: dev.max.ru
+    reality-opts:
+      public-key: -yJaCCGsucUDEnTTn6VJJyF0R5ZLlJAVNeIXFJYSGn8
+      short-id: 361c68748712c743
+    grpc-opts:
+      grpc-service-name: grpc-service
+    client-fingerprint: qq
+
+  - name: "🇪🇺 Европа 8"
+    type: vless
+    server: moldova.koexp.ru
+    port: 4443
+    network: grpc
+    udp: true
+    uuid: 6fc7a1f7-5ac7-409c-9d74-682748d6bd20
+    tls: true
+    servername: dev.max.ru
+    reality-opts:
+      public-key: -yJaCCGsucUDEnTTn6VJJyF0R5ZLlJAVNeIXFJYSGn8
+      short-id: 361c68748712c743
+    grpc-opts:
+      grpc-service-name: grpc-service
+    client-fingerprint: qq
+
+  - name: "🇪🇺 Европа 9"
+    type: vless
+    server: centraleurope.koexp.ru
+    port: 4443
+    network: grpc
+    udp: true
+    uuid: 6fc7a1f7-5ac7-409c-9d74-682748d6bd20
+    tls: true
+    servername: dev.max.ru
+    reality-opts:
+      public-key: -yJaCCGsucUDEnTTn6VJJyF0R5ZLlJAVNeIXFJYSGn8
+      short-id: 361c68748712c743
+    grpc-opts:
+      grpc-service-name: grpc-service
+    client-fingerprint: chrome
+
+  - name: "🇪🇺 Европа 10"
+    type: vless
+    server: shop16.svoy.run
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6f6fefad-9554-4965-9357-346283ddb778
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.cloudflare.com
+    reality-opts:
+      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
+      short-id: a150dff4
+    client-fingerprint: firefox
+
   - name: "🇭🇰 Гонконг 1"
     type: vless
     server: metrics.hartfordmedia.cloud
@@ -633,6 +745,22 @@ proxies:
       short-id: bc755b173467c322
     client-fingerprint: edge
 
+  - name: "🇪🇸 Испания 1"
+    type: vless
+    server: shop9.svoy.run
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6f6fefad-9554-4965-9357-346283ddb778
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.cloudflare.com
+    reality-opts:
+      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
+      short-id: a150dff4
+    client-fingerprint: firefox
+
   - name: "🇮🇹 Италия 1"
     type: vless
     server: ita.gorhub.ru
@@ -680,6 +808,22 @@ proxies:
       public-key: eaRNeC8fccrx0nBNvBpAXZgK4m4FxfnQ-t0W7NOM7mU
       short-id: e53048e82bb20077
     client-fingerprint: chrome
+
+  - name: "🇰🇿 Казахстан 2"
+    type: vless
+    server: node10.svoy.run
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6f6fefad-9554-4965-9357-346283ddb778
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.cloudflare.com
+    reality-opts:
+      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
+      short-id: a150dff4
+    client-fingerprint: firefox
 
   - name: "🇨🇦 Канада 1"
     type: vless
@@ -804,6 +948,22 @@ proxies:
       short-id: 4a46213c935e2ee4
     client-fingerprint: qq
 
+  - name: "🇱🇻 Латвия 7"
+    type: vless
+    server: shop18.svoy.run
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6f6fefad-9554-4965-9357-346283ddb778
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.cloudflare.com
+    reality-opts:
+      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
+      short-id: a150dff4
+    client-fingerprint: firefox
+
   - name: "🇱🇹 Литва 1"
     type: vless
     server: 31.76.83.48
@@ -818,6 +978,22 @@ proxies:
     reality-opts:
       public-key: t_qv0VOfWhKZJV_giGC55-ipgHYWo44Yfvik_B8T8ik
       short-id: 4a46213c935e2ee4
+    client-fingerprint: chrome
+
+  - name: "🇲🇩 Молдова 1"
+    type: vless
+    server: moldova.koexp.ru
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 6fc7a1f7-5ac7-409c-9d74-682748d6bd20
+    tls: true
+    servername: moldova.koexp.ru
+    reality-opts:
+      public-key: -yJaCCGsucUDEnTTn6VJJyF0R5ZLlJAVNeIXFJYSGn8
+      short-id: 361c68748712c743
+    grpc-opts:
+      grpc-service-name: grpc
     client-fingerprint: chrome
 
   - name: "🇳🇱 Нидерланды 1"
@@ -1036,6 +1212,36 @@ proxies:
       short-id: dd3ff38418d29d22
     client-fingerprint: qq
 
+  - name: "🇳🇱 Нидерланды 15"
+    type: vless
+    server: centraleurope.koexp.ru
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6fc7a1f7-5ac7-409c-9d74-682748d6bd20
+    tls: true
+    servername: centraleurope.koexp.ru
+    reality-opts:
+      public-key: -yJaCCGsucUDEnTTn6VJJyF0R5ZLlJAVNeIXFJYSGn8
+      short-id: 361c68748712c743
+    client-fingerprint: chrome
+
+  - name: "🇳🇱 Нидерланды 16"
+    type: vless
+    server: node76.svoy.run
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6f6fefad-9554-4965-9357-346283ddb778
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.cloudflare.com
+    reality-opts:
+      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
+      short-id: a150dff4
+    client-fingerprint: firefox
+
   - name: "🇳🇴 Норвегия 1"
     type: vless
     server: 46.29.238.131
@@ -1148,6 +1354,38 @@ proxies:
       short-id: 00bca5982f82d083
     client-fingerprint: qq
 
+  - name: "🇵🇱 Польша 6"
+    type: vless
+    server: node31.svoy.run
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6f6fefad-9554-4965-9357-346283ddb778
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.cloudflare.com
+    reality-opts:
+      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
+      short-id: a150dff4
+    client-fingerprint: firefox
+
+  - name: "🇵🇱 Польша 7"
+    type: vless
+    server: tt13.svoy.run
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6f6fefad-9554-4965-9357-346283ddb778
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.cloudflare.com
+    reality-opts:
+      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
+      short-id: a150dff4
+    client-fingerprint: firefox
+
   - name: "🇷🇺 Россия 1"
     type: vless
     server: 188.68.221.35
@@ -1227,6 +1465,38 @@ proxies:
       public-key: uo-U-FDlo7Cqldg7JKUe8jHvYnwP08NanGX0tUFrqEc
       short-id: bef240e96a8474a3
     client-fingerprint: qq
+
+  - name: "🇷🇺 Россия 6"
+    type: vless
+    server: moscow.koexp.ru
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 6fc7a1f7-5ac7-409c-9d74-682748d6bd20
+    tls: true
+    servername: moscow.koexp.ru
+    reality-opts:
+      public-key: -yJaCCGsucUDEnTTn6VJJyF0R5ZLlJAVNeIXFJYSGn8
+      short-id: 361c68748712c743
+    grpc-opts:
+      grpc-service-name: grpc
+    client-fingerprint: chrome
+
+  - name: "🇷🇺 Россия 7"
+    type: vless
+    server: shop24.svoy.run
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6f6fefad-9554-4965-9357-346283ddb778
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.cloudflare.com
+    reality-opts:
+      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
+      short-id: a150dff4
+    client-fingerprint: firefox
 
   - name: "🇸🇬 Сингапур 1"
     type: vless
@@ -1356,6 +1626,38 @@ proxies:
       short-id: 065cf4f1c7d83e79
     client-fingerprint: chrome
 
+  - name: "🇺🇸 США 8"
+    type: vless
+    server: america.koexp.ru
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 6fc7a1f7-5ac7-409c-9d74-682748d6bd20
+    tls: true
+    servername: america.koexp.ru
+    reality-opts:
+      public-key: -yJaCCGsucUDEnTTn6VJJyF0R5ZLlJAVNeIXFJYSGn8
+      short-id: 361c68748712c743
+    grpc-opts:
+      grpc-service-name: grpc
+    client-fingerprint: qq
+
+  - name: "🇺🇸 США 9"
+    type: vless
+    server: tt19.svoy.run
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6f6fefad-9554-4965-9357-346283ddb778
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.cloudflare.com
+    reality-opts:
+      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
+      short-id: a150dff4
+    client-fingerprint: firefox
+
   - name: "🇹🇯 Таджикистан 1"
     type: vless
     server: 144.31.131.99
@@ -1452,6 +1754,22 @@ proxies:
       short-id: 2186a755ed67b034
     client-fingerprint: qq
 
+  - name: "🇫🇮 Финляндия 6"
+    type: vless
+    server: node63.svoy.run
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6f6fefad-9554-4965-9357-346283ddb778
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.cloudflare.com
+    reality-opts:
+      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
+      short-id: a150dff4
+    client-fingerprint: firefox
+
   - name: "🇫🇷 Франция 1"
     type: vless
     server: broker.hartfordmedia.cloud
@@ -1516,6 +1834,22 @@ proxies:
       short-id: 00bca5982f82d083
     client-fingerprint: chrome
 
+  - name: "🇨🇿 Чехия 3"
+    type: vless
+    server: node18.svoy.run
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6f6fefad-9554-4965-9357-346283ddb778
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.cloudflare.com
+    reality-opts:
+      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
+      short-id: a150dff4
+    client-fingerprint: firefox
+
   - name: "🇨🇭 Швейцария 1"
     type: vless
     server: ch.spectrum.vu
@@ -1547,6 +1881,22 @@ proxies:
       public-key: b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI
       short-id: 00bca5982f82d083
     client-fingerprint: chrome
+
+  - name: "🇨🇭 Швейцария 3"
+    type: vless
+    server: node33.svoy.run
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6f6fefad-9554-4965-9357-346283ddb778
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.cloudflare.com
+    reality-opts:
+      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
+      short-id: a150dff4
+    client-fingerprint: firefox
 
   - name: "🇸🇪 Швеция 1"
     type: vless
@@ -1658,6 +2008,20 @@ proxies:
       short-id: 2186a755ed67b034
     client-fingerprint: qq
 
+  - name: "🇸🇪 Швеция 8"
+    type: vless
+    server: scandinavia.koexp.ru
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6fc7a1f7-5ac7-409c-9d74-682748d6bd20
+    tls: true
+    servername: scandinavia.koexp.ru
+    reality-opts:
+      public-key: -yJaCCGsucUDEnTTn6VJJyF0R5ZLlJAVNeIXFJYSGn8
+      short-id: 361c68748712c743
+    client-fingerprint: chrome
+
   - name: "🇪🇪 Эстония 1"
     type: vless
     server: 185.252.177.125
@@ -1721,6 +2085,22 @@ proxies:
       public-key: eaRNeC8fccrx0nBNvBpAXZgK4m4FxfnQ-t0W7NOM7mU
       short-id: e53048e82bb20077
     client-fingerprint: chrome
+
+  - name: "🇯🇵 Япония 2"
+    type: vless
+    server: shop23.svoy.run
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6f6fefad-9554-4965-9357-346283ddb778
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.cloudflare.com
+    reality-opts:
+      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
+      short-id: a150dff4
+    client-fingerprint: firefox
 
   - name: "📱 Мобильный интернет 1"
     type: vless
@@ -1994,6 +2374,22 @@ proxies:
       short-id: ""
     client-fingerprint: qq
 
+  - name: "📱 Мобильный интернет 18"
+    type: vless
+    server: 1node12.svoy.run
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 6f6fefad-9554-4965-9357-346283ddb778
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: ads.x5.ru
+    reality-opts:
+      public-key: UYJNjs8ho4VtcpVY78vCX13kUQTuXYogdCQSOSHC3Co
+      short-id: a150dff4
+    client-fingerprint: randomized
+
 proxy-groups:
   - name: "→ MiVPN"
     type: select
@@ -2003,6 +2399,7 @@ proxy-groups:
       - "🇧🇪 Бельгия 1"
       - "🇧🇬 Болгария 1"
       - "🇧🇬 Болгария 2"
+      - "🇧🇬 Болгария 3"
       - "🇧🇷 Бразилия 1"
       - "🇬🇧 Великобритания 1"
       - "🇬🇧 Великобритания 2"
@@ -2024,7 +2421,7 @@ proxy-groups:
       - "🇩🇪 Германия 13"
       - "🇩🇪 Германия 14"
       - "🇩🇪 Германия 15"
-      - "🇭🇰 Гонконг 1"
+      - "🇩🇪 Германия 16"
       - "🇬🇷 Греция 1"
       - "🇩🇰 Дания 1"
       - "🇪🇺 Европа 1"
@@ -2032,12 +2429,20 @@ proxy-groups:
       - "🇪🇺 Европа 3"
       - "🇪🇺 Европа 4"
       - "🇪🇺 Европа 5"
+      - "🇪🇺 Европа 6"
+      - "🇪🇺 Европа 7"
+      - "🇪🇺 Европа 8"
+      - "🇪🇺 Европа 9"
+      - "🇪🇺 Европа 10"
+      - "🇭🇰 Гонконг 1"
       - "🇮🇳 Индия 1"
       - "🇮🇳 Индия 2"
       - "🇮🇩 Индонезия 1"
+      - "🇪🇸 Испания 1"
       - "🇮🇹 Италия 1"
       - "🇮🇹 Италия 2"
       - "🇰🇿 Казахстан 1"
+      - "🇰🇿 Казахстан 2"
       - "🇨🇦 Канада 1"
       - "🇨🇳 Китай 1"
       - "🇱🇻 Латвия 1"
@@ -2046,7 +2451,9 @@ proxy-groups:
       - "🇱🇻 Латвия 4"
       - "🇱🇻 Латвия 5"
       - "🇱🇻 Латвия 6"
+      - "🇱🇻 Латвия 7"
       - "🇱🇹 Литва 1"
+      - "🇲🇩 Молдова 1"
       - "🇳🇱 Нидерланды 1"
       - "🇳🇱 Нидерланды 2"
       - "🇳🇱 Нидерланды 3"
@@ -2061,6 +2468,8 @@ proxy-groups:
       - "🇳🇱 Нидерланды 12"
       - "🇳🇱 Нидерланды 13"
       - "🇳🇱 Нидерланды 14"
+      - "🇳🇱 Нидерланды 15"
+      - "🇳🇱 Нидерланды 16"
       - "🇳🇴 Норвегия 1"
       - "🇳🇴 Норвегия 2"
       - "🇵🇱 Польша 1"
@@ -2068,11 +2477,15 @@ proxy-groups:
       - "🇵🇱 Польша 3"
       - "🇵🇱 Польша 4"
       - "🇵🇱 Польша 5"
+      - "🇵🇱 Польша 6"
+      - "🇵🇱 Польша 7"
       - "🇷🇺 Россия 1"
       - "🇷🇺 Россия 2"
       - "🇷🇺 Россия 3"
       - "🇷🇺 Россия 4"
       - "🇷🇺 Россия 5"
+      - "🇷🇺 Россия 6"
+      - "🇷🇺 Россия 7"
       - "🇸🇬 Сингапур 1"
       - "🇺🇸 США 1"
       - "🇺🇸 США 2"
@@ -2081,18 +2494,23 @@ proxy-groups:
       - "🇺🇸 США 5"
       - "🇺🇸 США 6"
       - "🇺🇸 США 7"
+      - "🇺🇸 США 8"
+      - "🇺🇸 США 9"
       - "🇹🇯 Таджикистан 1"
       - "🇫🇮 Финляндия 1"
       - "🇫🇮 Финляндия 2"
       - "🇫🇮 Финляндия 3"
       - "🇫🇮 Финляндия 4"
       - "🇫🇮 Финляндия 5"
+      - "🇫🇮 Финляндия 6"
       - "🇫🇷 Франция 1"
       - "🇫🇷 Франция 2"
       - "🇨🇿 Чехия 1"
       - "🇨🇿 Чехия 2"
+      - "🇨🇿 Чехия 3"
       - "🇨🇭 Швейцария 1"
       - "🇨🇭 Швейцария 2"
+      - "🇨🇭 Швейцария 3"
       - "🇸🇪 Швеция 1"
       - "🇸🇪 Швеция 2"
       - "🇸🇪 Швеция 3"
@@ -2100,10 +2518,12 @@ proxy-groups:
       - "🇸🇪 Швеция 5"
       - "🇸🇪 Швеция 6"
       - "🇸🇪 Швеция 7"
+      - "🇸🇪 Швеция 8"
       - "🇪🇪 Эстония 1"
       - "🇪🇪 Эстония 2"
       - "🇪🇪 Эстония 3"
       - "🇯🇵 Япония 1"
+      - "🇯🇵 Япония 2"
       - "📱 Мобильный интернет 1"
       - "📱 Мобильный интернет 2"
       - "📱 Мобильный интернет 3"
@@ -2121,6 +2541,7 @@ proxy-groups:
       - "📱 Мобильный интернет 15"
       - "📱 Мобильный интернет 16"
       - "📱 Мобильный интернет 17"
+      - "📱 Мобильный интернет 18"
 
 rules:
   - MATCH,→ MiVPN
