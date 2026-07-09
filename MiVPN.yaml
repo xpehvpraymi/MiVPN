@@ -113,6 +113,22 @@ proxies:
       short-id: deadbeef
     client-fingerprint: qq
 
+  - name: "🇦🇹 Австрия 3"
+    type: vless
+    server: as.pinkmoon.pro
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 85bf0dd3-bde2-4361-836f-9c3d450fa67a
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: as.pinkmoon.pro
+    reality-opts:
+      public-key: DS9mX6cMb5wvwFzga8yN2NLbs7soXM7038_P23yPKwk
+      short-id: 8ffa160e608bf539
+    client-fingerprint: qq
+
   - name: "🇦🇷 Аргентина 1"
     type: vless
     server: 94.139.251.147
@@ -143,6 +159,38 @@ proxies:
     reality-opts:
       public-key: cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg
       short-id: 2356d1ae4b
+    client-fingerprint: firefox
+
+  - name: "🇬🇧 Великобритания 2"
+    type: vless
+    server: upload.nothingchange.com
+    port: 443
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: ozon.ru
+    reality-opts:
+      public-key: eKyUyIzbzn0TL5ip_00Buvum95qnWy8gTCwjZvv-olc
+      short-id: 3f7b1e5a9c2d8f46
+    client-fingerprint: firefox
+
+  - name: "🇬🇧 Великобритания 3"
+    type: vless
+    server: 45.43.75.99
+    port: 443
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: ozon.ru
+    reality-opts:
+      public-key: eKyUyIzbzn0TL5ip_00Buvum95qnWy8gTCwjZvv-olc
+      short-id: 3f7b1e5a9c2d8f46
     client-fingerprint: firefox
 
   - name: "🇩🇪 Германия 1"
@@ -351,6 +399,70 @@ proxies:
       grpc-service-name: germania-grpc
     client-fingerprint: chrome
 
+  - name: "🇩🇪 Германия 14"
+    type: vless
+    server: hub.nothingchange.com
+    port: 8447
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: hub.nothingchange.com
+    reality-opts:
+      public-key: eKyUyIzbzn0TL5ip_00Buvum95qnWy8gTCwjZvv-olc
+      short-id: 3f7b1e5a9c2d8f46
+    client-fingerprint: firefox
+
+  - name: "🇩🇪 Германия 15"
+    type: vless
+    server: stream.nothingchange.com
+    port: 8447
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: stream.nothingchange.com
+    reality-opts:
+      public-key: eKyUyIzbzn0TL5ip_00Buvum95qnWy8gTCwjZvv-olc
+      short-id: 3f7b1e5a9c2d8f46
+    client-fingerprint: firefox
+
+  - name: "🇩🇪 Германия 16"
+    type: vless
+    server: de.pinkmoon.pro
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 85bf0dd3-bde2-4361-836f-9c3d450fa67a
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: de.pinkmoon.pro
+    reality-opts:
+      public-key: DS9mX6cMb5wvwFzga8yN2NLbs7soXM7038_P23yPKwk
+      short-id: 8ffa160e608bf539
+    client-fingerprint: qq
+
+  - name: "🇩🇪 Германия 17"
+    type: vless
+    server: de2.pink-perfect.ru
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 85bf0dd3-bde2-4361-836f-9c3d450fa67a
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: de2.pink-perfect.ru
+    reality-opts:
+      public-key: DS9mX6cMb5wvwFzga8yN2NLbs7soXM7038_P23yPKwk
+      short-id: 8ffa160e608bf539
+    client-fingerprint: qq
+
   - name: "🇪🇺 Европа 1"
     type: vless
     server: lb1.capitaledge.blog
@@ -396,6 +508,54 @@ proxies:
     servername: spain1.potatosubge20.org
     alpn:
       - http/1.1
+    client-fingerprint: firefox
+
+  - name: "🇪🇸 Испания 2"
+    type: vless
+    server: edge.nothingchange.com
+    port: 8447
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: edge.nothingchange.com
+    reality-opts:
+      public-key: eKyUyIzbzn0TL5ip_00Buvum95qnWy8gTCwjZvv-olc
+      short-id: 3f7b1e5a9c2d8f46
+    client-fingerprint: firefox
+
+  - name: "🇮🇹 Италия 1"
+    type: vless
+    server: mts.nothingchange.com
+    port: 10443
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: mts.nothingchange.com
+    reality-opts:
+      public-key: eKyUyIzbzn0TL5ip_00Buvum95qnWy8gTCwjZvv-olc
+      short-id: 3f7b1e5a9c2d8f46
+    client-fingerprint: firefox
+
+  - name: "🇮🇹 Италия 2"
+    type: vless
+    server: 193.168.175.152
+    port: 443
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: mts.nothingchange.com
+    reality-opts:
+      public-key: eKyUyIzbzn0TL5ip_00Buvum95qnWy8gTCwjZvv-olc
+      short-id: 3f7b1e5a9c2d8f46
     client-fingerprint: firefox
 
   - name: "🇭🇰 Гонконг 1"
@@ -445,6 +605,54 @@ proxies:
       public-key: cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg
       short-id: 2356d1ae4b
     client-fingerprint: firefox
+
+  - name: "🇨🇦 Канада 1"
+    type: vless
+    server: media.nothingchange.com
+    port: 10443
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: media.nothingchange.com
+    reality-opts:
+      public-key: eKyUyIzbzn0TL5ip_00Buvum95qnWy8gTCwjZvv-olc
+      short-id: 3f7b1e5a9c2d8f46
+    client-fingerprint: firefox
+
+  - name: "🇨🇦 Канада 2"
+    type: vless
+    server: 207.126.161.204
+    port: 443
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: media.nothingchange.com
+    reality-opts:
+      public-key: eKyUyIzbzn0TL5ip_00Buvum95qnWy8gTCwjZvv-olc
+      short-id: 3f7b1e5a9c2d8f46
+    client-fingerprint: firefox
+
+  - name: "🇱🇻 Латвия 1"
+    type: vless
+    server: lat.pinkmoon.pro
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 85bf0dd3-bde2-4361-836f-9c3d450fa67a
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: lat.pinkmoon.pro
+    reality-opts:
+      public-key: DS9mX6cMb5wvwFzga8yN2NLbs7soXM7038_P23yPKwk
+      short-id: 8ffa160e608bf539
+    client-fingerprint: chrome
 
   - name: "🇱🇹 Литва 1"
     type: vless
@@ -701,6 +909,70 @@ proxies:
       short-id: ""
     client-fingerprint: chrome
 
+  - name: "🇳🇱 Нидерланды 9"
+    type: vless
+    server: api.nothingchange.com
+    port: 8443
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: api.nothingchange.com
+    reality-opts:
+      public-key: bcKfeFGpXIAG7OqLnCUBnpHVyMRXWbXYG-v2os098mU
+      short-id: 3756b828dd5d335e
+    client-fingerprint: firefox
+
+  - name: "🇳🇱 Нидерланды 10"
+    type: vless
+    server: files.nothingchange.com
+    port: 443
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: files.nothingchange.com
+    reality-opts:
+      public-key: eKyUyIzbzn0TL5ip_00Buvum95qnWy8gTCwjZvv-olc
+      short-id: 3f7b1e5a9c2d8f46
+    client-fingerprint: firefox
+
+  - name: "🇳🇱 Нидерланды 11"
+    type: vless
+    server: nid3.pinkmoon.pro
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 85bf0dd3-bde2-4361-836f-9c3d450fa67a
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: nid3.pinkmoon.pro
+    reality-opts:
+      public-key: DS9mX6cMb5wvwFzga8yN2NLbs7soXM7038_P23yPKwk
+      short-id: 8ffa160e608bf539
+    client-fingerprint: chrome
+
+  - name: "🇳🇱 Нидерланды 12"
+    type: vless
+    server: 62.84.99.42
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 85bf0dd3-bde2-4361-836f-9c3d450fa67a
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: nid3.pinkmoon.pro
+    reality-opts:
+      public-key: DS9mX6cMb5wvwFzga8yN2NLbs7soXM7038_P23yPKwk
+      short-id: 8ffa160e608bf539
+    client-fingerprint: chrome
+
   - name: "🇳🇴 Норвегия 1"
     type: vless
     server: nor.voxyvpn.ru
@@ -813,6 +1085,54 @@ proxies:
       short-id: ""
     client-fingerprint: firefox
 
+  - name: "🇵🇱 Польша 7"
+    type: vless
+    server: avatars.nothingchange.com
+    port: 6443
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: avatars.nothingchange.com
+    reality-opts:
+      public-key: Go2S7qUeSE4TiYbeJzsZC1_D7MvzYkWTkl0TaI4hD0s
+      short-id: 3756b828dd5d335e
+    client-fingerprint: firefox
+
+  - name: "🇵🇱 Польша 8"
+    type: vless
+    server: pol.pinkmoon.pro
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 85bf0dd3-bde2-4361-836f-9c3d450fa67a
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: pol.pinkmoon.pro
+    reality-opts:
+      public-key: DS9mX6cMb5wvwFzga8yN2NLbs7soXM7038_P23yPKwk
+      short-id: 8ffa160e608bf539
+    client-fingerprint: chrome
+
+  - name: "🇵🇱 Польша 9"
+    type: vless
+    server: pol2.pinkmoon.pro
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 85bf0dd3-bde2-4361-836f-9c3d450fa67a
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: pol2.pinkmoon.pro
+    reality-opts:
+      public-key: DS9mX6cMb5wvwFzga8yN2NLbs7soXM7038_P23yPKwk
+      short-id: 8ffa160e608bf539
+    client-fingerprint: chrome
+
   - name: "🇷🇺 Россия 1"
     type: vless
     server: 188.68.221.35
@@ -877,6 +1197,70 @@ proxies:
       public-key: eeZa4PahzvV_lNP-1R7vCijkiasljVioJTxf-UMtvU0
       short-id: ""
     client-fingerprint: chrome
+
+  - name: "🇷🇺 Россия 5"
+    type: vless
+    server: seo.nothingchange.com
+    port: 443
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: ozon.ru
+    reality-opts:
+      public-key: eKyUyIzbzn0TL5ip_00Buvum95qnWy8gTCwjZvv-olc
+      short-id: 3f7b1e5a9c2d8f46
+    client-fingerprint: firefox
+
+  - name: "🇷🇺 Россия 6"
+    type: vless
+    server: 80.66.81.75
+    port: 443
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: ozon.ru
+    reality-opts:
+      public-key: eKyUyIzbzn0TL5ip_00Buvum95qnWy8gTCwjZvv-olc
+      short-id: 3f7b1e5a9c2d8f46
+    client-fingerprint: firefox
+
+  - name: "🇷🇺 Россия 7"
+    type: vless
+    server: 80.66.81.183
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 85bf0dd3-bde2-4361-836f-9c3d450fa67a
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: ru.pinkmoon.pro
+    reality-opts:
+      public-key: DS9mX6cMb5wvwFzga8yN2NLbs7soXM7038_P23yPKwk
+      short-id: 8ffa160e608bf539
+    client-fingerprint: qq
+
+  - name: "🇸🇬 Сингапур 1"
+    type: vless
+    server: nid3.pinkmoon.pro
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 85bf0dd3-bde2-4361-836f-9c3d450fa67a
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: nid3.pinkmoon.pro
+    reality-opts:
+      public-key: DS9mX6cMb5wvwFzga8yN2NLbs7soXM7038_P23yPKwk
+      short-id: 8ffa160e608bf539
+    client-fingerprint: qq
 
   - name: "🇸🇪 Швеция 1"
     type: vless
@@ -982,6 +1366,22 @@ proxies:
       public-key: L7DF7bQGLb1hLQxHoDqnsd7WMAo8bklWteoXqKYwAl8
       short-id: deadbeef
     client-fingerprint: randomized
+
+  - name: "🇸🇪 Швеция 7"
+    type: vless
+    server: sw2.pink-perfect.ru
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 85bf0dd3-bde2-4361-836f-9c3d450fa67a
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: sw2.pink-perfect.ru
+    reality-opts:
+      public-key: DS9mX6cMb5wvwFzga8yN2NLbs7soXM7038_P23yPKwk
+      short-id: 8ffa160e608bf539
+    client-fingerprint: qq
 
   - name: "🇨🇭 Швейцария 1"
     type: vless
@@ -1128,6 +1528,54 @@ proxies:
       - http/1.1
     client-fingerprint: firefox
 
+  - name: "🇺🇸 США 9"
+    type: vless
+    server: cache.nothingchange.com
+    port: 4447
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: cache.nothingchange.com
+    reality-opts:
+      public-key: eKyUyIzbzn0TL5ip_00Buvum95qnWy8gTCwjZvv-olc
+      short-id: 3f7b1e5a9c2d8f46
+    client-fingerprint: firefox
+
+  - name: "🇺🇸 США 10"
+    type: vless
+    server: 162.217.248.123
+    port: 443
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: cache.nothingchange.com
+    reality-opts:
+      public-key: eKyUyIzbzn0TL5ip_00Buvum95qnWy8gTCwjZvv-olc
+      short-id: 3f7b1e5a9c2d8f46
+    client-fingerprint: firefox
+
+  - name: "🇺🇸 США 11"
+    type: vless
+    server: usa.pinkmoon.pro
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 85bf0dd3-bde2-4361-836f-9c3d450fa67a
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: usa.pinkmoon.pro
+    reality-opts:
+      public-key: DS9mX6cMb5wvwFzga8yN2NLbs7soXM7038_P23yPKwk
+      short-id: 8ffa160e608bf539
+    client-fingerprint: qq
+
   - name: "🇹🇷 Турция 1"
     type: vless
     server: 94.139.251.147
@@ -1160,6 +1608,54 @@ proxies:
       short-id: deadbeef
     client-fingerprint: randomized
 
+  - name: "🇫🇮 Финляндия 2"
+    type: vless
+    server: assets.nothingchange.com
+    port: 8443
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: assets.nothingchange.com
+    reality-opts:
+      public-key: K4pEHtXsSmtXZP0JoLT5NjRXY_sGvTQl0c5OImFZ1wo
+      short-id: 3756b828dd5d335e
+    client-fingerprint: firefox
+
+  - name: "🇫🇮 Финляндия 3"
+    type: vless
+    server: fin.pinkmoon.pro
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 85bf0dd3-bde2-4361-836f-9c3d450fa67a
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: fin.pinkmoon.pro
+    reality-opts:
+      public-key: DS9mX6cMb5wvwFzga8yN2NLbs7soXM7038_P23yPKwk
+      short-id: 8ffa160e608bf539
+    client-fingerprint: qq
+
+  - name: "🇫🇮 Финляндия 4"
+    type: vless
+    server: fin2.pink-perfect.ru
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 85bf0dd3-bde2-4361-836f-9c3d450fa67a
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: fin2.pink-perfect.ru
+    reality-opts:
+      public-key: DS9mX6cMb5wvwFzga8yN2NLbs7soXM7038_P23yPKwk
+      short-id: 8ffa160e608bf539
+    client-fingerprint: qq
+
   - name: "🇫🇷 Франция 1"
     type: vless
     server: rest.westondigita.cloud
@@ -1190,6 +1686,38 @@ proxies:
     reality-opts:
       public-key: bjNO8Qo_UHsGPjMoIlINncJJJPNEWyT_ludd_LJjTHA
       short-id: aabbccdd
+    client-fingerprint: firefox
+
+  - name: "🇫🇷 Франция 3"
+    type: vless
+    server: mirror.nothingchange.com
+    port: 443
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: mirror.nothingchange.com
+    reality-opts:
+      public-key: eKyUyIzbzn0TL5ip_00Buvum95qnWy8gTCwjZvv-olc
+      short-id: 3f7b1e5a9c2d8f46
+    client-fingerprint: firefox
+
+  - name: "🇫🇷 Франция 4"
+    type: vless
+    server: 217.179.6.64
+    port: 443
+    network: tcp
+    udp: true
+    uuid: e77de2ca-3b48-4b45-bd08-484335ce44c6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: ozon.ru
+    reality-opts:
+      public-key: eKyUyIzbzn0TL5ip_00Buvum95qnWy8gTCwjZvv-olc
+      short-id: 3f7b1e5a9c2d8f46
     client-fingerprint: firefox
 
   - name: "🇨🇿 Чехия 1"
@@ -1574,6 +2102,40 @@ proxies:
       short-id: 93fa1c
     client-fingerprint: qq
 
+  - name: "📱 Мобильный интернет 18"
+    type: vless
+    server: 2.26.82.237
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 906be882-7f16-47c3-8702-59db2ada9688
+    packet-encoding: xudp
+    tls: true
+    servername: speed.cloudflare.com
+    reality-opts:
+      public-key: VmBEjLUpiEnoNIaPNGDfVPIOzH_ktSDdsGGAvissxgI
+      short-id: ""
+    grpc-opts:
+      grpc-service-name: grpc
+    client-fingerprint: chrome
+
+  - name: "📱 Мобильный интернет 19"
+    type: vless
+    server: 2.26.82.237
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 906be882-7f16-47c3-8702-59db2ada9688
+    packet-encoding: xudp
+    tls: true
+    servername: speed.cloudflare.com
+    reality-opts:
+      public-key: VmBEjLUpiEnoNIaPNGDfVPIOzH_ktSDdsGGAvissxgI
+      short-id: ""
+    grpc-opts:
+      grpc-service-name: grpc
+    client-fingerprint: chrome
+
 proxy-groups:
   - name: "→ MiVPN"
     type: select
@@ -1582,8 +2144,11 @@ proxy-groups:
       - "🇦🇱 Албания 2"
       - "🇦🇹 Австрия 1"
       - "🇦🇹 Австрия 2"
+      - "🇦🇹 Австрия 3"
       - "🇦🇷 Аргентина 1"
       - "🇬🇧 Великобритания 1"
+      - "🇬🇧 Великобритания 2"
+      - "🇬🇧 Великобритания 3"
       - "🇩🇪 Германия 1"
       - "🇩🇪 Германия 2"
       - "🇩🇪 Германия 3"
@@ -1597,12 +2162,22 @@ proxy-groups:
       - "🇩🇪 Германия 11"
       - "🇩🇪 Германия 12"
       - "🇩🇪 Германия 13"
+      - "🇩🇪 Германия 14"
+      - "🇩🇪 Германия 15"
+      - "🇩🇪 Германия 16"
+      - "🇩🇪 Германия 17"
       - "🇪🇺 Европа 1"
       - "🇪🇺 Европа 2"
       - "🇪🇸 Испания 1"
+      - "🇪🇸 Испания 2"
+      - "🇮🇹 Италия 1"
+      - "🇮🇹 Италия 2"
       - "🇭🇰 Гонконг 1"
       - "🇯🇵 Япония 1"
       - "🇰🇿 Казахстан 1"
+      - "🇨🇦 Канада 1"
+      - "🇨🇦 Канада 2"
+      - "🇱🇻 Латвия 1"
       - "🇱🇹 Литва 1"
       - "🇱🇹 Литва 2"
       - "🇱🇹 Литва 3"
@@ -1619,6 +2194,10 @@ proxy-groups:
       - "🇳🇱 Нидерланды 6"
       - "🇳🇱 Нидерланды 7"
       - "🇳🇱 Нидерланды 8"
+      - "🇳🇱 Нидерланды 9"
+      - "🇳🇱 Нидерланды 10"
+      - "🇳🇱 Нидерланды 11"
+      - "🇳🇱 Нидерланды 12"
       - "🇳🇴 Норвегия 1"
       - "🇵🇱 Польша 1"
       - "🇵🇱 Польша 2"
@@ -1626,16 +2205,24 @@ proxy-groups:
       - "🇵🇱 Польша 4"
       - "🇵🇱 Польша 5"
       - "🇵🇱 Польша 6"
+      - "🇵🇱 Польша 7"
+      - "🇵🇱 Польша 8"
+      - "🇵🇱 Польша 9"
       - "🇷🇺 Россия 1"
       - "🇷🇺 Россия 2"
       - "🇷🇺 Россия 3"
       - "🇷🇺 Россия 4"
+      - "🇷🇺 Россия 5"
+      - "🇷🇺 Россия 6"
+      - "🇷🇺 Россия 7"
+      - "🇸🇬 Сингапур 1"
       - "🇸🇪 Швеция 1"
       - "🇸🇪 Швеция 2"
       - "🇸🇪 Швеция 3"
       - "🇸🇪 Швеция 4"
       - "🇸🇪 Швеция 5"
       - "🇸🇪 Швеция 6"
+      - "🇸🇪 Швеция 7"
       - "🇨🇭 Швейцария 1"
       - "🇺🇸 США 1"
       - "🇺🇸 США 2"
@@ -1645,10 +2232,18 @@ proxy-groups:
       - "🇺🇸 США 6"
       - "🇺🇸 США 7"
       - "🇺🇸 США 8"
+      - "🇺🇸 США 9"
+      - "🇺🇸 США 10"
+      - "🇺🇸 США 11"
       - "🇹🇷 Турция 1"
       - "🇫🇮 Финляндия 1"
+      - "🇫🇮 Финляндия 2"
+      - "🇫🇮 Финляндия 3"
+      - "🇫🇮 Финляндия 4"
       - "🇫🇷 Франция 1"
       - "🇫🇷 Франция 2"
+      - "🇫🇷 Франция 3"
+      - "🇫🇷 Франция 4"
       - "🇨🇿 Чехия 1"
       - "🇨🇿 Чехия 2"
       - "🇪🇪 Эстония 1"
@@ -1673,6 +2268,8 @@ proxy-groups:
       - "📱 Мобильный интернет 15"
       - "📱 Мобильный интернет 16"
       - "📱 Мобильный интернет 17"
+      - "📱 Мобильный интернет 18"
+      - "📱 Мобильный интернет 19"
 
 rules:
   - MATCH,→ MiVPN
