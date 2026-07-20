@@ -66,6 +66,39 @@ proxies:
       short-id: 7c8e3d4a9b1f26d3
     client-fingerprint: random
 
+  - name: "🇦🇱 Албания 2"
+    type: vless
+    server: 103.167.235.106
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 0217ae6b-bdeb-49fe-b10d-692a2adcc94b
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: kookas.fi
+    reality-opts:
+      public-key: qB_eMu3ZO_wGITnyIqJ7Kt39-h9oHFnHlQQEqA-r3VA
+      short-id: 43dcff53849b81e6
+    client-fingerprint: firefox
+
+  - name: "🇦🇱 Албания 3"
+    type: vless
+    server: 103.167.235.98
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0217ae6b-bdeb-49fe-b10d-692a2adcc94b
+    packet-encoding: xudp
+    tls: true
+    servername: viennaairport
+    reality-opts:
+      public-key: qB_eMu3ZO_wGITnyIqJ7Kt39-h9oHFnHlQQEqA-r3VA
+      short-id: ""
+    grpc-opts:
+      grpc-service-name: grpc
+    client-fingerprint: firefox
+
   - name: "🇦🇹 Австрия 1"
     type: vless
     server: aust-alw2.nodsvpnspace.com
@@ -246,6 +279,21 @@ proxies:
       short-id: ""
     client-fingerprint: firefox
 
+  - name: "🇩🇪 Германия 8"
+    type: vless
+    server: de1.hys.braidx.tech
+    port: 8443
+    network: tcp
+    udp: true
+    uuid: d0d78bce-5e71-4be6-a536-71c6c6681499
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: de1.hys.braidx.tech
+    alpn:
+      - http/1.1
+    client-fingerprint: chrome
+
   - name: "🇪🇪 Эстония 1"
     type: vless
     server: cloud-most-3.harknmav.fun
@@ -293,6 +341,22 @@ proxies:
     grpc-opts:
       grpc-service-name: UpdateService
     client-fingerprint: safari
+
+  - name: "🇪🇪 Эстония 4"
+    type: vless
+    server: hz.disavi.store
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 874c8e27-da14-4aa9-bc40-313bc156b112
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: hz.disavi.store
+    reality-opts:
+      public-key: rm_x5uIWNBup1fx85I_K3Fz7HSUqZNA5Wiyn_ILlsl8
+      short-id: 0f17bb06a83a2c85
+    client-fingerprint: firefox
 
   - name: "🇫🇮 Финляндия 1"
     type: vless
@@ -393,6 +457,22 @@ proxies:
       early-data-header-name: Sec-WebSocket-Protocol
     client-fingerprint: chrome
 
+  - name: "🇫🇮 Финляндия 7"
+    type: vless
+    server: time.kyras.pw
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 874c8e27-da14-4aa9-bc40-313bc156b112
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: time.kyras.pw
+    reality-opts:
+      public-key: xIwz5JAHH-X3QSB2C9RtICmpOwxqw_fVB-ma4z7ouAo
+      short-id: c23a1d233b373636
+    client-fingerprint: qq
+
   - name: "🇫🇷 Франция 1"
     type: vless
     server: wsfr.nodsvpnspace.com
@@ -424,6 +504,54 @@ proxies:
     reality-opts:
       public-key: XSerkZgTPWKCzSgKTbfx3xgTp3asGddifSFtvp0bJyw
       short-id: 89b8ef1537c69f72
+    client-fingerprint: firefox
+
+  - name: "🇫🇷 Франция 3"
+    type: vless
+    server: frx1.braidx.tech
+    port: 8443
+    network: tcp
+    udp: true
+    uuid: d0d78bce-5e71-4be6-a536-71c6c6681499
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: frx1.braidx.tech
+    alpn:
+      - http/1.1
+    client-fingerprint: chrome
+
+  - name: "🇬🇧 Великобритания 1"
+    type: vless
+    server: 90.156.218.67
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 0217ae6b-bdeb-49fe-b10d-692a2adcc94b
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: sun2-11.userapi.com
+    reality-opts:
+      public-key: qB_eMu3ZO_wGITnyIqJ7Kt39-h9oHFnHlQQEqA-r3VA
+      short-id: ""
+    client-fingerprint: chrome
+
+  - name: "🇬🇧 Великобритания 2"
+    type: vless
+    server: 31.76.39.63
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0217ae6b-bdeb-49fe-b10d-692a2adcc94b
+    packet-encoding: xudp
+    tls: true
+    servername: viennaairport
+    reality-opts:
+      public-key: qB_eMu3ZO_wGITnyIqJ7Kt39-h9oHFnHlQQEqA-r3VA
+      short-id: ""
+    grpc-opts:
+      grpc-service-name: grpc
     client-fingerprint: firefox
 
   - name: "🇮🇹 Италия 1"
@@ -464,6 +592,22 @@ proxies:
       short-id: 4fa44664f6a566d3
     client-fingerprint: firefox
 
+  - name: "🇮🇹 Италия 3"
+    type: vless
+    server: dom.kyras.pw
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 874c8e27-da14-4aa9-bc40-313bc156b112
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: polimi.it
+    reality-opts:
+      public-key: LLeJ6Zywo0YhdAvrn7nLEAASm0vMgduNh6q-1VGCs0M
+      short-id: 7f1a3c6d
+    client-fingerprint: qq
+
   - name: "🇰🇿 Казахстан 1"
     type: hysteria2
     server: ws-kz.nodsvpnspace.com
@@ -474,6 +618,22 @@ proxies:
     client-fingerprint: chrome
     alpn:
       - h3
+
+  - name: "🇰🇿 Казахстан 2"
+    type: vless
+    server: 185.91.126.213
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 0217ae6b-bdeb-49fe-b10d-692a2adcc94b
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: ads.x5.ru
+    reality-opts:
+      public-key: qB_eMu3ZO_wGITnyIqJ7Kt39-h9oHFnHlQQEqA-r3VA
+      short-id: ""
+    client-fingerprint: firefox
 
   - name: "🇱🇻 Латвия 1"
     type: vless
@@ -490,6 +650,22 @@ proxies:
       public-key: nDq00UeDI5TKKFipI6rgdVCqiTO98ncHKn90Qp3EsBE
       short-id: f2b78452f9233f26
     client-fingerprint: firefox
+
+  - name: "🇱🇻 Латвия 2"
+    type: vless
+    server: 51.250.41.104
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 55577974-1cdd-42a9-90a8-f2f1da20855f
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: cdn.tracker.yandex.net
+    reality-opts:
+      public-key: KYNrRy0ElOU9Hg5tmWRwpf-Ff3R8Gjcjdk91jZt2nGg
+      short-id: bb6c8a1e7c
+    client-fingerprint: chrome
 
   - name: "🇱🇹 Литва 1"
     type: vless
@@ -805,6 +981,22 @@ proxies:
       short-id: 17faf32cb516c9cb
     client-fingerprint: firefox
 
+  - name: "🇸🇪 Швеция 8"
+    type: vless
+    server: mobile-forum.kyras.pw
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 874c8e27-da14-4aa9-bc40-313bc156b112
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: mobile-forum.kyras.pw
+    reality-opts:
+      public-key: mIJzzCtQfr4nmqjsmINvBFrsmnKPfVNxD4XBuILbviw
+      short-id: f3bfaec9bc4e7e58
+    client-fingerprint: firefox
+
   - name: "🇺🇸 США 1"
     type: hysteria2
     server: hyst-us.nodsvpnspace.com
@@ -914,6 +1106,22 @@ proxies:
       short-id: cbb0a5c1dc905505
     client-fingerprint: firefox
 
+  - name: "🇺🇸 США 8"
+    type: vless
+    server: us7.netfix.app
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 18309716-3893-4617-8d9a-468c8311fad5
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: hahaus.xixihaha.it.com
+    reality-opts:
+      public-key: HNC4xdL0kgaIcgnPtMyc21hxY6dk0zl_vAclmQZHigw
+      short-id: 323da253
+    client-fingerprint: chrome
+
   - name: "🇹🇷 Турция 1"
     type: vless
     server: tr.plus-hit.ru
@@ -946,6 +1154,22 @@ proxies:
     grpc-opts:
       grpc-service-name: deepl-grpc
     client-fingerprint: qq
+
+  - name: "🇹🇷 Турция 3"
+    type: vless
+    server: 212.115.103.200
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 0217ae6b-bdeb-49fe-b10d-692a2adcc94b
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: kookas.fi
+    reality-opts:
+      public-key: qB_eMu3ZO_wGITnyIqJ7Kt39-h9oHFnHlQQEqA-r3VA
+      short-id: 43dcff52289b81e6
+    client-fingerprint: firefox
 
   - name: "🇨🇿 Чехия 1"
     type: vless
@@ -983,6 +1207,23 @@ proxies:
       sc-max-each-post-bytes: "1000000"
       sc-min-posts-interval-ms: "10"
     client-fingerprint: qq
+
+  - name: "🇨🇿 Чехия 3"
+    type: vless
+    server: 83.166.250.44
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0217ae6b-bdeb-49fe-b10d-692a2adcc94b
+    packet-encoding: xudp
+    tls: true
+    servername: viennaairport
+    reality-opts:
+      public-key: qB_eMu3ZO_wGITnyIqJ7Kt39-h9oHFnHlQQEqA-r3VA
+      short-id: ""
+    grpc-opts:
+      grpc-service-name: grpc
+    client-fingerprint: firefox
 
   - name: "🇺🇿 Узбекистан 1"
     type: vless
@@ -1082,11 +1323,29 @@ proxies:
       grpc-service-name: grpc
     client-fingerprint: chrome
 
+  - name: "📱 Мобильный интернет 6"
+    type: vless
+    server: 46.243.142.132
+    port: 8449
+    network: tcp
+    udp: true
+    uuid: 18309716-3893-4617-8d9a-468c8311fad5
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: hahauswl1.xixihaha.it.com
+    reality-opts:
+      public-key: xgrTu3gRY8g-wVlHimQl0fcVBEdvxfE0_cxTDJIeOz4
+      short-id: c9395d24
+    client-fingerprint: firefox
+
 proxy-groups:
   - name: → MiVPN
     type: select
     proxies:
       - "🇦🇱 Албания 1"
+      - "🇦🇱 Албания 2"
+      - "🇦🇱 Албания 3"
       - "🇦🇹 Австрия 1"
       - "🇧🇪 Бельгия 1"
       - "🇧🇬 Болгария 1"
@@ -1098,21 +1357,30 @@ proxy-groups:
       - "🇩🇪 Германия 5"
       - "🇩🇪 Германия 6"
       - "🇩🇪 Германия 7"
+      - "🇩🇪 Германия 8"
       - "🇪🇪 Эстония 1"
       - "🇪🇪 Эстония 2"
       - "🇪🇪 Эстония 3"
+      - "🇪🇪 Эстония 4"
       - "🇫🇮 Финляндия 1"
       - "🇫🇮 Финляндия 2"
       - "🇫🇮 Финляндия 3"
       - "🇫🇮 Финляндия 4"
       - "🇫🇮 Финляндия 5"
       - "🇫🇮 Финляндия 6"
+      - "🇫🇮 Финляндия 7"
       - "🇫🇷 Франция 1"
       - "🇫🇷 Франция 2"
+      - "🇫🇷 Франция 3"
+      - "🇬🇧 Великобритания 1"
+      - "🇬🇧 Великобритания 2"
       - "🇮🇹 Италия 1"
       - "🇮🇹 Италия 2"
+      - "🇮🇹 Италия 3"
       - "🇰🇿 Казахстан 1"
+      - "🇰🇿 Казахстан 2"
       - "🇱🇻 Латвия 1"
+      - "🇱🇻 Латвия 2"
       - "🇱🇹 Литва 1"
       - "🇱🇹 Литва 2"
       - "🇱🇹 Литва 3"
@@ -1132,6 +1400,7 @@ proxy-groups:
       - "🇸🇪 Швеция 5"
       - "🇸🇪 Швеция 6"
       - "🇸🇪 Швеция 7"
+      - "🇸🇪 Швеция 8"
       - "🇺🇸 США 1"
       - "🇺🇸 США 2"
       - "🇺🇸 США 3"
@@ -1139,16 +1408,20 @@ proxy-groups:
       - "🇺🇸 США 5"
       - "🇺🇸 США 6"
       - "🇺🇸 США 7"
+      - "🇺🇸 США 8"
       - "🇹🇷 Турция 1"
       - "🇹🇷 Турция 2"
+      - "🇹🇷 Турция 3"
       - "🇨🇿 Чехия 1"
       - "🇨🇿 Чехия 2"
+      - "🇨🇿 Чехия 3"
       - "🇺🇿 Узбекистан 1"
       - "📱 Мобильный интернет 1"
       - "📱 Мобильный интернет 2"
       - "📱 Мобильный интернет 3"
       - "📱 Мобильный интернет 4"
       - "📱 Мобильный интернет 5"
+      - "📱 Мобильный интернет 6"
 
 rules:
   - MATCH,→ MiVPN
