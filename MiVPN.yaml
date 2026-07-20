@@ -1032,7 +1032,55 @@ proxies:
       short-id: ea9f32c58bd74201
     client-fingerprint: random
 
-  # ... (additional mobile ones from all sources added similarly, e.g. from user_7977 LTE/Обход, 692570 LTE, etc.)
+  - name: "📱 Мобильный интернет 3"
+    type: vless
+    server: 78.159.245.22
+    port: 1111
+    network: tcp
+    udp: true
+    uuid: bfa96ee8-0d73-4f24-9b61-4833e8a04b9b
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: api-maps.yandex.ru
+    reality-opts:
+      public-key: YuhNgtj_Tf8WNLiSB2bNJKPvfwmqa6PNRpbP8TvNkzA
+      short-id: ""
+    client-fingerprint: chrome
+
+  - name: "📱 Мобильный интернет 4"
+    type: vless
+    server: 82.202.137.160
+    port: 1505
+    network: grpc
+    udp: true
+    uuid: bfa96ee8-0d73-4f24-9b61-4833e8a04b9b
+    packet-encoding: xudp
+    tls: true
+    servername: gp.x5.ru
+    reality-opts:
+      public-key: HnqIgsSExriczShU5PzdhnNYXfRXq_mqaK006N5yS04
+      short-id: ""
+    grpc-opts:
+      grpc-service-name: grpc
+    client-fingerprint: chrome
+
+  - name: "📱 Мобильный интернет 5"
+    type: vless
+    server: 176.108.253.222
+    port: 1505
+    network: grpc
+    udp: true
+    uuid: bfa96ee8-0d73-4f24-9b61-4833e8a04b9b
+    packet-encoding: xudp
+    tls: true
+    servername: gp.x5.ru
+    reality-opts:
+      public-key: HnqIgsSExriczShU5PzdhnNYXfRXq_mqaK006N5yS04
+      short-id: ""
+    grpc-opts:
+      grpc-service-name: grpc
+    client-fingerprint: chrome
 
 proxy-groups:
   - name: → MiVPN
@@ -1063,7 +1111,6 @@ proxy-groups:
       - "🇫🇷 Франция 2"
       - "🇮🇹 Италия 1"
       - "🇮🇹 Италия 2"
-      - "🇮🇹 Италия 3"
       - "🇰🇿 Казахстан 1"
       - "🇱🇻 Латвия 1"
       - "🇱🇹 Литва 1"
@@ -1099,6 +1146,9 @@ proxy-groups:
       - "🇺🇿 Узбекистан 1"
       - "📱 Мобильный интернет 1"
       - "📱 Мобильный интернет 2"
+      - "📱 Мобильный интернет 3"
+      - "📱 Мобильный интернет 4"
+      - "📱 Мобильный интернет 5"
 
 rules:
   - MATCH,→ MiVPN
