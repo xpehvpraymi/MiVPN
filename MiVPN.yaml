@@ -4007,11 +4007,16 @@ proxies:
     port: 443
     network: tcp
     udp: true
+    uuid: 40aef553-4587-40b9-8a31-e9dc8f34c0a6
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
     servername: sun1-22.userapi.com
     reality-opts:
       public-key: jWVk2Z7eFkyDcu2xgzqX8JsPbZuCVhHUWD463Vfgazw
       short-id: 7a5b89ecdb01f781
     client-fingerprint: firefox
+
 
   - name: "📱 Мобильный интернет 63"
     type: vless
