@@ -50,716 +50,238 @@ dns:
     - speedtest.cros.wr.pvp.net
 
 proxies:
-  - name: "🇬🇧 Великобритания 1"
+  - name: "впн ПОЛНОСТЬЮ бесплатен"
     type: vless
-    server: gb.servers.gracevpnbuy.com
-    port: 443
+    server: 0.0.0.0
+    port: 1
+    uuid: 00000000-0000-0000-0000-000000000000
     network: tcp
-    udp: true
-    uuid: bb05f9d7-a3d1-4b81-a790-f6dba0301907
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: gb.servers.gracevpnbuy.com
-    reality-opts:
-      public-key: i00_tpIO0Oe2TV2lxm2BLm6QUzzkncyJtauMa7Rn500
-      short-id: b91a73752053b039
-    client-fingerprint: chrome
+    tls: false
 
-  - name: "🇬🇧 Великобритания 2"
+  - name: "если вы у кого-то купили"
     type: vless
-    server: 37.252.20.166
-    port: 443
-    network: grpc
-    udp: true
-    uuid: f6da8274-44be-4599-a8d8-66929c980677
-    packet-encoding: xudp
-    tls: true
-    servername: dl.google.com
-    reality-opts:
-      public-key: Vs7_XFo1cg224HiMYNRTJij_O4uyUIFtxMGGtBs_E3Q
-      short-id: ""
-    grpc-opts:
-      grpc-service-name: grpc-tunnel
-    client-fingerprint: chrome
+    server: 0.0.0.0
+    port: 1
+    uuid: 00000000-0000-0000-0000-000000000000
+    network: tcp
+    tls: false
 
-  - name: "🇬🇧 Великобритания 3"
+  - name: "то вы еблан"
     type: vless
-    server: 85.137.249.157
-    port: 2054
-    network: grpc
-    udp: true
-    uuid: f6da8274-44be-4599-a8d8-66929c980677
-    packet-encoding: xudp
-    tls: true
-    servername: max.ru
-    reality-opts:
-      public-key: Re5uQKjLVnOpmsyTQKCiqh8LLJ-UAyZy0s3KO6PRtEY
-      short-id: 300580005a374a9f
-    grpc-opts:
-      grpc-service-name: grpc
-    client-fingerprint: chrome
+    server: 0.0.0.0
+    port: 1
+    uuid: 00000000-0000-0000-0000-000000000000
+    network: tcp
+    tls: false
+
+  - name: "канал @MiVPNN"
+    type: vless
+    server: 0.0.0.0
+    port: 1
+    uuid: 00000000-0000-0000-0000-000000000000
+    network: tcp
+    tls: false
 
   - name: "🇩🇪 Германия 1"
     type: vless
-    server: v1.api2.ttpservers.ru
+    server: de1.1905vpn.ru
     port: 443
-    network: grpc
+    network: tcp
     udp: true
-    uuid: 163dc809-7970-4ff8-a7e5-8080ad53e7bb
-    packet-encoding: xudp
+    uuid: 781cfb3e-3b09-4046-9786-4a329256ad55
+    flow: xtls-rprx-vision
     tls: true
-    servername: v1.api2.ttpservers.ru
-    alpn:
-      - h2
-    grpc-opts:
-      grpc-service-name: mygrpc
-    client-fingerprint: chrome
+    servername: de1.1905vpn.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 6Y41pgRLh3dlKytkY_FSQXY18NILdI5ZaYlkLLos2BY
+      short-id: 00ab5cfc665bf7ee
 
   - name: "🇩🇪 Германия 2"
     type: vless
-    server: de.servers.gracevpnbuy.com
+    server: ger2.1905vpn.ru
     port: 443
     network: tcp
     udp: true
-    uuid: bb05f9d7-a3d1-4b81-a790-f6dba0301907
-    packet-encoding: xudp
+    uuid: 781cfb3e-3b09-4046-9786-4a329256ad55
     flow: xtls-rprx-vision
     tls: true
-    servername: de.servers.gracevpnbuy.com
+    servername: ger2.1905vpn.ru
+    client-fingerprint: firefox
     reality-opts:
-      public-key: i00_tpIO0Oe2TV2lxm2BLm6QUzzkncyJtauMa7Rn500
-      short-id: b91a73752053b039
-    client-fingerprint: chrome
+      public-key: 5Hsbzvb4xsERDbmmSDFV8EqPYlicp-aHY99WpGOMX2Q
+      short-id: cda627bf8f11a2ff
 
   - name: "🇩🇪 Германия 3"
     type: vless
-    server: 159.195.21.231
+    server: nurn.ultrakey.top
     port: 443
-    network: tcp
+    network: grpc
     udp: true
-    uuid: c4d46ad4-7b73-4627-8afd-aff739e831d0
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
+    uuid: febfffee-7f91-498e-99fe-55dfdd2ce368
     tls: true
-    servername: de.bananaru.shop
-    alpn:
-      - h2
-      - http/1.1
+    servername: nurn.ultrakey.top
     client-fingerprint: firefox
+    reality-opts:
+      public-key: EUK_ePvEKUGcezQYHqgJ5P462XxLPXPm9CZWGLaL33k
+      short-id: 77ddb81332b2abf1
+      spider-x: /
+    grpc-opts:
+      grpc-service-name: grpc
 
   - name: "🇩🇪 Германия 4"
     type: vless
-    server: 72.56.5.183
-    port: 8443
-    network: grpc
+    server: m2e4f3b-19rzvv.95.yndx-cdn.com
+    port: 40443
+    network: tcp
     udp: true
-    uuid: f6da8274-44be-4599-a8d8-66929c980677
-    packet-encoding: xudp
+    uuid: 12cd395e-036d-402c-9178-f2f2ba81b70c
+    flow: xtls-rprx-vision
     tls: true
-    servername: dl.google.com
+    servername: api-maps.yandex.ru
+    client-fingerprint: qq
     reality-opts:
-      public-key: eNvO4-6_VFngHHC6D5AhcCpCpOdi5gY7-Srimhh-6Xw
-      short-id: 8458830adcfd5475
-    grpc-opts:
-      grpc-service-name: grpc-tunnel
-    client-fingerprint: chrome
+      public-key: ZSzB9TQPGNcCiC0WLmciF5Jc8doJDvdRgbqTi8SCoEM
+      short-id: a1b2c3d4e5f6789a
+      spider-x: /
 
   - name: "🇩🇪 Германия 5"
     type: vless
-    server: 89.169.52.230
-    port: 2054
+    server: 13.143.128.44
+    port: 2059
     network: grpc
     udp: true
-    uuid: f6da8274-44be-4599-a8d8-66929c980677
-    packet-encoding: xudp
+    uuid: a8702217-cba0-4c5a-99a4-121cfeeed7e8
     tls: true
-    servername: www.ibm.com
+    servername: piwikpro.de
+    client-fingerprint: chrome
     reality-opts:
-      public-key: CSJwWInaYhXDD1soBqp7u6RcTrAbB3Sj5NSZ0D4-qkY
-      short-id: e6762738de47f48c
+      public-key: 66qqJ8UVRbQmGEVFrSQwFrdMcqQHV68mxig213tSyDM
+      short-id: a0223b5c71e1
     grpc-opts:
-      grpc-service-name: grpc
-    client-fingerprint: chrome
-
-  - name: "🇮🇹 Италия 1"
-    type: vless
-    server: 72.56.5.183
-    port: 443
-    network: grpc
-    udp: true
-    uuid: f6da8274-44be-4599-a8d8-66929c980677
-    packet-encoding: xudp
-    tls: true
-    servername: dl.google.com
-    reality-opts:
-      public-key: eNvO4-6_VFngHHC6D5AhcCpCpOdi5gY7-Srimhh-6Xw
-      short-id: bc5e0c082adcd6be
-    grpc-opts:
-      grpc-service-name: grpc-tunnel
-    client-fingerprint: chrome
-
-  - name: "🇨🇦 Канада 1"
-    type: vless
-    server: ca.servers.gracevpnbuy.com
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bb05f9d7-a3d1-4b81-a790-f6dba0301907
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: ca.servers.gracevpnbuy.com
-    reality-opts:
-      public-key: i00_tpIO0Oe2TV2lxm2BLm6QUzzkncyJtauMa7Rn500
-      short-id: b91a73752053b039
-    client-fingerprint: chrome
+      grpc-service-name: grpcservice
 
   - name: "🇳🇱 Нидерланды 1"
     type: vless
-    server: v1.api2.ttpservers.ru
-    port: 8443
-    network: grpc
-    udp: true
-    uuid: 163dc809-7970-4ff8-a7e5-8080ad53e7bb
-    packet-encoding: xudp
-    tls: true
-    servername: v1.api2.ttpservers.ru
-    alpn:
-      - h2
-    grpc-opts:
-      grpc-service-name: mygrpc
-    client-fingerprint: chrome
-
-  - name: "🇳🇱 Нидерланды 2"
-    type: vless
-    server: nl.servers.gracevpnbuy.com
-    port: 443
+    server: 194.41.113.112
+    port: 2059
     network: tcp
     udp: true
-    uuid: bb05f9d7-a3d1-4b81-a790-f6dba0301907
-    packet-encoding: xudp
+    uuid: a8702217-cba0-4c5a-99a4-121cfeeed7e8
     flow: xtls-rprx-vision
     tls: true
-    servername: nl.servers.gracevpnbuy.com
+    servername: piwikpro.de
+    client-fingerprint: qq
     reality-opts:
-      public-key: i00_tpIO0Oe2TV2lxm2BLm6QUzzkncyJtauMa7Rn500
-      short-id: b91a73752053b039
-    client-fingerprint: chrome
-
-  - name: "🇳🇱 Нидерланды 3"
-    type: vless
-    server: 72.56.109.51
-    port: 443
-    network: tcp
-    udp: true
-    uuid: c4d46ad4-7b73-4627-8afd-aff739e831d0
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: icloud.com
-    reality-opts:
-      public-key: aSgzTTH69EsTGy2BdVMlOI2L1gT5hOSVsj0X7lcEzFY
-      short-id: 8922f09145aedbf2
-    client-fingerprint: firefox
-
-  - name: "🇳🇱 Нидерланды 4"
-    type: vless
-    server: 31.56.185.39
-    port: 2054
-    network: grpc
-    udp: true
-    uuid: f6da8274-44be-4599-a8d8-66929c980677
-    packet-encoding: xudp
-    tls: true
-    servername: www.ibm.com
-    reality-opts:
-      public-key: 7_7E8McQrXRtGaDe_QBWxB-i3zRPRwGPl8tB2JRhkhs
-      short-id: 93ab7c1d
-    grpc-opts:
-      grpc-service-name: grpc
-    client-fingerprint: chrome
-
-  - name: "🇳🇱 Нидерланды 5"
-    type: vless
-    server: 13.143.141.28
-    port: 2054
-    network: grpc
-    udp: true
-    uuid: f6da8274-44be-4599-a8d8-66929c980677
-    packet-encoding: xudp
-    tls: true
-    servername: www.ibm.com
-    reality-opts:
-      public-key: LxfBal4zumw8Un0P9G-F8auThUm_6jzJviu5jsZ2qGw
-      short-id: 2d8775cc
-    grpc-opts:
-      grpc-service-name: grpc
-    client-fingerprint: chrome
+      public-key: 1OwGV3PL9tWIUGcAB4hw9uIWd0rmyhJ6oTV-CUqUCXo
+      short-id: aa1111bb2222cc
 
   - name: "🇵🇱 Польша 1"
     type: vless
-    server: pl.servers.gracevpnbuy.com
-    port: 753
-    network: tcp
+    server: 176.124.216.16
+    port: 24445
+    network: grpc
     udp: true
-    uuid: bb05f9d7-a3d1-4b81-a790-f6dba0301907
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
+    uuid: d83933fb-b65d-406b-993c-0dd077bbac00
     tls: true
-    servername: www.nvidia.com
+    servername: store.steampowered.com
+    client-fingerprint: safari
     reality-opts:
-      public-key: i00_tpIO0Oe2TV2lxm2BLm6QUzzkncyJtauMa7Rn500
-      short-id: b91a73752053b039
-    client-fingerprint: firefox
+      public-key: oFMogvqMmqIXCtL4PAgodU2KFngzs9Wop2fQ1z6Q-S4
+      short-id: b50cea813a06a57f
+      spider-x: /
+    grpc-opts:
+      grpc-service-name: poland_bridge_spb
 
   - name: "🇵🇱 Польша 2"
     type: vless
-    server: 185.241.208.89
-    port: 2054
-    network: grpc
+    server: pl3.animereze.site
+    port: 8443
+    network: tcp
     udp: true
-    uuid: f6da8274-44be-4599-a8d8-66929c980677
-    packet-encoding: xudp
+    uuid: 8e2bc532-edb1-4f37-9c62-8c62fb4e26de
+    flow: xtls-rprx-vision
     tls: true
-    servername: www.ibm.com
+    servername: www.bmw.com
+    client-fingerprint: firefox
     reality-opts:
-      public-key: OyptJTnaUSyaiYY3_iB-Lrst04EoVetdB1ZMoHDViyI
-      short-id: e5fe88d9c232c341
-    grpc-opts:
-      grpc-service-name: grpc
-    client-fingerprint: chrome
+      public-key: FJuV3x6dgGU2ijWQyNykgMcS7fScCyXPa-wyR_bM4gE
+      short-id: c3ab1ab747e9fdf3
 
   - name: "🇷🇺 Россия 1"
     type: vless
-    server: ekb-ru.servers.gracevpnbuy.com
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bb05f9d7-a3d1-4b81-a790-f6dba0301907
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: ekb-ru.servers.gracevpnbuy.com
-    reality-opts:
-      public-key: i00_tpIO0Oe2TV2lxm2BLm6QUzzkncyJtauMa7Rn500
-      short-id: b91a73752053b039
-    client-fingerprint: chrome
-
-  - name: "🇷🇺 Россия 2"
-    type: vless
-    server: 92.255.78.9
-    port: 443
-    network: tcp
-    udp: true
-    uuid: f6da8274-44be-4599-a8d8-66929c980677
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: max.ru
-    reality-opts:
-      public-key: NzaCxfbgTDajw93CJs3uFkFJzp7DWhzJIqcnzoZwGQ4
-      short-id: 5e6f7a8b
-    client-fingerprint: firefox
-
-  - name: "🇺🇸 США 1"
-    type: vless
-    server: us.servers.gracevpnbuy.com
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bb05f9d7-a3d1-4b81-a790-f6dba0301907
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: us.servers.gracevpnbuy.com
-    reality-opts:
-      public-key: i00_tpIO0Oe2TV2lxm2BLm6QUzzkncyJtauMa7Rn500
-      short-id: b91a73752053b039
-    client-fingerprint: chrome
-
-  - name: "🇺🇸 США 2"
-    type: vless
-    server: 152.53.38.23
-    port: 2054
-    network: grpc
-    udp: true
-    uuid: f6da8274-44be-4599-a8d8-66929c980677
-    packet-encoding: xudp
-    tls: true
-    servername: www.ibm.com
-    reality-opts:
-      public-key: teH1wJW96tJosjZBhjCIb2u2v9cLUS9aj9mJA_blUVE
-      short-id: af819b4bfd529732
-    grpc-opts:
-      grpc-service-name: grpc
-    client-fingerprint: chrome
-
-  - name: "🇫🇮 Финляндия 1"
-    type: vless
-    server: fi.servers.gracevpnbuy.com
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bb05f9d7-a3d1-4b81-a790-f6dba0301907
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: de.servers.gracevpnbuy.com
-    reality-opts:
-      public-key: i00_tpIO0Oe2TV2lxm2BLm6QUzzkncyJtauMa7Rn500
-      short-id: b91a73752053b039
-    client-fingerprint: chrome
-
-  - name: "🇫🇮 Финляндия 2"
-    type: vless
-    server: 103.110.64.233
-    port: 443
-    network: tcp
-    udp: true
-    uuid: c4d46ad4-7b73-4627-8afd-aff739e831d0
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: bananaru.shop
-    alpn:
-      - h2
-      - http/1.1
-    client-fingerprint: qq
-
-  - name: "🇫🇮 Финляндия 3"
-    type: vless
-    server: 103.110.64.233
+    server: yt.node.vpnpplvpn.top
     port: 8443
     network: grpc
     udp: true
-    uuid: c4d46ad4-7b73-4627-8afd-aff739e831d0
-    packet-encoding: xudp
+    uuid: dcc549cc-a8c8-45f1-800e-4df1212624eb
     tls: true
-    servername: ads.x5.ru
-    reality-opts:
-      public-key: Ty_Z3DMnuhWrMo3G5DMPSzuHMuB7Pc-sxGyjCBf1v2E
-      short-id: c521b936
-    grpc-opts:
-      grpc-service-name: rwgrpc
-    client-fingerprint: firefox
-
-  - name: "🇫🇮 Финляндия 4"
-    type: vless
-    server: 185.103.102.110
-    port: 2054
-    network: grpc
-    udp: true
-    uuid: f6da8274-44be-4599-a8d8-66929c980677
-    packet-encoding: xudp
-    tls: true
-    servername: www.ibm.com
-    reality-opts:
-      public-key: WckOSneVajAzpH0sZSAFAWPnmwuuEXKZrTICNj5_hHU
-      short-id: 7c8d9e0f
-    grpc-opts:
-      grpc-service-name: grpc
+    servername: eh.vk.ru
     client-fingerprint: chrome
-
-  - name: "🇨🇭 Швейцария 1"
-    type: vless
-    server: 132.243.174.112
-    port: 2054
-    network: grpc
-    udp: true
-    uuid: f6da8274-44be-4599-a8d8-66929c980677
-    packet-encoding: xudp
-    tls: true
-    servername: www.swisscom.ch
     reality-opts:
-      public-key: JFzd2AbfzZSnMefyKEXNIae_QEZAo5o239pmuHHZsAY
-      short-id: 0c25988a
+      public-key: SDQsoOr7a1fxki6y-Z-EgNsSJYIQJ7xwRum72utndX8
     grpc-opts:
-      grpc-service-name: grpc
-    client-fingerprint: chrome
+      grpc-service-name: api
 
-  - name: "🇸🇪 Швеция 1"
+  - name: "🇫🇷 Франция 1"
     type: vless
-    server: 89.22.235.255
+    server: 95.182.87.236
     port: 443
     network: tcp
     udp: true
-    uuid: c4d46ad4-7b73-4627-8afd-aff739e831d0
-    packet-encoding: xudp
+    uuid: 7e3c4e34-c665-4da3-848a-1bff80c16cb5
     flow: xtls-rprx-vision
     tls: true
-    servername: icloud.com
-    reality-opts:
-      public-key: Zi4dJJ4Nnp2FHS65vica8GOfah-jvfAazMDedxHbe0E
-      short-id: b55462b9dfb6b235
+    servername: github.com
     client-fingerprint: firefox
-
-  - name: "🇸🇪 Швеция 2"
-    type: vless
-    server: 143.246.198.91
-    port: 2054
-    network: grpc
-    udp: true
-    uuid: f6da8274-44be-4599-a8d8-66929c980677
-    packet-encoding: xudp
-    tls: true
-    servername: www.ibm.com
     reality-opts:
-      public-key: z8O-5nI4-3eKexufSrkEUvAubPw7a73cQtTGNDp3Uxo
-      short-id: 6ffc74326185d4d6
-    grpc-opts:
-      grpc-service-name: grpc
-    client-fingerprint: chrome
+      public-key: MKsJOc_AuUkto4TNyHZ1dz9RlIp_iL4oa9op6hkdnnQ
+      short-id: af61d9e3074c8b25
 
-  - name: "🇨🇿 Чехия 1"
+  - name: "🇫🇮 Финляндия 1"
     type: vless
-    server: 31.31.73.169
+    server: us.i-love-russia.online
     port: 443
     network: tcp
     udp: true
-    uuid: c4d46ad4-7b73-4627-8afd-aff739e831d0
-    packet-encoding: xudp
+    uuid: cd2c4f6c-7a59-4078-a028-d2797db1ada4
     flow: xtls-rprx-vision
     tls: true
-    servername: icloud.com
+    servername: us.i-love-russia.online
+    client-fingerprint: firefox
     reality-opts:
-      public-key: ZuNBThEMv1Z0YiwZfb1pw3SAzuAPR-V7lJAXjhSdjUI
-      short-id: b3f2d623833cf886
-    client-fingerprint: firefox
+      public-key: ThYiOQmlRYp3vrb_MAshWmjSxwOOYcstJusgIiiopHY
+      short-id: 1b4e086bf0a1b1f4
+      spider-x: /
 
-  - name: "🇯🇵 Япония 1"
-    type: vless
-    server: jp.servers.gracevpnbuy.com
+  - name: "🇫🇮 Финляндия 2"
+    type: hysteria2
+    server: us.i-love-russia.online
     port: 443
-    network: tcp
     udp: true
-    uuid: bb05f9d7-a3d1-4b81-a790-f6dba0301907
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: jp.servers.gracevpnbuy.com
-    reality-opts:
-      public-key: i00_tpIO0Oe2TV2lxm2BLm6QUzzkncyJtauMa7Rn500
-      short-id: b91a73752053b039
-    client-fingerprint: chrome
-
-  - name: "📱 Мобильный интернет 1"
-    type: vless
-    server: 81.163.23.142
-    port: 5443
-    network: tcp
-    udp: true
-    uuid: 163dc809-7970-4ff8-a7e5-8080ad53e7bb
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: ads.x5.ru
-    reality-opts:
-      public-key: TnbAN4i4nOPEyCCqmz2d-AUNM9lZj18h6P08LBpGsiM
-      short-id: f7ce475282c06a8f
-    client-fingerprint: firefox
-
-  - name: "📱 Мобильный интернет 2"
-    type: vless
-    server: 46.182.24.112
-    port: 2096
-    network: grpc
-    udp: true
-    uuid: 163dc809-7970-4ff8-a7e5-8080ad53e7bb
-    packet-encoding: xudp
-    tls: true
-    servername: v1.api2.ttpservers.ru
-    alpn:
-      - h2
-    grpc-opts:
-      grpc-service-name: mygrpc
-    client-fingerprint: chrome
-
-  - name: "📱 Мобильный интернет 3"
-    type: vless
-    server: 178.250.240.32
-    port: 2096
-    network: grpc
-    udp: true
-    uuid: 163dc809-7970-4ff8-a7e5-8080ad53e7bb
-    packet-encoding: xudp
-    tls: true
-    servername: v1.api2.ttpservers.ru
-    alpn:
-      - h2
-    grpc-opts:
-      grpc-service-name: mygrpc
-    client-fingerprint: chrome
-
-  - name: "📱 Мобильный интернет 4"
-    type: vless
-    server: cdnvideotransferer0461.rest
-    port: 443
-    network: xhttp
-    udp: true
-    uuid: bb05f9d7-a3d1-4b81-a790-f6dba0301907
-    packet-encoding: xudp
-    tls: true
-    servername: cdnvideotransferer0461.rest
-    alpn:
-      - h2
-    xhttp-opts:
-      path: /content/preview.mp4/
-      host: cdnvideotransferer0461.rest
-      mode: packet-up
-      x-padding-obfs-mode: true
-      x-padding-key: _dc
-      x-padding-header: X-Cache
-      x-padding-placement: query
-      x-padding-method: tokenish
-      uplink-http-method: GET
-    client-fingerprint: firefox
-
-  - name: "📱 Мобильный интернет 5"
-    type: vless
-    server: cdn3-de.servers.gracevpnbuy.com
-    port: 443
-    network: xhttp
-    udp: true
-    uuid: bb05f9d7-a3d1-4b81-a790-f6dba0301907
-    packet-encoding: xudp
-    tls: true
-    servername: cdn3-de.servers.gracevpnbuy.com
-    alpn:
-      - h2
-    xhttp-opts:
-      path: /content/preview.mp4/
-      host: cdn3-de.servers.gracevpnbuy.com
-      mode: packet-up
-      x-padding-obfs-mode: true
-      x-padding-key: _dc
-      x-padding-header: X-Cache
-      x-padding-placement: query
-      x-padding-method: tokenish
-      uplink-http-method: GET
-    client-fingerprint: firefox
-
-  - name: "📱 Мобильный интернет 6"
-    type: vless
-    server: n6dp0rw1e6.a.trbcdn.net
-    port: 443
-    network: xhttp
-    udp: true
-    uuid: bb05f9d7-a3d1-4b81-a790-f6dba0301907
-    packet-encoding: xudp
-    tls: true
-    servername: n6dp0rw1e6.a.trbcdn.net
-    alpn:
-      - h2
-    xhttp-opts:
-      path: /v6/feed/segment.php
-      host: n6dp0rw1e6.a.trbcdn.net
-      mode: packet-up
-      headers:
-        Accept: '*/*'
-        Cookie: session_id=66693f41171e7ad909f9d129861935ac
-        Origin: https://videotranslatorservice926.live/
-        Referer: https://videotranslatorservice926.live/
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:151.0) Gecko/20100101 Firefox/151.0
-        Sec-Fetch-Dest: empty
-        Sec-Fetch-Mode: cors
-        Sec-Fetch-Site: same-origin
-        Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
-      no-grpc-header: true
-      x-padding-bytes: 50-150
-      x-padding-obfs-mode: true
-      x-padding-header: X-Api-Key
-      x-padding-placement: header
-      x-padding-method: tokenish
-      uplink-http-method: POST
-      session-placement: query
-      session-key: auth
-      session-table: Base62
-      session-length: 16-32
-      seq-placement: query
-      seq-key: chunk_id
-      uplink-data-placement: body
-      sc-max-each-post-bytes: 3000000
-      sc-min-posts-interval-ms: 5-10
-      reuse-settings:
-        max-concurrency: 16-32
-    client-fingerprint: firefox
-
-  - name: "📱 Мобильный интернет 7"
-    type: vless
-    server: 79.174.92.102
-    port: 80
-    network: grpc
-    udp: true
-    uuid: c4d46ad4-7b73-4627-8afd-aff739e831d0
-    packet-encoding: xudp
-    tls: true
-    servername: ads.x5.ru
-    reality-opts:
-      public-key: Ty_Z3DMnuhWrMo3G5DMPSzuHMuB7Pc-sxGyjCBf1v2E
-      short-id: c521b936
-    grpc-opts:
-      grpc-service-name: rwgrpc
-    client-fingerprint: firefox
-
-  - name: "📱 Мобильный интернет 8"
-    type: vless
-    server: 79.174.92.102
-    port: 443
-    network: tcp
-    udp: true
-    uuid: c4d46ad4-7b73-4627-8afd-aff739e831d0
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.mos.ru
-    reality-opts:
-      public-key: V5VPgDIKriL6AOPxmvXemijYIrhqpTAsllyOj6AtiAU
-      short-id: 367e91840fd87ef1
-    client-fingerprint: firefox
+    password: cd2c4f6c-7a59-4078-a028-d2797db1ada4
+    sni: us.i-love-russia.online
 
 proxy-groups:
   - name: "→ MiVPN"
     type: select
     proxies:
-      - "🇬🇧 Великобритания 1"
-      - "🇬🇧 Великобритания 2"
-      - "🇬🇧 Великобритания 3"
+      - "впн ПОЛНОСТЬЮ бесплатен"
+      - "если вы у кого-то купили"
+      - "то вы еблан"
+      - "канал @MiVPNN"
       - "🇩🇪 Германия 1"
       - "🇩🇪 Германия 2"
       - "🇩🇪 Германия 3"
       - "🇩🇪 Германия 4"
       - "🇩🇪 Германия 5"
-      - "🇮🇹 Италия 1"
-      - "🇨🇦 Канада 1"
       - "🇳🇱 Нидерланды 1"
-      - "🇳🇱 Нидерланды 2"
-      - "🇳🇱 Нидерланды 3"
-      - "🇳🇱 Нидерланды 4"
-      - "🇳🇱 Нидерланды 5"
       - "🇵🇱 Польша 1"
       - "🇵🇱 Польша 2"
       - "🇷🇺 Россия 1"
-      - "🇷🇺 Россия 2"
-      - "🇺🇸 США 1"
-      - "🇺🇸 США 2"
+      - "🇫🇷 Франция 1"
       - "🇫🇮 Финляндия 1"
       - "🇫🇮 Финляндия 2"
-      - "🇫🇮 Финляндия 3"
-      - "🇫🇮 Финляндия 4"
-      - "🇨🇭 Швейцария 1"
-      - "🇸🇪 Швеция 1"
-      - "🇸🇪 Швеция 2"
-      - "🇨🇿 Чехия 1"
-      - "🇯🇵 Япония 1"
-      - "📱 Мобильный интернет 1"
-      - "📱 Мобильный интернет 2"
-      - "📱 Мобильный интернет 3"
-      - "📱 Мобильный интернет 4"
-      - "📱 Мобильный интернет 5"
-      - "📱 Мобильный интернет 6"
-      - "📱 Мобильный интернет 7"
-      - "📱 Мобильный интернет 8"
 
 rules:
   - MATCH,→ MiVPN
