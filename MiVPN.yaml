@@ -82,6 +82,21 @@ proxies:
     network: tcp
     tls: false
 
+  - name: "🇬🇧 Великобритания 1"
+    type: vless
+    server: 150.layer.tel
+    port: 443
+    network: tcp
+    udp: true
+    uuid: fdc3618f-f8d3-41e4-ac24-9c2b6914258f
+    flow: xtls-rprx-vision
+    tls: true
+    servername: 150.layer.tel
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: kJ60YHfp5-_INj-mDjNUycndpFexT0_ZyE5ie1AVQSs
+      short-id: d0be5b4f4b341f4c
+
   - name: "🇩🇪 Германия 1"
     type: vless
     server: nurn.ultrakey.top
@@ -145,6 +160,38 @@ proxies:
       short-id: a0223b5c71e1
     grpc-opts:
       grpc-service-name: grpcservice
+
+  - name: "🇪🇺 Европа 1"
+    type: vless
+    server: media-zs12-m53x.mx.yndx-cdn.com
+    port: 20443
+    network: tcp
+    udp: true
+    uuid: 12cd395e-036d-402c-9178-f2f2ba81b70c
+    flow: xtls-rprx-vision
+    tls: true
+    servername: river-3-369.rtbcdn.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: DG904eM7xGecwV_nhjX73c-7g_fGEv8BgjbeAmTE8Bs
+      short-id: 505c94b8c65afb0a
+      spider-x: /
+
+  - name: "🇪🇺 Европа 2"
+    type: vless
+    server: media-zs12-m53x.mx.yndx-cdn.com
+    port: 20443
+    network: tcp
+    udp: true
+    uuid: 12cd395e-036d-402c-9178-f2f2ba81b70c
+    flow: xtls-rprx-vision
+    tls: true
+    servername: player.mx.yndx-cdn.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: DG904eM7xGecwV_nhjX73c-7g_fGEv8BgjbeAmTE8Bs
+      short-id: 505c94b8c65afb0a
+      spider-x: /
 
   - name: "🇱🇻 Латвия 1"
     type: vless
@@ -210,18 +257,19 @@ proxies:
 
   - name: "🇷🇺 Россия 1"
     type: vless
-    server: yt.node.vpnpplvpn.top
-    port: 8443
-    network: grpc
+    server: rf5.o4ka-internet.com
+    port: 443
+    network: tcp
     udp: true
-    uuid: dcc549cc-a8c8-45f1-800e-4df1212624eb
+    uuid: 9c35e609-6f39-4881-b4ab-0a24618d76fc
+    flow: xtls-rprx-vision
     tls: true
-    servername: eh.vk.ru
-    client-fingerprint: chrome
+    servername: rf5.o4ka-internet.com
+    client-fingerprint: firefox
     reality-opts:
-      public-key: SDQsoOr7a1fxki6y-Z-EgNsSJYIQJ7xwRum72utndX8
-    grpc-opts:
-      grpc-service-name: api
+      public-key: 5cGv2vcHGSPHyHPorYvWywpiCftygl0LT02uuuBzTTo
+      short-id: 27e53bbcab7593d7
+      spider-x: /
 
   - name: "🇸🇪 Швеция 1"
     type: vless
@@ -301,10 +349,13 @@ proxy-groups:
       - "если вы у кого-то купили"
       - "то вы еблан"
       - "канал @MiVPNN"
+      - "🇬🇧 Великобритания 1"
       - "🇩🇪 Германия 1"
       - "🇩🇪 Германия 2"
       - "🇩🇪 Германия 3"
       - "🇩🇪 Германия 4"
+      - "🇪🇺 Европа 1"
+      - "🇪🇺 Европа 2"
       - "🇱🇻 Латвия 1"
       - "🇳🇱 Нидерланды 1"
       - "🇵🇱 Польша 1"
