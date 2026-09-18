@@ -82,41 +82,24 @@ proxies:
     network: tcp
     tls: false
 
-  - name: "🇬🇧 Великобритания 1"
+  - name: "🇩🇪 Германия 1"
     type: vless
-    server: 150.layer.tel
+    server: 176.109.104.167
     port: 443
     network: tcp
     udp: true
-    uuid: fdc3618f-f8d3-41e4-ac24-9c2b6914258f
+    uuid: c8c1de61-f127-4084-b5cb-b45be80a3839
     flow: xtls-rprx-vision
     tls: true
-    servername: 150.layer.tel
+    servername: de.lstu.ru
     client-fingerprint: firefox
     reality-opts:
-      public-key: kJ60YHfp5-_INj-mDjNUycndpFexT0_ZyE5ie1AVQSs
-      short-id: d0be5b4f4b341f4c
-
-  - name: "🇩🇪 Германия 1"
-    type: vless
-    server: nurn.ultrakey.top
-    port: 443
-    network: grpc
-    udp: true
-    uuid: febfffee-7f91-498e-99fe-55dfdd2ce368
-    tls: true
-    servername: nurn.ultrakey.top
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: EUK_ePvEKUGcezQYHqgJ5P462XxLPXPm9CZWGLaL33k
-      short-id: 77ddb81332b2abf1
-      spider-x: /
-    grpc-opts:
-      grpc-service-name: grpc
+      public-key: e0RV9wRJdsQbQ0ugn5QUhJcTgWsSTVsKQTXMKweMDUg
+      short-id: 848b53fea10a561e
 
   - name: "🇩🇪 Германия 2"
     type: vless
-    server: 159.195.196.138
+    server: 159.195.197.183
     port: 443
     network: tcp
     udp: true
@@ -131,97 +114,110 @@ proxies:
 
   - name: "🇩🇪 Германия 3"
     type: vless
-    server: m2e4f3b-19rzvv.95.yndx-cdn.com
-    port: 40443
-    network: tcp
-    udp: true
-    uuid: 12cd395e-036d-402c-9178-f2f2ba81b70c
-    flow: xtls-rprx-vision
-    tls: true
-    servername: api-maps.yandex.ru
-    client-fingerprint: qq
-    reality-opts:
-      public-key: ZSzB9TQPGNcCiC0WLmciF5Jc8doJDvdRgbqTi8SCoEM
-      short-id: a1b2c3d4e5f6789a
-      spider-x: /
-
-  - name: "🇩🇪 Германия 4"
-    type: vless
-    server: 13.143.128.44
-    port: 2059
-    network: grpc
-    udp: true
-    uuid: a8702217-cba0-4c5a-99a4-121cfeeed7e8
-    tls: true
-    servername: piwikpro.de
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: 66qqJ8UVRbQmGEVFrSQwFrdMcqQHV68mxig213tSyDM
-      short-id: a0223b5c71e1
-    grpc-opts:
-      grpc-service-name: grpcservice
-
-  - name: "🇪🇺 Европа 1"
-    type: vless
-    server: media-zs12-m53x.mx.yndx-cdn.com
-    port: 20443
-    network: tcp
-    udp: true
-    uuid: 12cd395e-036d-402c-9178-f2f2ba81b70c
-    flow: xtls-rprx-vision
-    tls: true
-    servername: river-3-369.rtbcdn.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: DG904eM7xGecwV_nhjX73c-7g_fGEv8BgjbeAmTE8Bs
-      short-id: 505c94b8c65afb0a
-      spider-x: /
-
-  - name: "🇪🇺 Европа 2"
-    type: vless
-    server: media-zs12-m53x.mx.yndx-cdn.com
-    port: 20443
-    network: tcp
-    udp: true
-    uuid: 12cd395e-036d-402c-9178-f2f2ba81b70c
-    flow: xtls-rprx-vision
-    tls: true
-    servername: player.mx.yndx-cdn.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: DG904eM7xGecwV_nhjX73c-7g_fGEv8BgjbeAmTE8Bs
-      short-id: 505c94b8c65afb0a
-      spider-x: /
-
-  - name: "🇱🇻 Латвия 1"
-    type: vless
-    server: 176.109.104.167
+    server: 159.195.196.138
     port: 443
     network: tcp
     udp: true
     uuid: c8c1de61-f127-4084-b5cb-b45be80a3839
     flow: xtls-rprx-vision
     tls: true
-    servername: lv.lstu.ru
+    servername: lstu.ru
     client-fingerprint: firefox
     reality-opts:
       public-key: e0RV9wRJdsQbQ0ugn5QUhJcTgWsSTVsKQTXMKweMDUg
       short-id: 848b53fea10a561e
 
-  - name: "🇳🇱 Нидерланды 1"
+  - name: "🇪🇺 Европа 1"
     type: vless
-    server: 194.41.113.112
-    port: 2059
+    server: ger1.fghy27.top
+    port: 443
     network: tcp
     udp: true
-    uuid: a8702217-cba0-4c5a-99a4-121cfeeed7e8
+    uuid: da568e7a-09a6-464c-8dec-6ba92c00ee62
     flow: xtls-rprx-vision
     tls: true
-    servername: piwikpro.de
-    client-fingerprint: qq
+    servername: ger1.fghy27.top
+    client-fingerprint: firefox
     reality-opts:
-      public-key: 1OwGV3PL9tWIUGcAB4hw9uIWd0rmyhJ6oTV-CUqUCXo
-      short-id: aa1111bb2222cc
+      public-key: 4DaKDV7T06wGPZ8kQd_lzEO0D13X67PZdSC-swz-HFA
+      short-id: 43c76bb1
+      spider-x: /
+
+  - name: "🇪🇺 Европа 2"
+    type: vless
+    server: ger1.fghy27.top
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 1327ed9e-a819-40ab-b187-c4d20b42e819
+    flow: xtls-rprx-vision
+    tls: true
+    servername: ger1.fghy27.top
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 4DaKDV7T06wGPZ8kQd_lzEO0D13X67PZdSC-swz-HFA
+      short-id: d944d397
+      spider-x: /
+
+  - name: "🇪🇺 Европа 3"
+    type: vless
+    server: ee2.1905vpn.ru
+    port: 443
+    network: tcp
+    udp: true
+    uuid: dac4afba-5255-4de3-b814-c83696118420
+    flow: xtls-rprx-vision
+    tls: true
+    servername: ee2.1905vpn.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: fk7mSBnxEZCwFzUBgmRNMM3z0HLpcnrOwaOCKv-0Ikk
+      short-id: 25e36d60bf398b16
+
+  - name: "🇳🇱 Нидерланды 1"
+    type: vless
+    server: 31.58.179.74
+    port: 443
+    network: tcp
+    udp: true
+    uuid: c8c1de61-f127-4084-b5cb-b45be80a3839
+    flow: xtls-rprx-vision
+    tls: true
+    servername: lstu.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: e0RV9wRJdsQbQ0ugn5QUhJcTgWsSTVsKQTXMKweMDUg
+      short-id: 848b53fea10a561e
+
+  - name: "🇳🇱 Нидерланды 2"
+    type: vless
+    server: 63i.layer.tel
+    port: 443
+    network: tcp
+    udp: true
+    uuid: fdc3618f-f8d3-41e4-ac24-9c2b6914258f
+    flow: xtls-rprx-vision
+    tls: true
+    servername: 63i.layer.tel
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: __pQj_LdoiEOsL_g9d5ELJxdA7IC07HTklc7urWjei8
+      short-id: d475de6d996decc7
+
+  - name: "🇳🇱 Нидерланды 3"
+    type: vless
+    server: 219.welcomelayer.ru
+    port: 443
+    network: tcp
+    udp: true
+    uuid: fdc3618f-f8d3-41e4-ac24-9c2b6914258f
+    flow: xtls-rprx-vision
+    tls: true
+    servername: 219.welcomelayer.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: o3OZYxrqO4pcVMKy8FD54-c5zZx0MIqqsOGMr_zcxx8
+      short-id: 872a98b8b2ea9bae
 
   - name: "🇵🇱 Польша 1"
     type: vless
@@ -242,104 +238,194 @@ proxies:
 
   - name: "🇵🇱 Польша 2"
     type: vless
-    server: pl3.animereze.site
-    port: 8443
-    network: tcp
+    server: 91.185.83.113
+    port: 443
+    network: grpc
     udp: true
-    uuid: 8e2bc532-edb1-4f37-9c62-8c62fb4e26de
-    flow: xtls-rprx-vision
+    uuid: b26e02d0-0e3b-4a31-bd4d-ebbf0e217b39
     tls: true
-    servername: www.bmw.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: FJuV3x6dgGU2ijWQyNykgMcS7fScCyXPa-wyR_bM4gE
-      short-id: c3ab1ab747e9fdf3
+    servername: d3-pl.cloud-cdn.xyz
+    client-fingerprint: edge
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: vlgrpc
 
   - name: "🇷🇺 Россия 1"
     type: vless
-    server: rf5.o4ka-internet.com
+    server: 46.149.68.140
     port: 443
     network: tcp
     udp: true
-    uuid: 9c35e609-6f39-4881-b4ab-0a24618d76fc
+    uuid: 5960a018-5ae8-432a-9038-86466465322a
     flow: xtls-rprx-vision
     tls: true
-    servername: rf5.o4ka-internet.com
-    client-fingerprint: firefox
+    servername: ads.x5.ru
+    client-fingerprint: qq
     reality-opts:
-      public-key: 5cGv2vcHGSPHyHPorYvWywpiCftygl0LT02uuuBzTTo
-      short-id: 27e53bbcab7593d7
+      public-key: hJAFs0uE6ALPK_hCctGQo1DbV6OYt2Yc40Mz_Y8VNVc
+      short-id: 92ba94c503e65638
       spider-x: /
 
-  - name: "🇸🇪 Швеция 1"
+  - name: "🇷🇺 Россия 2"
     type: vless
-    server: swed2.o4ka-internet.com
+    server: 91.185.83.23
     port: 443
-    network: tcp
+    network: grpc
     udp: true
-    uuid: 9c35e609-6f39-4881-b4ab-0a24618d76fc
-    flow: xtls-rprx-vision
+    uuid: b26e02d0-0e3b-4a31-bd4d-ebbf0e217b39
     tls: true
-    servername: swed2.o4ka-internet.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 5cGv2vcHGSPHyHPorYvWywpiCftygl0LT02uuuBzTTo
-      short-id: 27e53bbcab7593d7
-      spider-x: /
+    servername: d3cdn15.cloud-cdn.xyz
+    client-fingerprint: edge
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: vlgrpc
 
   - name: "🇫🇷 Франция 1"
     type: vless
-    server: 95.182.87.236
+    server: 195.58.140.170
     port: 443
     network: tcp
     udp: true
-    uuid: 7e3c4e34-c665-4da3-848a-1bff80c16cb5
+    uuid: b4cfbc7d-5b6d-42c8-87c5-ae1ab6f859f9
     flow: xtls-rprx-vision
     tls: true
-    servername: github.com
-    client-fingerprint: firefox
+    servername: d3-fr.cloud-cdn.xyz
+    client-fingerprint: edge
     reality-opts:
-      public-key: MKsJOc_AuUkto4TNyHZ1dz9RlIp_iL4oa9op6hkdnnQ
-      short-id: af61d9e3074c8b25
+      public-key: lRuJPDrUb0b32-47hl4BgDoQutqmkuW31N4qVxbDgmI
+      short-id: dc927a04e8572c61
+      spider-x: /
 
   - name: "🇫🇮 Финляндия 1"
     type: vless
-    server: us.i-love-russia.online
+    server: 81.163.22.242
     port: 443
     network: tcp
     udp: true
-    uuid: cd2c4f6c-7a59-4078-a028-d2797db1ada4
+    uuid: b26e02d0-0e3b-4a31-bd4d-ebbf0e217b39
     flow: xtls-rprx-vision
     tls: true
-    servername: us.i-love-russia.online
-    client-fingerprint: firefox
+    servername: d3-se1.cloud-cdn.xyz
+    client-fingerprint: edge
     reality-opts:
-      public-key: ThYiOQmlRYp3vrb_MAshWmjSxwOOYcstJusgIiiopHY
-      short-id: 1b4e086bf0a1b1f4
+      public-key: T8Ksz9LPCJ6RZR_5rCQQu48xAMAZLLqyLcgMk2_ovm0
+      short-id: 7659bcb57cf06b34
       spider-x: /
 
   - name: "🇫🇮 Финляндия 2"
-    type: hysteria2
-    server: us.i-love-russia.online
+    type: vless
+    server: 31.207.7.154
     port: 443
+    network: tcp
     udp: true
-    password: cd2c4f6c-7a59-4078-a028-d2797db1ada4
-    sni: us.i-love-russia.online
+    uuid: b4cfbc7d-5b6d-42c8-87c5-ae1ab6f859f9
+    flow: xtls-rprx-vision
+    tls: true
+    servername: d3-se1.cloud-cdn.xyz
+    client-fingerprint: edge
+    reality-opts:
+      public-key: zWDvtTWK-cWWwHDMHMXcOpQy4k3EKp7yw-5e0wTZAUM
+      short-id: 5efa80b939612291
+      spider-x: /
+
+  - name: "🇫🇮 Финляндия 3"
+    type: vless
+    server: fi8.finlandnature.land
+    port: 443
+    network: xhttp
+    udp: true
+    uuid: fb5b7513-8506-41ca-96ee-7a94e24f0c77
+    tls: true
+    servername: fi8.finlandnature.land
+    client-fingerprint: edge
+    alpn:
+      - h2
+      - http/1.1
+    xhttp-opts:
+      path: /assets/build/_app/immutable/chunks/stream-one/
+      host: fi8.finlandnature.land
+      mode: auto
+      no-grpc-header: false
+      noSSEHeader: false
+      reuse-settings:
+        c-max-reuse-times: 200-300
+        h-keep-alive-period: 60
+        h-max-request-times: 200-300
+        h-max-reusable-secs: 600-900
+        max-connections: 1
+      sc-max-each-post-bytes: 393216-786432
+      sc-min-posts-interval-ms: "30"
+      scStreamUpServerSecs: 20-80
+      x-padding-bytes: 100-500
 
   - name: "🇪🇪 Эстония 1"
     type: vless
-    server: es3.animereze.site
-    port: 8443
-    network: tcp
+    server: ee2.belauto.store
+    port: 443
+    network: xhttp
     udp: true
-    uuid: 8e2bc532-edb1-4f37-9c62-8c62fb4e26de
-    flow: xtls-rprx-vision
+    uuid: fb5b7513-8506-41ca-96ee-7a94e24f0c77
     tls: true
-    servername: www.bmw.com
+    servername: ee2.belauto.store
+    client-fingerprint: qq
+    alpn:
+      - h2
+      - http/1.1
+    xhttp-opts:
+      path: /assets/build/_app/immutable/chunks/stream-one/
+      host: ee2.belauto.store
+      mode: auto
+      reuse-settings:
+        c-max-reuse-times: 200-300
+        h-keep-alive-period: 60
+        h-max-request-times: 200-300
+        h-max-reusable-secs: 600-900
+        max-connections: 1
+      sc-max-each-post-bytes: 393216-786432
+      x-padding-bytes: 100-500
+
+  - name: "🇪🇪 Эстония 2"
+    type: vless
+    server: ee3.belauto.store
+    port: 443
+    network: xhttp
+    udp: true
+    uuid: fb5b7513-8506-41ca-96ee-7a94e24f0c77
+    tls: true
+    servername: ee3.belauto.store
+    client-fingerprint: qq
+    alpn:
+      - h2
+      - http/1.1
+    xhttp-opts:
+      path: /assets/build/_app/immutable/chunks/stream-one/
+      host: ee3.belauto.store
+      mode: auto
+      reuse-settings:
+        c-max-reuse-times: 200-300
+        h-keep-alive-period: 60
+        h-max-request-times: 200-300
+        h-max-reusable-secs: 600-900
+        max-connections: 1
+      sc-max-each-post-bytes: 393216-786432
+      x-padding-bytes: 100-500
+
+  - name: "📱 Мобильный интернет 1"
+    type: vless
+    server: info.moscowtour.world
+    port: 443
+    network: grpc
+    udp: true
+    uuid: fb5b7513-8506-41ca-96ee-7a94e24f0c77
+    tls: true
+    servername: info.moscowtour.world
     client-fingerprint: firefox
-    reality-opts:
-      public-key: 92pQ72GNAyQefazEJYWLkJeMVjMeZ1x2XvU5u6kyMSs
-      short-id: 6b8bb090363319dd
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: travel.tours.v1.BookingService
 
 proxy-groups:
   - name: "→ MiVPN"
@@ -349,23 +435,26 @@ proxy-groups:
       - "если вы у кого-то купили"
       - "то вы еблан"
       - "канал @MiVPNN"
-      - "🇬🇧 Великобритания 1"
       - "🇩🇪 Германия 1"
       - "🇩🇪 Германия 2"
       - "🇩🇪 Германия 3"
-      - "🇩🇪 Германия 4"
       - "🇪🇺 Европа 1"
       - "🇪🇺 Европа 2"
-      - "🇱🇻 Латвия 1"
+      - "🇪🇺 Европа 3"
       - "🇳🇱 Нидерланды 1"
+      - "🇳🇱 Нидерланды 2"
+      - "🇳🇱 Нидерланды 3"
       - "🇵🇱 Польша 1"
       - "🇵🇱 Польша 2"
       - "🇷🇺 Россия 1"
-      - "🇸🇪 Швеция 1"
+      - "🇷🇺 Россия 2"
       - "🇫🇷 Франция 1"
       - "🇫🇮 Финляндия 1"
       - "🇫🇮 Финляндия 2"
+      - "🇫🇮 Финляндия 3"
       - "🇪🇪 Эстония 1"
+      - "🇪🇪 Эстония 2"
+      - "📱 Мобильный интернет 1"
 
 rules:
   - MATCH,→ MiVPN
