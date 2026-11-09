@@ -1,14 +1,12 @@
 mixed-port: 7890
 socks-port: 7891
-tproxy-port: 7893
 redir-port: 7892
 allow-lan: true
-mode: rule
+mode: global
 log-level: info
 external-controller: 127.0.0.1:9090
 dns:
   enable: true
-  listen: 0.0.0.0:1053
   use-hosts: true
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
@@ -19,18 +17,14 @@ dns:
     - 1.1.1.1
     - 8.8.8.8
   fake-ip-filter:
-    - '*.lan'
-    - +.lan
-    - +.local
-    - +.home.arpa
-    - +.internal
+    - "*.lan"
     - stun.*.*.*
     - stun.*.*
     - time.windows.com
     - time.nist.gov
     - time.apple.com
     - time.asia.apple.com
-    - '*.openwrt.pool.ntp.org'
+    - "*.openwrt.pool.ntp.org"
     - pool.ntp.org
     - ntp.ubuntu.com
     - time1.apple.com
@@ -46,845 +40,654 @@ dns:
     - time4.google.com
     - api.joox.com
     - joox.com
-    - '*.xiami.com'
-    - '*.msftconnecttest.com'
-    - '*.msftncsi.com'
+    - "*.xiami.com"
+    - "*.msftconnecttest.com"
+    - "*.msftncsi.com"
     - +.xboxlive.com
-    - '*.*.stun.playstation.net'
+    - "*.*.stun.playstation.net"
     - xbox.*.*.microsoft.com
-    - '*.ipv6.microsoft.com'
+    - "*.ipv6.microsoft.com"
     - speedtest.cros.wr.pvp.net
 proxies:
-  - name: 🇷🇺 Россия
+  - name: 🇬🇧 ⚡️ Великобритания | 100 Gbit/s
     type: vless
-    server: ru.originpull.com
-    port: 40443
+    server: ONLYSERVERS-100GB
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: data.aimodelmega.org
+    reality-opts:
+      public-key: 0JawqIGAt7eduzwnJN9Tcyq3BjwpTmPnewpsWfpwtCU
+      short-id: a1ca1855a1b0eef0
+    grpc-opts:
+      grpc-service-name: rpc.v1.MetricsService
+    client-fingerprint: firefox
+  - name: 🇵🇱 Польша [1]
+    type: vless
+    server: MEVSPACE
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: tracker.happylumenplot.org
+    reality-opts:
+      public-key: 83nCPechXO--tzf6dAFWqD3fi2uPEU9PynjeqNq_ey4
+      short-id: 01386e927d1c781e
+    grpc-opts:
+      grpc-service-name: edge.v1.StreamService
+    client-fingerprint: chrome
+  - name: 🇸🇪 Швеция [1]
+    type: vless
+    server: "1"
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: live.on3ok.com
+    reality-opts:
+      public-key: _4x6mU7USpNESoYSD2qzwA2pdvq8f30m0UwALXAqqzY
+      short-id: 5877634632cd9b75
+    grpc-opts:
+      grpc-service-name: api.v1.StreamService
+    client-fingerprint: chrome
+  - name: 🇵🇱 Польша [2]
+    type: vless
+    server: MEVSPACE- 1
+    port: 10103
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: gw.v1.FeedService
+    client-fingerprint: chrome
+  - name: 🇸🇪 Швеция [2]
+    type: vless
+    server: cherry
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: live.on3ok.com
+    reality-opts:
+      public-key: _4x6mU7USpNESoYSD2qzwA2pdvq8f30m0UwALXAqqzY
+      short-id: 5877634632cd9b75
+    grpc-opts:
+      grpc-service-name: api.v1.StreamService
+    client-fingerprint: chrome
+  - name: 🇵🇱 Польша [3]
+    type: vless
+    server: MEVSPACE
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: rpc.v1.ObjectService
+    client-fingerprint: chrome
+  - name: 🇱🇹 Литва
+    type: vless
+    server: cherry
+    port: 10101
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: app.v1.SyncService
+    client-fingerprint: chrome
+  - name: 🇩🇪 Германия
+    type: vless
+    server: 31.58.182.4
+    port: 7443
     network: tcp
     udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
     packet-encoding: xudp
     flow: xtls-rprx-vision
     tls: true
-    servername: www.booking.com
+    servername: stackoverflow.com
     reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: e6ada633d7771dda
-    client-fingerprint: qq
-    serverDescription: Госуслуги и РФ-сервисы
-  - name: 🇳🇱 Нидерланды (Hysteria)
-    type: hysteria2
-    server: edge.originpull.com
-    port: 40451
+      public-key: 5QAO98ot2U7TcGs_f6EEaQjCzNOJLNHqPf6smYsdFVI
+      short-id: d82fb387
+    client-fingerprint: firefox
+  - name: 🇷🇺 Россия | Для тех кто за рубежом
+    type: vless
+    server: vps2.nemnogogo.com
+    port: 443
+    network: grpc
     udp: true
-    password: a334822e-38f2-491e-8c78-dc0923c78368
-    sni: nl.originpull.com
-    client-fingerprint: randomized
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: vps2.nemnogogo.com
+    alpn:
+      - h2
+      - http/1.1
+    grpc-opts:
+      grpc-service-name: mobile.api.Event
+    client-fingerprint: ios
+  - name: 🇧🇬 Болгария
+    type: vless
+    server: BG
+    port: 10001
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: grpc-api
+    client-fingerprint: chrome
+  - name: 🇺🇸 США
+    type: vless
+    server: CHERRY
+    port: 10101
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: push.v2.FeedService
+    client-fingerprint: chrome
+  - name: 🇳🇱 Нидерланды [1]
+    type: vless
+    server: NOVOSERV
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: mobile.api.Event
+    client-fingerprint: chrome
+  - name: 🇳🇱 Нидерланды [2]
+    type: vless
+    server: NOVOSERV 2
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: mobile.api.Event
+    client-fingerprint: chrome
+  - name: 🇳🇱 Нидерланды [3]
+    type: vless
+    server: NOVO
+    port: 10101
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: media.v2.ObjectService
+    client-fingerprint: chrome
+  - name: 🇳🇱 Нидерланды [4]
+    type: vless
+    server: NOVO
+    port: 10101
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: media.v2.ObjectService
+    client-fingerprint: chrome
+  - name: 🇳🇱 Нидерланды [5]
+    type: vless
+    server: NOVOSERV 3
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: mobile.api.Event
+    client-fingerprint: chrome
+  - name: 🇳🇱 Нидерланды [1] | YouTube, Gemini
+    type: vless
+    server: NOVOSERV
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: mobile.api.Event
+    client-fingerprint: chrome
+  - name: 🇳🇱 Нидерланды [2] | YouTube, Gemini
+    type: vless
+    server: "1"
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: mobile.api.Event
+    client-fingerprint: chrome
+  - name: 🇳🇱 Нидерланды [3] | YouTube, Gemini
+    type: vless
+    server: NOVOSERV 3
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: mobile.api.Event
+    client-fingerprint: chrome
+  - name: 🇳🇱 Нидерланды [4] | YouTube, Gemini
+    type: vless
+    server: NOVOSERV 2
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: mobile.api.Event
+    client-fingerprint: chrome
+  - name: 🇮🇹 Италия
+    type: vless
+    server: vps
+    port: 10001
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: mobile.api.Event
+    client-fingerprint: chrome
+  - name: 🇷🇸 Сербия
+    type: vless
+    server: RS
+    port: 10001
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: grpc-api
+    client-fingerprint: chrome
+  - name: 🇲🇩 Молдова
+    type: vless
+    server: MD
+    port: 10001
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: grpc-api
+    client-fingerprint: chrome
+  - name: 🇭🇷 Хорватия
+    type: vless
+    server: HR
+    port: 10001
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    grpc-opts:
+      grpc-service-name: grpc-api
+    client-fingerprint: chrome
+  - name: 🇬🇧 Великобритания [1]
+    type: vless
+    server: ONLYSERVERS-X
+    port: 10207
+    network: xhttp
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: ""
+    xhttp-opts:
+      path: /static/v3/ingest/N8J6tGQ8TZ
+      mode: stream-up
+    client-fingerprint: firefox
+  - name: 🇬🇧 Великобритания [2]
+    type: vless
+    server: ONLYSERVERS-X
+    port: 443
+    network: xhttp
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: ""
+    xhttp-opts:
+      path: /cdn/v2/upload/ybpK2mXPpU
+      mode: stream-up
+    client-fingerprint: firefox
+  - name: 🇬🇧 ⚡️ Великобритания | Hysteria2
+    type: hysteria2
+    server: ONLYSERVERS-H-1
+    port: 443
+    udp: true
+    password: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    bbr-profile: conservative
+    sni: stream.hahaahhaah.com
+    client-fingerprint: chrome
     alpn:
       - h3
-    serverDescription: Экспериментальный протокол
-  - name: 🇦🇹 Австрия (Hysteria)
-    type: hysteria2
-    server: at.originpull.com
-    port: 40443
+  - name: 🇳🇱 LTE⚡мобильная связь 1
+    type: vless
+    server: lk.nehtar.online
+    port: 443
+    network: xhttp
     udp: true
-    password: a334822e-38f2-491e-8c78-dc0923c78368
-    sni: nl.originpull.com
-    client-fingerprint: randomized
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: lk.nehtar.online
     alpn:
-      - h3
-    serverDescription: Экспериментальный протокол
-  - name: 🇺🇸 США (Hysteria)
-    type: hysteria2
-    server: edge.originpull.com
-    port: 40449
+      - h2
+    xhttp-opts:
+      path: /gateway/v1/ws/848ea1203a5a306ad0b1168b6354d5cb
+      host: lk.nehtar.online
+      mode: packet-up
+      x-padding-bytes: 100-1000
+      x-padding-obfs-mode: true
+      x-padding-key: xss
+      x-padding-header: api_v1
+      x-padding-placement: query
+      x-padding-method: tokenish
+      uplink-http-method: GET
+      session-placement: query
+      session-key: auth
+      session-table: alphabet
+      session-length: "20"
+      seq-placement: query
+      seq-key: id
+      uplink-data-placement: body
+      uplink-data-key: X-Ver
+      sc-max-each-post-bytes: "1000000"
+      sc-min-posts-interval-ms: 5-20
+      sc-stream-up-server-secs: 20-80
+      reuse-settings:
+        max-concurrency: 8-16
+        c-max-reuse-times: 64-128
+        h-max-request-times: 600-900
+        h-max-reusable-secs: 1800-3000
+        h-keep-alive-period: 30
+    client-fingerprint: firefox
+  - name: 🇳🇱 LTE⚡мобильная связь 2
+    type: vless
+    server: chat.gpt.prem-ai.shop
+    port: 443
+    network: ws
     udp: true
-    password: a334822e-38f2-491e-8c78-dc0923c78368
-    sni: nl.originpull.com
-    client-fingerprint: randomized
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: chat.gpt.prem-ai.shop
     alpn:
-      - h3
-    serverDescription: Экспериментальный протокол
-  - name: 🇯🇵 Япония (Hysteria)
-    type: hysteria2
-    server: edge.originpull.com
-    port: 40448
+      - http/1.1
+    ws-opts:
+      path: /gateway/v1/ws/791f9a4d19f715c2ffaedfbaf99d88bd
+      headers:
+        Host: chat.gpt.prem-ai.shop
+    client-fingerprint: chrome
+  - name: 🇳🇱 LTE⚡мобильная связь 3
+    type: vless
+    server: d.nehtar.ru
+    port: 443
+    network: ws
     udp: true
-    password: a334822e-38f2-491e-8c78-dc0923c78368
-    sni: nl.originpull.com
-    client-fingerprint: randomized
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: d.nehtar.ru
     alpn:
-      - h3
-    serverDescription: Экспериментальный протокол
-  - name: 🇳🇱 Нидерланды · 1
+      - http/1.1
+    ws-opts:
+      path: /gateway/v1/ws/ed538a1fa54bd54fb14352a847675357
+      headers:
+        Host: d.nehtar.ru
+    client-fingerprint: chrome
+  - name: 🇪🇺 LTE мобильная связь — Авто-выбор
     type: vless
-    server: edge.originpull.com
-    port: 40443
-    network: tcp
+    server: LTEM
+    port: 443
+    network: ws
     udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
     packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: b2c3d4e5f6071829
-    client-fingerprint: qq
-  - name: 🇳🇱 Нидерланды · 3
+    ws-opts:
+      path: /api/v4/media/session
+      headers: {}
+    client-fingerprint: chrome
+  - name: 🇬🇧 Обход Великобритания 1
     type: vless
-    server: 178.72.185.235
-    port: 41443
-    network: tcp
+    server: rpc.casc2.nemnogogo.com
+    port: 443
+    network: grpc
     udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
     packet-encoding: xudp
-    flow: xtls-rprx-vision
     tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: b2c3d4e5f6071829
-    client-fingerprint: qq
-  - name: 🇳🇱 Нидерланды · 4
-    type: vless
-    server: 84.21.191.136
-    port: 40443
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: b2c3d4e5f6071829
-    client-fingerprint: qq
-  - name: 🇩🇪 Германия · 1
-    type: vless
-    server: edge.originpull.com
-    port: 40444
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: a1b2c3d4e5f60718
-    client-fingerprint: qq
-  - name: 🇩🇪 Германия · 3
-    type: vless
-    server: 178.72.185.235
-    port: 41444
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: a1b2c3d4e5f60718
-    client-fingerprint: qq
-  - name: 🇩🇪 Германия · 4
-    type: vless
-    server: 84.21.191.136
-    port: 40444
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: a1b2c3d4e5f60718
-    client-fingerprint: qq
-  - name: 🇫🇮 Финляндия · 1
-    type: vless
-    server: edge.originpull.com
-    port: 40446
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: d4e5f60718293a4b
-    client-fingerprint: qq
-  - name: 🇫🇮 Финляндия · 3
-    type: vless
-    server: 178.72.185.235
-    port: 41446
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: d4e5f60718293a4b
-    client-fingerprint: qq
-  - name: 🇫🇮 Финляндия · 4
-    type: vless
-    server: 84.21.191.136
-    port: 40446
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: d4e5f60718293a4b
-    client-fingerprint: qq
-  - name: 🇸🇪 Швеция · 1
-    type: vless
-    server: edge.originpull.com
-    port: 40447
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: 30fc443cf34a1471
-    client-fingerprint: qq
-  - name: 🇸🇪 Швеция · 3
-    type: vless
-    server: 178.72.185.235
-    port: 41447
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: 30fc443cf34a1471
-    client-fingerprint: qq
-  - name: 🇸🇪 Швеция · 4
-    type: vless
-    server: 84.21.191.136
-    port: 40447
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: 30fc443cf34a1471
-    client-fingerprint: qq
-  - name: 🇦🇹 Австрия · 1
-    type: vless
-    server: edge.originpull.com
-    port: 40445
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: c3d4e5f607182939
-    client-fingerprint: qq
-  - name: 🇦🇹 Австрия · 3
-    type: vless
-    server: 178.72.185.235
-    port: 41445
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: c3d4e5f607182939
-    client-fingerprint: qq
-  - name: 🇦🇹 Австрия · 4
-    type: vless
-    server: 84.21.191.136
-    port: 40445
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: c3d4e5f607182939
-    client-fingerprint: qq
-  - name: 🇺🇸 США · 1
-    type: vless
-    server: edge.originpull.com
-    port: 40449
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: e5f60718293a4b5c
-    client-fingerprint: qq
-  - name: 🇺🇸 США · 3
-    type: vless
-    server: 178.72.185.235
-    port: 41449
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: e5f60718293a4b5c
-    client-fingerprint: qq
-  - name: 🇺🇸 США · 4
-    type: vless
-    server: 84.21.191.136
-    port: 40449
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: e5f60718293a4b5c
-    client-fingerprint: qq
-  - name: 🇯🇵 Япония · 1
-    type: vless
-    server: edge.originpull.com
-    port: 40448
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: 09f696119a54ea3c
-    client-fingerprint: qq
-  - name: 🇯🇵 Япония · 3
-    type: vless
-    server: 178.72.185.235
-    port: 41448
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: 09f696119a54ea3c
-    client-fingerprint: qq
-  - name: 🇯🇵 Япония · 4
-    type: vless
-    server: 84.21.191.136
-    port: 40448
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: 09f696119a54ea3c
-    client-fingerprint: qq
-  - name: 🇩🇪 Германия · 9
-    type: vless
-    server: 49.12.115.23
-    port: 40443
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: a1b2c3d4e5f60718
-    client-fingerprint: qq
-  - name: 🇫🇮 Финляндия · 9
-    type: vless
-    server: 65.109.247.185
-    port: 40443
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: d4e5f60718293a4b
-    client-fingerprint: qq
-  - name: 🇦🇹 Австрия · 9
-    type: vless
-    server: 62.60.239.215
-    port: 40443
-    network: tcp
-    udp: true
-    uuid: a334822e-38f2-491e-8c78-dc0923c78368
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.booking.com
-    reality-opts:
-      public-key: EbXSjwJKAI1cmU2TK3af62qS2k58x8Rnct1525c0m1I
-      short-id: c3d4e5f607182939
-    client-fingerprint: qq
-  - name: 🇳🇱 Нидерланды · 99
-    type: hysteria2
-    server: edge.originpull.com
-    port: 40451
-    udp: true
-    password: a334822e-38f2-491e-8c78-dc0923c78368
-    sni: nl.originpull.com
-    client-fingerprint: randomized
+    servername: rpc.casc2.nemnogogo.com
     alpn:
-      - h3
-  - name: 🇦🇹 Австрия · 99
-    type: hysteria2
-    server: at.originpull.com
-    port: 40443
+      - h2
+      - http/1.1
+    grpc-opts:
+      grpc-service-name: stats.v1.FeedService
+    client-fingerprint: firefox
+  - name: 🇬🇧 Обход Великобритания 2
+    type: vless
+    server: main.3.nemnogogo.com
+    port: 443
+    network: grpc
     udp: true
-    password: a334822e-38f2-491e-8c78-dc0923c78368
-    sni: nl.originpull.com
-    client-fingerprint: randomized
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: main.3.nemnogogo.com
     alpn:
-      - h3
-  - name: 🇺🇸 США · 99
-    type: hysteria2
-    server: edge.originpull.com
-    port: 40449
+      - h2
+      - http/1.1
+    grpc-opts:
+      grpc-service-name: gw.v1.StreamService
+    client-fingerprint: firefox
+  - name: 🇬🇧 Обход Великобритания 3
+    type: vless
+    server: img.n1.casc.nemnogogo.com
+    port: 443
+    network: grpc
     udp: true
-    password: a334822e-38f2-491e-8c78-dc0923c78368
-    sni: nl.originpull.com
-    client-fingerprint: randomized
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: img.n1.casc.nemnogogo.com
     alpn:
-      - h3
-  - name: 🇯🇵 Япония · 99
-    type: hysteria2
-    server: edge.originpull.com
-    port: 40448
+      - h2
+      - http/1.1
+    grpc-opts:
+      grpc-service-name: node.v1.ApiService
+    client-fingerprint: firefox
+  - name: 🇳🇱 Обход Нидерланды 1
+    type: vless
+    server: img.n1.casc.nemnogogo.com
+    port: 443
+    network: grpc
     udp: true
-    password: a334822e-38f2-491e-8c78-dc0923c78368
-    sni: nl.originpull.com
-    client-fingerprint: randomized
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: img.n1.casc.nemnogogo.com
     alpn:
-      - h3
+      - h2
+      - http/1.1
+    grpc-opts:
+      grpc-service-name: node.v1.ApiService
+    client-fingerprint: firefox
+  - name: 🇳🇱 Обход Нидерланды 2
+    type: vless
+    server: rpc.casc2.nemnogogo.com
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: rpc.casc2.nemnogogo.com
+    alpn:
+      - h2
+      - http/1.1
+    grpc-opts:
+      grpc-service-name: stats.v1.FeedService
+    client-fingerprint: firefox
+  - name: 🇳🇱 Обход Нидерланды 3
+    type: vless
+    server: main.3.nemnogogo.com
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: main.3.nemnogogo.com
+    alpn:
+      - h2
+      - http/1.1
+    grpc-opts:
+      grpc-service-name: gw.v1.StreamService
+    client-fingerprint: firefox
+  - name: 🇳🇱 Обход Нидерланды 4
+    type: vless
+    server: main.3.nemnogogo.com
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: main.3.nemnogogo.com
+    alpn:
+      - h2
+      - http/1.1
+    grpc-opts:
+      grpc-service-name: gw.v1.StreamService
+    client-fingerprint: firefox
+  - name: 🇳🇱 Обход Нидерланды
+    type: vless
+    server: 185.229.9.121
+    port: 2053
+    network: tcp
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: data.dgmasterai.org
+    reality-opts:
+      public-key: 4rQWJxehWlUl1_KUWvcViR5xCsIAnYVov6eajNhPRVM
+      short-id: 305439b213bc392b
+    client-fingerprint: firefox
+  - name: 🇸🇪 Обход Швеция 1
+    type: vless
+    server: rpc.casc2.nemnogogo.com
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: rpc.casc2.nemnogogo.com
+    alpn:
+      - h2
+      - http/1.1
+    grpc-opts:
+      grpc-service-name: stats.v1.FeedService
+    client-fingerprint: firefox
+  - name: 🇸🇪 Обход Швеция 2
+    type: vless
+    server: main.3.nemnogogo.com
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: main.3.nemnogogo.com
+    alpn:
+      - h2
+      - http/1.1
+    grpc-opts:
+      grpc-service-name: gw.v1.StreamService
+    client-fingerprint: firefox
+  - name: 🇸🇪 Обход Швеция 3
+    type: vless
+    server: img.n1.casc.nemnogogo.com
+    port: 443
+    network: grpc
+    udp: true
+    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
+    packet-encoding: xudp
+    tls: true
+    servername: img.n1.casc.nemnogogo.com
+    alpn:
+      - h2
+      - http/1.1
+    grpc-opts:
+      grpc-service-name: node.v1.ApiService
+    client-fingerprint: firefox
 proxy-groups:
-  - name: 7️⃣ 7vpn
+  - name: → Remnawave
     type: select
     proxies:
-      - ⚡ Автовыбор
-      - 🇳🇱 Нидерланды
+      - 🇬🇧 ⚡️ Великобритания | 100 Gbit/s
+      - 🇵🇱 Польша [1]
+      - 🇸🇪 Швеция [1]
+      - 🇵🇱 Польша [2]
+      - 🇸🇪 Швеция [2]
+      - 🇵🇱 Польша [3]
+      - 🇱🇹 Литва
       - 🇩🇪 Германия
-      - 🇫🇮 Финляндия
-      - 🇸🇪 Швеция
-      - 🇦🇹 Австрия
+      - 🇷🇺 Россия | Для тех кто за рубежом
+      - 🇧🇬 Болгария
       - 🇺🇸 США
-      - 🇯🇵 Япония
-    include-all-proxies: true
-    exclude-filter: · \d+$
-  - name: ⚡ Автовыбор
-    type: fallback
-    proxies:
-      - 🇳🇱 Нидерланды
-      - 🇩🇪 Германия
-      - 🇫🇮 Финляндия
-      - 🇦🇹 Австрия
-    url: http://84.32.231.10/generate_204
-    expected-status: 204
-    interval: 300
-    timeout: 5000
-    lazy: true
-    hidden: true
-  - name: 🇳🇱 Нидерланды
-    type: fallback
-    include-all-proxies: true
-    filter: Нидерланды · \d+$|^(⏸|🔄|👉|🚧|💬|🚫|Обратитесь)
-    url: http://84.32.231.10/generate_204
-    expected-status: 204
-    interval: 300
-    timeout: 5000
-    lazy: true
-    hidden: true
-    proxies: []
-  - name: 🇩🇪 Германия
-    type: fallback
-    include-all-proxies: true
-    filter: Германия · \d+$|^(⏸|🔄|👉|🚧|💬|🚫|Обратитесь)
-    url: http://84.32.231.10/generate_204
-    expected-status: 204
-    interval: 300
-    timeout: 5000
-    lazy: true
-    hidden: true
-    proxies: []
-  - name: 🇫🇮 Финляндия
-    type: fallback
-    include-all-proxies: true
-    filter: Финляндия · \d+$|^(⏸|🔄|👉|🚧|💬|🚫|Обратитесь)
-    url: http://84.32.231.10/generate_204
-    expected-status: 204
-    interval: 300
-    timeout: 5000
-    lazy: true
-    hidden: true
-    proxies: []
-  - name: 🇸🇪 Швеция
-    type: fallback
-    include-all-proxies: true
-    filter: Швеция · \d+$|^(⏸|🔄|👉|🚧|💬|🚫|Обратитесь)
-    url: http://84.32.231.10/generate_204
-    expected-status: 204
-    interval: 300
-    timeout: 5000
-    lazy: true
-    hidden: true
-    proxies: []
-  - name: 🇦🇹 Австрия
-    type: fallback
-    include-all-proxies: true
-    filter: Австрия · \d+$|^(⏸|🔄|👉|🚧|💬|🚫|Обратитесь)
-    url: http://84.32.231.10/generate_204
-    expected-status: 204
-    interval: 300
-    timeout: 5000
-    lazy: true
-    hidden: true
-    proxies: []
-  - name: 🇺🇸 США
-    type: fallback
-    include-all-proxies: true
-    filter: США · \d+$|^(⏸|🔄|👉|🚧|💬|🚫|Обратитесь)
-    url: http://84.32.231.10/generate_204
-    expected-status: 204
-    interval: 300
-    timeout: 5000
-    lazy: true
-    hidden: true
-    proxies: []
-  - name: 🇯🇵 Япония
-    type: fallback
-    include-all-proxies: true
-    filter: Япония · \d+$|^(⏸|🔄|👉|🚧|💬|🚫|Обратитесь)
-    url: http://84.32.231.10/generate_204
-    expected-status: 204
-    interval: 300
-    timeout: 5000
-    lazy: true
-    hidden: true
-    proxies: []
+      - 🇳🇱 Нидерланды [1]
+      - 🇳🇱 Нидерланды [2]
+      - 🇳🇱 Нидерланды [3]
+      - 🇳🇱 Нидерланды [4]
+      - 🇳🇱 Нидерланды [5]
+      - 🇳🇱 Нидерланды [1] | YouTube, Gemini
+      - 🇳🇱 Нидерланды [2] | YouTube, Gemini
+      - 🇳🇱 Нидерланды [3] | YouTube, Gemini
+      - 🇳🇱 Нидерланды [4] | YouTube, Gemini
+      - 🇮🇹 Италия
+      - 🇷🇸 Сербия
+      - 🇲🇩 Молдова
+      - 🇭🇷 Хорватия
+      - 🇬🇧 Великобритания [1]
+      - 🇬🇧 Великобритания [2]
+      - 🇬🇧 ⚡️ Великобритания | Hysteria2
+      - 🇳🇱 LTE⚡мобильная связь 1
+      - 🇳🇱 LTE⚡мобильная связь 2
+      - 🇳🇱 LTE⚡мобильная связь 3
+      - 🇪🇺 LTE мобильная связь — Авто-выбор
+      - 🇬🇧 Обход Великобритания 1
+      - 🇬🇧 Обход Великобритания 2
+      - 🇬🇧 Обход Великобритания 3
+      - 🇳🇱 Обход Нидерланды 1
+      - 🇳🇱 Обход Нидерланды 2
+      - 🇳🇱 Обход Нидерланды 3
+      - 🇳🇱 Обход Нидерланды 4
+      - 🇳🇱 Обход Нидерланды
+      - 🇸🇪 Обход Швеция 1
+      - 🇸🇪 Обход Швеция 2
+      - 🇸🇪 Обход Швеция 3
 rules:
-  - DOMAIN-SUFFIX,lan,DIRECT
-  - DOMAIN-SUFFIX,local,DIRECT
-  - DOMAIN-SUFFIX,home.arpa,DIRECT
-  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
-  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
-  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
-  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
-  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
-  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
-  - IP-CIDR6,::1/128,DIRECT,no-resolve
-  - IP-CIDR6,fc00::/7,DIRECT,no-resolve
-  - IP-CIDR6,fe80::/10,DIRECT,no-resolve
-  - DOMAIN-SUFFIX,novayagazeta.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,theins.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,tvrain.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,republic.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,moscowtimes.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,grani.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,kasparov.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,ej.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,7x7-journal.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,paperpaper.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,echo.msk.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,the-village.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,polit.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,sobesednik.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,4pda.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,tjournal.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,cypherpunks.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,rutracker.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,seasonvar.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,lostfilm.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,jut.su,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,123rutor.su,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,imgsrc.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,amdm.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,mangahub.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,sharavoz.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,zona.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,kinokrad.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,torrentino.ru,7️⃣ 7vpn
-  - DOMAIN-SUFFIX,ru,DIRECT
-  - DOMAIN-SUFFIX,su,DIRECT
-  - DOMAIN-SUFFIX,xn--p1ai,DIRECT
-  - DOMAIN-SUFFIX,xn--p1acf,DIRECT
-  - DOMAIN-SUFFIX,xn--p1ag,DIRECT
-  - DOMAIN-SUFFIX,24h.tv,DIRECT
-  - DOMAIN-SUFFIX,5post.market,DIRECT
-  - DOMAIN-SUFFIX,afafb.com,DIRECT
-  - DOMAIN-SUFFIX,applovin.com,DIRECT
-  - DOMAIN-SUFFIX,appsflyersdk.com,DIRECT
-  - DOMAIN-SUFFIX,avs.io,DIRECT
-  - DOMAIN-SUFFIX,beeline.tv,DIRECT
-  - DOMAIN-SUFFIX,boosty.to,DIRECT
-  - DOMAIN-SUFFIX,castarsdk.com,DIRECT
-  - DOMAIN-SUFFIX,chizhik.club,DIRECT
-  - DOMAIN-SUFFIX,dbo-dengi.online,DIRECT
-  - DOMAIN-SUFFIX,donationalerts.com,DIRECT
-  - DOMAIN-SUFFIX,eaptechka.online,DIRECT
-  - DOMAIN-SUFFIX,earnapp.com,DIRECT
-  - DOMAIN-SUFFIX,earnsdk.io,DIRECT
-  - DOMAIN-SUFFIX,emias.info,DIRECT
-  - DOMAIN-SUFFIX,etna.ai,DIRECT
-  - DOMAIN-SUFFIX,fix-price.com,DIRECT
-  - DOMAIN-SUFFIX,getsynapse.io,DIRECT
-  - DOMAIN-SUFFIX,hexsdk.com,DIRECT
-  - DOMAIN-SUFFIX,honeygain.com,DIRECT
-  - DOMAIN-SUFFIX,instajob.ai,DIRECT
-  - DOMAIN-SUFFIX,ipidea.io,DIRECT
-  - DOMAIN-SUFFIX,ipidea.net,DIRECT
-  - DOMAIN-SUFFIX,kinorium.com,DIRECT
-  - DOMAIN-SUFFIX,koshelek.app,DIRECT
-  - DOMAIN-SUFFIX,megamarket.tech,DIRECT
-  - DOMAIN-SUFFIX,memealerts.com,DIRECT
-  - DOMAIN-SUFFIX,meteum.ai,DIRECT
-  - DOMAIN-SUFFIX,mp.world,DIRECT
-  - DOMAIN-SUFFIX,mradx.net,DIRECT
-  - DOMAIN-SUFFIX,mvk.com,DIRECT
-  - DOMAIN-SUFFIX,mycdn.me,DIRECT
-  - DOMAIN-SUFFIX,naydex.net,DIRECT
-  - DOMAIN-SUFFIX,neon.click,DIRECT
-  - DOMAIN-SUFFIX,okolo.app,DIRECT
-  - DOMAIN-SUFFIX,packetsdk.com,DIRECT
-  - DOMAIN-SUFFIX,packetsdk.io,DIRECT
-  - DOMAIN-SUFFIX,packetsdk.net,DIRECT
-  - DOMAIN-SUFFIX,packetsdk.xyz,DIRECT
-  - DOMAIN-SUFFIX,packetstream.net,DIRECT
-  - DOMAIN-SUFFIX,pawns.app,DIRECT
-  - DOMAIN-SUFFIX,peer2profit.com,DIRECT
-  - DOMAIN-SUFFIX,premier.one,DIRECT
-  - DOMAIN-SUFFIX,prodcontest.com,DIRECT
-  - DOMAIN-SUFFIX,psk,DIRECT
-  - DOMAIN-SUFFIX,restream-media.net,DIRECT
-  - DOMAIN-SUFFIX,safeliner.tech,DIRECT
-  - DOMAIN-SUFFIX,sage-observability.tech,DIRECT
-  - DOMAIN-SUFFIX,smotreshka.tv,DIRECT
-  - DOMAIN-SUFFIX,t.finance,DIRECT
-  - DOMAIN-SUFFIX,tamtam.chat,DIRECT
-  - DOMAIN-SUFFIX,tbank-online.com,DIRECT
-  - DOMAIN-SUFFIX,telega.info,DIRECT
-  - DOMAIN-SUFFIX,telega.me,DIRECT
-  - DOMAIN-SUFFIX,tiktokpangle.us,DIRECT
-  - DOMAIN-SUFFIX,trbcdn.net,DIRECT
-  - DOMAIN-SUFFIX,turbopages.org,DIRECT
-  - DOMAIN-SUFFIX,userapi.com,DIRECT
-  - DOMAIN-SUFFIX,uxzw.club,DIRECT
-  - DOMAIN-SUFFIX,vungle.com,DIRECT
-  - DOMAIN-SUFFIX,warehouse.domains,DIRECT
-  - DOMAIN-SUFFIX,yads.tech,DIRECT
-  - DOMAIN-SUFFIX,yektanet.com,DIRECT
-  - DOMAIN-SUFFIX,2gis.ae,DIRECT
-  - DOMAIN-SUFFIX,2gis.am,DIRECT
-  - DOMAIN-SUFFIX,2gis.az,DIRECT
-  - DOMAIN-SUFFIX,2gis.by,DIRECT
-  - DOMAIN-SUFFIX,2gis.com,DIRECT
-  - DOMAIN-SUFFIX,2gis.com.cy,DIRECT
-  - DOMAIN-SUFFIX,2gis.cz,DIRECT
-  - DOMAIN-SUFFIX,2gis.ge,DIRECT
-  - DOMAIN-SUFFIX,2gis.kg,DIRECT
-  - DOMAIN-SUFFIX,2gis.kz,DIRECT
-  - DOMAIN-SUFFIX,2gis.ru,DIRECT
-  - DOMAIN-SUFFIX,2gis.tj,DIRECT
-  - DOMAIN-SUFFIX,2gis.ua,DIRECT
-  - DOMAIN-SUFFIX,2gis.uz,DIRECT
-  - DOMAIN-REGEX,(^|\.)alfa[a-z0-9-]*\.(oavdo.amc|ru|st)$,DIRECT
-  - DOMAIN-SUFFIX,atomyze.ru,DIRECT
-  - DOMAIN-SUFFIX,atomyze.tech,DIRECT
-  - DOMAIN-SUFFIX,aviasales.com,DIRECT
-  - DOMAIN-SUFFIX,aviasales.ru,DIRECT
-  - DOMAIN-SUFFIX,avito.ru,DIRECT
-  - DOMAIN-SUFFIX,avito.st,DIRECT
-  - DOMAIN-REGEX,(^|\.)dodo[a-z0-9-]*\.(com|io|net|ru)$,DIRECT
-  - DOMAIN-SUFFIX,gazprombank.com,DIRECT
-  - DOMAIN-SUFFIX,gazprombank.investments,DIRECT
-  - DOMAIN-SUFFIX,gazprombank.ru,DIRECT
-  - DOMAIN-REGEX,(^|\.)jivo[a-z0-9-]*\.(chat|co.in|co.za|com|com.br|com.co|com.pe|com.tr|de|es|ng|ru)$,DIRECT
-  - DOMAIN-SUFFIX,lenta.com,DIRECT
-  - DOMAIN-SUFFIX,lenta.tech,DIRECT
-  - DOMAIN-SUFFIX,mosmetro.ru,DIRECT
-  - DOMAIN-SUFFIX,mosmetro.tech,DIRECT
-  - DOMAIN-SUFFIX,okko.sport,DIRECT
-  - DOMAIN-SUFFIX,okko.tv,DIRECT
-  - DOMAIN-REGEX,(^|\.)ozon[a-z0-9-]*\.(by|com|pro|ru)$,DIRECT
-  - DOMAIN-SUFFIX,ozon.by,DIRECT
-  - DOMAIN-SUFFIX,ozon.com,DIRECT
-  - DOMAIN-SUFFIX,ozon.dev,DIRECT
-  - DOMAIN-SUFFIX,ozon.express,DIRECT
-  - DOMAIN-SUFFIX,ozon.kz,DIRECT
-  - DOMAIN-SUFFIX,ozon.li,DIRECT
-  - DOMAIN-SUFFIX,ozon.ru,DIRECT
-  - DOMAIN-SUFFIX,ozon.tech,DIRECT
-  - DOMAIN-SUFFIX,ozon.tm,DIRECT
-  - DOMAIN-SUFFIX,ozon.travel,DIRECT
-  - DOMAIN-SUFFIX,ozonru.co.il,DIRECT
-  - DOMAIN-SUFFIX,ozonru.com,DIRECT
-  - DOMAIN-SUFFIX,ozonru.eu,DIRECT
-  - DOMAIN-SUFFIX,ozonru.me,DIRECT
-  - DOMAIN-SUFFIX,perekrestok.com,DIRECT
-  - DOMAIN-SUFFIX,perekrestok.ru,DIRECT
-  - DOMAIN-REGEX,(^|\.)rosban[a-z0-9-]*\.(com|ru)$,DIRECT
-  - DOMAIN-REGEX,(^|\.)rwb[a-z0-9-]*\.(ru|tech)$,DIRECT
-  - DOMAIN-REGEX,(^|\.)sber[a-z0-9-]*\.(by|com|pro|ru|tech)$,DIRECT
-  - DOMAIN-REGEX,(^|\.)spasib[a-z0-9-]*\.(digital|market|ru)$,DIRECT
-  - DOMAIN-REGEX,(^|\.)t-[a-z0-9-]*\.(by|group|ru|su)$,DIRECT
-  - DOMAIN-SUFFIX,t-tech.dev,DIRECT
-  - DOMAIN-SUFFIX,t-tech.ru,DIRECT
-  - DOMAIN-SUFFIX,t-tech.team,DIRECT
-  - DOMAIN-REGEX,(^|\.)taxi[a-z0-9-]*\.(org)$,DIRECT
-  - DOMAIN-REGEX,(^|\.)tink[a-z0-9-]*\.(ai|com|ru)$,DIRECT
-  - DOMAIN-REGEX,(^|\.)tochka[a-z0-9-]*\.(com)$,DIRECT
-  - DOMAIN-REGEX,(^|\.)vk[^u][a-z0-9-]*\.(app|com|me|net|ru)$,DIRECT
-  - DOMAIN-SUFFIX,vk.cc,DIRECT
-  - DOMAIN-SUFFIX,vk.com,DIRECT
-  - DOMAIN-SUFFIX,vk.company,DIRECT
-  - DOMAIN-SUFFIX,vk.design,DIRECT
-  - DOMAIN-SUFFIX,vk.link,DIRECT
-  - DOMAIN-SUFFIX,vk.me,DIRECT
-  - DOMAIN-SUFFIX,vk.ru,DIRECT
-  - DOMAIN-SUFFIX,vk.team,DIRECT
-  - DOMAIN-REGEX,(^|\.)vkuser[a-z0-9-]*\.(com|net|ru)$,DIRECT
-  - DOMAIN-REGEX,(^|\.)wb[a-z0-9-]*\.(by|net|ru|tech)$,DIRECT
-  - DOMAIN-SUFFIX,wb.am,DIRECT
-  - DOMAIN-SUFFIX,wb.kg,DIRECT
-  - DOMAIN-SUFFIX,wb.kz,DIRECT
-  - DOMAIN-SUFFIX,wb.ru,DIRECT
-  - DOMAIN-SUFFIX,webvisor.com,DIRECT
-  - DOMAIN-SUFFIX,webvisor.org,DIRECT
-  - DOMAIN-SUFFIX,wibes.com,DIRECT
-  - DOMAIN-SUFFIX,wibes.ru,DIRECT
-  - DOMAIN-SUFFIX,wildberries.am,DIRECT
-  - DOMAIN-SUFFIX,wildberries.by,DIRECT
-  - DOMAIN-SUFFIX,wildberries.co.il,DIRECT
-  - DOMAIN-SUFFIX,wildberries.es,DIRECT
-  - DOMAIN-SUFFIX,wildberries.eu,DIRECT
-  - DOMAIN-SUFFIX,wildberries.ge,DIRECT
-  - DOMAIN-SUFFIX,wildberries.kg,DIRECT
-  - DOMAIN-SUFFIX,wildberries.kz,DIRECT
-  - DOMAIN-SUFFIX,wildberries.lt,DIRECT
-  - DOMAIN-SUFFIX,wildberries.ru,DIRECT
-  - DOMAIN-SUFFIX,wildberries.tj,DIRECT
-  - DOMAIN-SUFFIX,wildberries.tm,DIRECT
-  - DOMAIN-SUFFIX,wildberries.uz,DIRECT
-  - DOMAIN-REGEX,(^|\.)x5[a-z0-9-]*\.(net|ru)$,DIRECT
-  - DOMAIN-SUFFIX,x5.ai,DIRECT
-  - DOMAIN-SUFFIX,x5.com,DIRECT
-  - DOMAIN-SUFFIX,x5.digital,DIRECT
-  - DOMAIN-SUFFIX,x5.group,DIRECT
-  - DOMAIN-SUFFIX,x5.media,DIRECT
-  - DOMAIN-SUFFIX,x5.ru,DIRECT
-  - DOMAIN-SUFFIX,x5.team,DIRECT
-  - DOMAIN-SUFFIX,x5.tech,DIRECT
-  - DOMAIN-SUFFIX,ya.cc,DIRECT
-  - DOMAIN-SUFFIX,ya.ru,DIRECT
-  - DOMAIN-REGEX,(^|\.)yand[a-z0-9-]*\.(com|net|org|ru)$,DIRECT
-  - DOMAIN-SUFFIX,yandex.aero,DIRECT
-  - DOMAIN-SUFFIX,yandex.asia,DIRECT
-  - DOMAIN-SUFFIX,yandex.az,DIRECT
-  - DOMAIN-SUFFIX,yandex.by,DIRECT
-  - DOMAIN-SUFFIX,yandex.cloud,DIRECT
-  - DOMAIN-SUFFIX,yandex.co.il,DIRECT
-  - DOMAIN-SUFFIX,yandex.com,DIRECT
-  - DOMAIN-SUFFIX,yandex.com.am,DIRECT
-  - DOMAIN-SUFFIX,yandex.com.ge,DIRECT
-  - DOMAIN-SUFFIX,yandex.com.ru,DIRECT
-  - DOMAIN-SUFFIX,yandex.com.tr,DIRECT
-  - DOMAIN-SUFFIX,yandex.com.ua,DIRECT
-  - DOMAIN-SUFFIX,yandex.de,DIRECT
-  - DOMAIN-SUFFIX,yandex.ee,DIRECT
-  - DOMAIN-SUFFIX,yandex.eu,DIRECT
-  - DOMAIN-SUFFIX,yandex.fi,DIRECT
-  - DOMAIN-SUFFIX,yandex.fr,DIRECT
-  - DOMAIN-SUFFIX,yandex.jobs,DIRECT
-  - DOMAIN-SUFFIX,yandex.kg,DIRECT
-  - DOMAIN-SUFFIX,yandex.kz,DIRECT
-  - DOMAIN-SUFFIX,yandex.lt,DIRECT
-  - DOMAIN-SUFFIX,yandex.lv,DIRECT
-  - DOMAIN-SUFFIX,yandex.md,DIRECT
-  - DOMAIN-SUFFIX,yandex.mobi,DIRECT
-  - DOMAIN-SUFFIX,yandex.net,DIRECT
-  - DOMAIN-SUFFIX,yandex.org,DIRECT
-  - DOMAIN-SUFFIX,yandex.pl,DIRECT
-  - DOMAIN-SUFFIX,yandex.ru,DIRECT
-  - DOMAIN-SUFFIX,yandex.st,DIRECT
-  - DOMAIN-SUFFIX,yandex.sx,DIRECT
-  - DOMAIN-SUFFIX,yandex.tj,DIRECT
-  - DOMAIN-SUFFIX,yandex.tm,DIRECT
-  - DOMAIN-SUFFIX,yandex.tr,DIRECT
-  - DOMAIN-SUFFIX,yandex.ua,DIRECT
-  - DOMAIN-SUFFIX,yandex.uz,DIRECT
-  - DOMAIN-REGEX,(^|\.)yang[a-z0-9-]*\.(com)$,DIRECT
-  - DOMAIN-SUFFIX,yango.africa,DIRECT
-  - DOMAIN-SUFFIX,yango.ao,DIRECT
-  - DOMAIN-SUFFIX,yango.bh,DIRECT
-  - DOMAIN-SUFFIX,yango.co.il,DIRECT
-  - DOMAIN-SUFFIX,yango.com,DIRECT
-  - DOMAIN-SUFFIX,yango.fi,DIRECT
-  - DOMAIN-SUFFIX,yango.qa,DIRECT
-  - DOMAIN-SUFFIX,yango.taxi,DIRECT
-  - DOMAIN-SUFFIX,yango.tech,DIRECT
-  - DOMAIN-REGEX,(^|\.)yast[a-z0-9-]*\.(net|ru)$,DIRECT
-  - DOMAIN-REGEX,(^|\.)zvuk[a-z0-9-]*\.(com)$,DIRECT
-  - DOMAIN-SUFFIX,wb.com,DIRECT
-  - DOMAIN-SUFFIX,wb.ru,DIRECT
-  - DOMAIN-SUFFIX,youla.io,DIRECT
-  - DOMAIN-SUFFIX,youla.ru,DIRECT
-  - DOMAIN-SUFFIX,my.7vpn.io,DIRECT
-  - DOMAIN-SUFFIX,syncpoint.top,DIRECT
-  - MATCH,7️⃣ 7vpn
+  - MATCH,→ Remnawave
