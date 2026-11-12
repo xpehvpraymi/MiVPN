@@ -1,693 +1,2263 @@
-mixed-port: 7890
-socks-port: 7891
-redir-port: 7892
-allow-lan: true
-mode: global
-log-level: info
-external-controller: 127.0.0.1:9090
+port: 0
+socks-port: 0
+mixed-port: 0
+allow-lan: false
+mode: rule
+log-level: warning
+ipv6: false
+proxies:
+- name: "\U0001F1E9\U0001F1EA Германия 1 ws"
+  type: vless
+  server: 95.182.121.7
+  port: 443
+  uuid: eebccf6f-4c3f-4b16-bb01-4d13d2a3504f
+  udp: true
+  encryption: none
+  tls: true
+  servername: va.stream-room.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vless-ws
+- name: "\U0001F1E9\U0001F1EA Германия 2"
+  type: vless
+  server: 157.22.202.173
+  port: 443
+  uuid: 1df7801e-cbba-479d-8328-1d481f2cd621
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: 91.107.240.88.sslip.io
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: o1Tv2X_-gcjqv1W67h1GPUqWFhEuTFez7Wqh48OfCxI
+    short-id: 9913d5950459e6b4
+- name: "\U0001F1E9\U0001F1EA ⚡FAST Германия 3 ws"
+  type: vless
+  server: orviko.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: orviko.xyz
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /api/de4/stream
+    headers:
+      Host: orviko.xyz
+- name: "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 4 | LTE grpc, ai"
+  type: vless
+  server: cadrin.wtf
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: cadrin.wtf
+  client-fingerprint: edge
+  alpn:
+  - h2
+  network: grpc
+  grpc-opts:
+    grpc-service-name: cache.sync.v1
+- name: "\U0001F1E9\U0001F1EA ⚡FAST Германия 5 xhttp"
+  type: vless
+  server: orviko.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: orviko.xyz
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  - http/1.1
+  network: xhttp
+  xhttp-opts:
+    path: /api/de5/sync
+    host: orviko.xyz
+    mode: auto
+- name: "\U0001F1E9\U0001F1EA ⚡FAST Германия 6 ws"
+  type: vless
+  server: orviko.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: orviko.xyz
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /api/de7/stream
+    headers:
+      Host: orviko.xyz
+- name: "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 7 | LTE xhttp"
+  type: vless
+  server: jarmelo.autos
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: jarmelo.autos
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  - http/1.1
+  network: xhttp
+  xhttp-opts:
+    path: /api/garage/sync
+    host: jarmelo.autos
+    mode: packet-up
+    reuse-settings:
+      c-max-reuse-times: 128-256
+      max-concurrency: 16-32
+      max-connections: 0
+      h-max-request-times: 1200-2400
+      h-max-reusable-secs: 900-1800
+    seq-key: segment
+    noSSEHeader: false
+    x-padding-key: cacheVersion
+    seq-placement: query
+    session-key: media_session
+    uplink-data-key: data
+    x-padding-bytes: 64-320
+    session-table: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+    x-padding-header: Referer
+    x-padding-method: tokenish
+    session-length: 22-30
+    uplink-chunk-size: 4096-6144
+    uplink-http-method: GET
+    x-padding-obfs-mode: true
+    x-padding-placement: queryInHeader
+    scMaxBufferedPosts: 512
+    sc-max-each-post-bytes: 20480-24576
+    session-placement: query
+    uplink-data-placement: header
+    sc-min-posts-interval-ms: 2-3
+    serverMaxHeaderBytes: 262144
+- name: "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 8 | LTE ws"
+  type: vless
+  server: torvani.cyou
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: torvani.cyou
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /api/boards/live
+    headers:
+      Host: torvani.cyou
+- name: "\U0001F1E9\U0001F1EA \U0001F4F1 Германия 9 | LTE xhttp"
+  type: vless
+  server: gavrino.casa
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: gavrino.casa
+  client-fingerprint: qq
+  alpn:
+  - h2
+  - http/1.1
+  network: xhttp
+  xhttp-opts:
+    path: /api/trails/sync
+    host: gavrino.casa
+    mode: packet-up
+    reuse-settings:
+      c-max-reuse-times: 128-256
+      max-concurrency: 16-32
+      max-connections: 0
+      h-max-request-times: 1200-2400
+      h-max-reusable-secs: 900-1800
+    seq-key: segment
+    noSSEHeader: false
+    x-padding-key: cacheVersion
+    seq-placement: query
+    session-key: media_session
+    uplink-data-key: data
+    x-padding-bytes: 64-320
+    session-table: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+    x-padding-header: Referer
+    x-padding-method: tokenish
+    session-length: 22-30
+    uplink-chunk-size: 4096-6144
+    uplink-http-method: GET
+    x-padding-obfs-mode: true
+    x-padding-placement: queryInHeader
+    scMaxBufferedPosts: 512
+    sc-max-each-post-bytes: 20480-24576
+    session-placement: query
+    uplink-data-placement: header
+    sc-min-posts-interval-ms: 2-3
+    serverMaxHeaderBytes: 262144
+- name: "\U0001F1E9\U0001F1EA ⚡FAST Германия 10 xhttp"
+  type: vless
+  server: orviko.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: orviko.xyz
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  - http/1.1
+  network: xhttp
+  xhttp-opts:
+    path: /api/de7/sync
+    host: orviko.xyz
+    mode: auto
+- name: "\U0001F1E9\U0001F1EA ⚡FAST Германия 11 ws"
+  type: vless
+  server: orviko.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: orviko.xyz
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /api/de5/stream
+    headers:
+      Host: orviko.xyz
+- name: "\U0001F1E9\U0001F1EA ⚡FAST Германия 12 xhttp"
+  type: vless
+  server: orviko.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: orviko.xyz
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  - http/1.1
+  network: xhttp
+  xhttp-opts:
+    path: /api/de6/sync
+    host: orviko.xyz
+    mode: auto
+- name: "\U0001F1E9\U0001F1EA ⚡FAST Германия 13 ws, ai"
+  type: vless
+  server: ru2.mguard-pro.com
+  port: 443
+  uuid: 69bdd990-2171-422d-9c64-b34250b0731e
+  udp: true
+  encryption: none
+  tls: true
+  servername: de.stonebridgejournal.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /api/v2/stream/08dbc47e9621
+    headers:
+      Host: de.stonebridgejournal.com
+- name: "\U0001F1E9\U0001F1EA ⚡FAST Германия 14 ws, ai"
+  type: vless
+  server: ru2.mguard-pro.com
+  port: 443
+  uuid: 69bdd990-2171-422d-9c64-b34250b0731e
+  udp: true
+  encryption: none
+  tls: true
+  servername: fi.stonebridgejournal.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /api/v2/stream/910e3a6d5478
+    headers:
+      Host: fi.stonebridgejournal.com
+- name: "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 15 | LTE xhttp, ai"
+  type: vless
+  server: cdn-vk.e-bobr.com
+  port: 443
+  uuid: f9ac23b9-3be7-4114-af4a-39a7c47634e7
+  udp: true
+  encryption: none
+  tls: true
+  servername: cdn-vk.e-bobr.com
+  client-fingerprint: edge
+  alpn:
+  - h2
+  - http/1.1
+  network: xhttp
+  xhttp-opts:
+    path: /api/v2/vk/manifest/
+    host: cdn-vk.e-bobr.com
+    mode: packet-up
+    reuse-settings:
+      c-max-reuse-times: 0
+      max-concurrency: 2-4
+      max-connections: 0
+      h-keep-alive-period: 0
+      h-max-request-times: 300-600
+      h-max-reusable-secs: 1000-2000
+    seq-key: XSRF-TOKEN
+    sessionKey: connect.sid
+    x-padding-key: _ts
+    no-grpc-header: true
+    seq-placement: cookie
+    session-key: connect.sid
+    x-padding-bytes: 100-1000
+    x-padding-header: X-XSRF-TOKEN
+    x-padding-method: tokenish
+    uplink-chunk-size: 0
+    sessionPlacement: cookie
+    uplink-http-method: HEAD
+    x-padding-obfs-mode: true
+    x-padding-placement: queryInHeader
+    sc-max-each-post-bytes: 700000
+    session-placement: cookie
+    uplink-data-placement: body
+    sc-min-posts-interval-ms: 40
+- name: "\U0001F1E9\U0001F1EA ⚡FAST Германия 16 ws, ai"
+  type: vless
+  server: ru2.mguard-pro.com
+  port: 443
+  uuid: 69bdd990-2171-422d-9c64-b34250b0731e
+  udp: true
+  encryption: none
+  tls: true
+  servername: blog.stonebridgejournal.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /api/v2/35ef41ad3bfe7ea2
+    headers:
+      Host: blog.stonebridgejournal.com
+- name: "\U0001F1E9\U0001F1EA ⚡FAST Германия 17 hy2, ai"
+  type: hysteria2
+  server: hy.ru2.mguard-pro.com
+  port: 8444
+  password: 69bdd990-2171-422d-9c64-b34250b0731e
+  udp: true
+  sni: blog.stonebridgejournal.com
+  client-fingerprint: chrome
+  alpn:
+  - h3
+- name: "\U0001F1E9\U0001F1EA Германия 18 hy2, ai"
+  type: hysteria2
+  server: 45.88.12.158
+  port: 443
+  password: eebccf6f-4c3f-4b16-bb01-4d13d2a3504f
+  udp: true
+  sni: va.stream-room.com
+  client-fingerprint: chrome
+  alpn:
+  - h3
+- name: "\U0001F1E9\U0001F1EA Германия 19 ws"
+  type: vless
+  server: 45.88.12.198
+  port: 443
+  uuid: eebccf6f-4c3f-4b16-bb01-4d13d2a3504f
+  udp: true
+  encryption: none
+  tls: true
+  servername: va.stream-room.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /vless-ws
+- name: "\U0001F1E9\U0001F1EA Германия 20 grpc, ai"
+  type: vless
+  server: astravellion.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: astravellion.xyz
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  network: grpc
+  grpc-opts:
+    grpc-service-name: glush.de4.v1
+- name: "\U0001F1E9\U0001F1EA Германия 21 ws"
+  type: vless
+  server: astravellion.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: astravellion.xyz
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /api/de3/stream
+    headers:
+      Host: astravellion.xyz
+- name: "\U0001F1E9\U0001F1EA ⚡FAST Германия 22 ws"
+  type: vless
+  server: astravellion.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: astravellion.xyz
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /api/de2/stream
+    headers:
+      Host: astravellion.xyz
+- name: "\U0001F1E9\U0001F1EA ⚡FAST Германия 23 grpc"
+  type: vless
+  server: astravellion.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: astravellion.xyz
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  network: grpc
+  grpc-opts:
+    grpc-service-name: glush.de1.v1
+- name: "\U0001F1E9\U0001F1EA \U0001F4F1 Германия 24 | LTE ws, ai"
+  type: vless
+  server: cryptoventura.online
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: cryptoventura.online
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /api/de3/live
+    headers:
+      Host: cryptoventura.online
+- name: "\U0001F1E9\U0001F1EA ⚡FAST Германия 25 ws, ai"
+  type: vless
+  server: astravellion.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: astravellion.xyz
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /api/de4/stream
+    headers:
+      Host: astravellion.xyz
+- name: "\U0001F1E9\U0001F1EA Германия 26 xhttp"
+  type: vless
+  server: astravellion.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: astravellion.xyz
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  - http/1.1
+  network: xhttp
+  xhttp-opts:
+    path: /api/de3/sync
+    host: astravellion.xyz
+    mode: auto
+- name: "\U0001F1E9\U0001F1EA \U0001F4F1 Германия 27 | LTE grpc, ai"
+  type: vless
+  server: astronovalis.wtf
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: astronovalis.wtf
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  network: grpc
+  grpc-opts:
+    grpc-service-name: glush.de2.v1
+- name: "\U0001F1E9\U0001F1EA Германия 28 ws, ai"
+  type: vless
+  server: astravellion.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: astravellion.xyz
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /api/de5/stream
+    headers:
+      Host: astravellion.xyz
+- name: "\U0001F1E9\U0001F1EA ⚡FAST Германия 29 grpc, ai"
+  type: vless
+  server: astravellion.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: astravellion.xyz
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  network: grpc
+  grpc-opts:
+    grpc-service-name: glush.de5.v1
+- name: "\U0001F1E9\U0001F1EA Германия 30 xhttp"
+  type: vless
+  server: astravellion.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: astravellion.xyz
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  - http/1.1
+  network: xhttp
+  xhttp-opts:
+    path: /api/de2/sync
+    host: astravellion.xyz
+    mode: auto
+- name: "\U0001F1E9\U0001F1EA Германия 31 ws"
+  type: vless
+  server: astravellion.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: astravellion.xyz
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /api/de1/stream
+    headers:
+      Host: astravellion.xyz
+- name: "\U0001F1E9\U0001F1EA Германия 32 grpc, ai"
+  type: vless
+  server: astravellion.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: astravellion.xyz
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  network: grpc
+  grpc-opts:
+    grpc-service-name: glush.de2.v1
+- name: "\U0001F1E9\U0001F1EA Германия 33 xhttp"
+  type: vless
+  server: astravellion.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: astravellion.xyz
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  - http/1.1
+  network: xhttp
+  xhttp-opts:
+    path: /api/de1/sync
+    host: astravellion.xyz
+    mode: auto
+- name: "\U0001F1E9\U0001F1EA Германия 34 xhttp, ai"
+  type: vless
+  server: astravellion.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: astravellion.xyz
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  - http/1.1
+  network: xhttp
+  xhttp-opts:
+    path: /api/de5/sync
+    host: astravellion.xyz
+    mode: auto
+- name: "\U0001F1E9\U0001F1EA Германия 35 grpc"
+  type: vless
+  server: astravellion.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: astravellion.xyz
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  network: grpc
+  grpc-opts:
+    grpc-service-name: glush.de3.v1
+- name: "\U0001F1E9\U0001F1EA ⚡FAST Германия 36 xhttp, ai"
+  type: vless
+  server: astravellion.xyz
+  port: 443
+  uuid: a41a9eff-2920-487c-b82d-44f2da76e5ce
+  udp: true
+  encryption: none
+  tls: true
+  servername: astravellion.xyz
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  - http/1.1
+  network: xhttp
+  xhttp-opts:
+    path: /api/de4/sync
+    host: astravellion.xyz
+    mode: auto
+- name: "\U0001F1F3\U0001F1F1 Нидерланды 1 ai"
+  type: vless
+  server: 157.22.201.135
+  port: 443
+  uuid: 1df7801e-cbba-479d-8328-1d481f2cd621
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: 195.26.226.94.sslip.io
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: vpHK3UQauTDkfoTygzOx903yHOuqsFlcfIVViZDKHnE
+    short-id: 5ceb3865839fc2b3
+- name: "\U0001F1F3\U0001F1F1 ⚡FAST Нидерланды 2 ai"
+  type: vless
+  server: 157.22.193.22
+  port: 443
+  uuid: 1df7801e-cbba-479d-8328-1d481f2cd621
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: 146.103.114.209.sslip.io
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: iD5q43CzBIQLCaC4491FyhTyk5Y78xP44f2MWC5IfyQ
+    short-id: 20e9e6a1dc1e0b33
+- name: "\U0001F1F3\U0001F1F1 ⚡FAST Нидерланды 3 ws, ai"
+  type: vless
+  server: ru2.mguard-pro.com
+  port: 443
+  uuid: 69bdd990-2171-422d-9c64-b34250b0731e
+  udp: true
+  encryption: none
+  tls: true
+  servername: nl.stonebridgejournal.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /49c656a052b47341
+    headers:
+      Host: nl.stonebridgejournal.com
+- name: "\U0001F1F3\U0001F1F1 ⚡FAST Нидерланды 4 xhttp, ai"
+  type: vless
+  server: jorke.1nm.uk
+  port: 443
+  uuid: 42895603-9f3d-4d73-a76e-2094a0d79782
+  udp: true
+  encryption: none
+  tls: true
+  servername: jorke.1nm.uk
+  client-fingerprint: firefox
+  network: xhttp
+  xhttp-opts:
+    path: /89c438919d13ed5b3572a1bc34d694ec6cfe203e80cd8c34/
+    mode: stream-up
+- name: "\U0001F1EA\U0001F1FA \U0001F4F1 Европа 1 | LTE ws, ai"
+  type: vless
+  server: akb-omsk.store
+  port: 443
+  uuid: 42895603-9f3d-4d73-a76e-2094a0d79782
+  udp: true
+  encryption: none
+  tls: true
+  servername: akb-omsk.store
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /checkout/step/wwHyjw5aTWTj
+- name: "\U0001F1F1\U0001F1FB ⚡FAST Латвия 1 ai"
+  type: vless
+  server: 200.169.181.26
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: nstwcngpgrkl.syncport.monster
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F1EB\U0001F1EE ⚡FAST Финляндия 1 ws, ai"
+  type: vless
+  server: hy2.fin4.mguard-pro.com
+  port: 5443
+  uuid: 69bdd990-2171-422d-9c64-b34250b0731e
+  udp: true
+  encryption: none
+  tls: true
+  servername: hy2.fin4.mguard-pro.com
+  client-fingerprint: firefox
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /client/events
+    headers:
+      Host: hy2.fin4.mguard-pro.com
+- name: "\U0001F1EB\U0001F1EE ⚡FAST Финляндия 2 hy2, ai"
+  type: hysteria2
+  server: hy2.fin4.mguard-pro.com
+  port: 443
+  password: 69bdd990-2171-422d-9c64-b34250b0731e
+  udp: true
+  sni: hy2.fin4.mguard-pro.com
+  client-fingerprint: chrome
+  alpn:
+  - h3
+- name: "\U0001F1EB\U0001F1EE ⚡FAST Финляндия 3"
+  type: vless
+  server: 37.9.13.40
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: l7egvyakfemg.cdnwave.lol
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    short-id: 6ba85179e30d4fc2
+    spider-x: /
+- name: "\U0001F1EB\U0001F1EE ⚡FAST Финляндия 4 ai"
+  type: vless
+  server: 83.141.95.167
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: yz0ove5g1nr.edgecache.click
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F1F8\U0001F1EA ⚡FAST Швеция 1 ai"
+  type: vless
+  server: 92.53.65.243
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: q16xybnd.zenaltra-hub95.cyou
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: esjSMExL6v40ksVJD5urvmQD4XZVWfBOCvStdk-q4DE
+    spider-x: /
+- name: "\U0001F1F7\U0001F1FA ⚡FAST Россия 1 hy2"
+  type: hysteria2
+  server: poery.1nm.uk
+  port: 443
+  password: 42895603-9f3d-4d73-a76e-2094a0d79782
+  udp: true
+  sni: poery.1nm.uk
+  client-fingerprint: firefox
+  alpn:
+  - h3
+- name: "\U0001F1F7\U0001F1FA \U0001F4F1 Россия 2 | LTE xhttp, ai"
+  type: vless
+  server: cdn.e-bobr.com
+  port: 443
+  uuid: f9ac23b9-3be7-4114-af4a-39a7c47634e7
+  udp: true
+  encryption: none
+  tls: true
+  servername: cdn.e-bobr.com
+  client-fingerprint: edge
+  alpn:
+  - h2
+  - http/1.1
+  network: xhttp
+  xhttp-opts:
+    path: /api/v2/assets/manifest/
+    host: cdn.e-bobr.com
+    mode: packet-up
+    reuse-settings:
+      c-max-reuse-times: 0
+      max-concurrency: 2-4
+      max-connections: 0
+      h-keep-alive-period: 0
+      h-max-request-times: 300-600
+      h-max-reusable-secs: 1000-2000
+    seq-key: XSRF-TOKEN
+    sessionKey: connect.sid
+    x-padding-key: _ts
+    no-grpc-header: true
+    seq-placement: cookie
+    session-key: connect.sid
+    uplink-data-key: X-Playback-Token
+    x-padding-bytes: 100-1000
+    x-padding-header: X-XSRF-TOKEN
+    x-padding-method: tokenish
+    uplink-chunk-size: 4096
+    sessionPlacement: cookie
+    uplink-http-method: HEAD
+    x-padding-obfs-mode: true
+    x-padding-placement: queryInHeader
+    sc-max-each-post-bytes: 8192
+    session-placement: cookie
+    uplink-data-placement: header
+    sc-min-posts-interval-ms: 40
+- name: "\U0001F1F7\U0001F1FA ⚡FAST Россия 3 hy2, ai"
+  type: hysteria2
+  server: grpc-gw.mguard-pro.com
+  port: 8444
+  password: 69bdd990-2171-422d-9c64-b34250b0731e
+  udp: true
+  sni: stonebridgejournal.com
+  client-fingerprint: chrome
+  alpn:
+  - h3
+- name: "\U0001F1F7\U0001F1FA ⚡FAST Россия 4 ws, ai"
+  type: vless
+  server: edge.mguard-pro.com
+  port: 443
+  uuid: 69bdd990-2171-422d-9c64-b34250b0731e
+  udp: true
+  encryption: none
+  tls: true
+  servername: stonebridgejournal.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /api/v2/47a2be459b90ff0d
+    headers:
+      Host: stonebridgejournal.com
+- name: "\U0001F1F7\U0001F1FA ⚡FAST Россия 5"
+  type: vless
+  server: 5.178.87.50
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: v2qvr3dsv5e.altrexon-net76.cfd
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F1F7\U0001F1FA ⚡FAST Россия 6"
+  type: vless
+  server: 5.188.159.42
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: wcuz69pxr.cdnwave.lol
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F1F7\U0001F1FA ⚡FAST Россия 7"
+  type: vless
+  server: 83.217.192.87
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: ylkagc7brk.bytecourier.cyou
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F1E7\U0001F1FE ⚡FAST Беларусь 1"
+  type: vless
+  server: 109.237.99.105
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: hu4tsbfm5.edgebundle.monster
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F1F5\U0001F1F1 ⚡FAST Польша 1 xhttp, ai"
+  type: vless
+  server: 201.58.190.104
+  port: 443
+  uuid: f9ac23b9-3be7-4114-af4a-39a7c47634e7
+  udp: true
+  encryption: none
+  tls: true
+  servername: edo.akt-sverki-servis.ru
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  network: xhttp
+  xhttp-opts:
+    path: /api/convert/stream/
+    host: edo.akt-sverki-servis.ru
+    mode: stream-up
+    reuse-settings:
+      c-max-reuse-times: 0
+      max-concurrency: 2-4
+      max-connections: 0
+      h-keep-alive-period: 0
+      h-max-request-times: 300-600
+      h-max-reusable-secs: 1000-2000
+    no-grpc-header: true
+    sc-max-each-post-bytes: 700000
+    sc-min-posts-interval-ms: 40
+- name: "\U0001F1F5\U0001F1F1 \U0001F4F1 ⚡FAST Польша 2 | LTE ws, ai"
+  type: vless
+  server: 45.88.161.198
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  encryption: none
+  tls: true
+  servername: www.smallfieldstudio.com
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /api/v1/stream/ad801198a9fab4e4ef79eb97624a4bf9c78b450a/ge5fdXc3bVItZUKV8ffAWHD3JQd4gvtbLKqp0s9MQiU
+    headers:
+      Host: www.smallfieldstudio.com
+- name: "\U0001F1F5\U0001F1F1 ⚡FAST Польша 3 ai"
+  type: vless
+  server: 171.22.129.227
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: bhiie2v0t7c.staticbay.sbs
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F1F5\U0001F1F1 ⚡FAST Польша 4 ai"
+  type: vless
+  server: 185.137.234.204
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: ub0kb09bi.staticbay.sbs
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    short-id: 6ba85179e30d4fc2
+    spider-x: /
+- name: "\U0001F1EA\U0001F1F8 Испания 1 ws, ai"
+  type: vless
+  server: ru2.mguard-pro.com
+  port: 443
+  uuid: 69bdd990-2171-422d-9c64-b34250b0731e
+  udp: true
+  encryption: none
+  tls: true
+  servername: es.stonebridgejournal.com
+  client-fingerprint: chrome
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /a99c7716643d2efa
+    headers:
+      Host: es.stonebridgejournal.com
+- name: "\U0001F1E8\U0001F1FF Чехия 1"
+  type: vless
+  server: 109.237.98.234
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: ny9xd6wlda.media-drift.website
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F1E8\U0001F1FF Чехия 2"
+  type: vless
+  server: 45.152.198.94
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: ny9xd6wlda.media-drift.website
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F1F1\U0001F1F9 ⚡FAST Литва 1 xhttp"
+  type: vless
+  server: cabinet.akt-sverki-servis.ru
+  port: 443
+  uuid: f9ac23b9-3be7-4114-af4a-39a7c47634e7
+  udp: true
+  encryption: none
+  tls: true
+  servername: cabinet.akt-sverki-servis.ru
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  network: xhttp
+  xhttp-opts:
+    path: /api/convert/stream/
+    host: cabinet.akt-sverki-servis.ru
+    mode: stream-up
+    reuse-settings:
+      c-max-reuse-times: 0
+      max-concurrency: 2-4
+      max-connections: 0
+      h-keep-alive-period: 0
+      h-max-request-times: 300-600
+      h-max-reusable-secs: 1000-2000
+    no-grpc-header: true
+    sc-max-each-post-bytes: 700000
+    sc-min-posts-interval-ms: 40
+- name: "\U0001F1EB\U0001F1F7 ⚡FAST Франция 1 ai"
+  type: vless
+  server: 5.42.98.249
+  port: 8443
+  uuid: 1df7801e-cbba-479d-8328-1d481f2cd621
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: 88.218.196.29.sslip.io
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: EIkYbJKUG9t492FSy8bJP2glT5mRBttjNdPTcePd4w4
+    short-id: 4f48e8b9b8f16752
+- name: "\U0001F1EB\U0001F1F7 ⚡FAST Франция 2"
+  type: vless
+  server: 94.228.166.68
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: j4p9p80jcn.static-relay.space
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F1EE\U0001F1F9 ⚡FAST Италия 1"
+  type: vless
+  server: 109.237.98.52
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: p5bl8qh8be.streamedge.best
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    short-id: 6ba85179e30d4fc2
+    spider-x: /
+- name: "\U0001F1EC\U0001F1E7 ⚡FAST Великобритания 1 ai"
+  type: vless
+  server: 141.8.198.181
+  port: 443
+  uuid: 1df7801e-cbba-479d-8328-1d481f2cd621
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: 206.245.166.59.sslip.io
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: zVah_o-GVgC-71Y0e5hnOh1Tbm6unzvsTWpIpkFd4kk
+    short-id: 0d1fec5653efde54
+- name: "\U0001F1EC\U0001F1E7 ⚡FAST Великобритания 2 ai"
+  type: vless
+  server: 104.171.128.91
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: bzs57qqx.axelvora-net35.cfd
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    short-id: 6ba85179e30d4fc2
+    spider-x: /
+- name: "\U0001F1EA\U0001F1EA ⚡FAST Эстония 1"
+  type: vless
+  server: 103.88.243.28
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: f366e0py8u5t.assetgrid.sbs
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F1EA\U0001F1EA ⚡FAST Эстония 2"
+  type: vless
+  server: 193.233.91.94
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: f366e0py8u5t.assetgrid.sbs
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F1F9\U0001F1F7 Турция 1 ai"
+  type: vless
+  server: 147.45.213.56
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: ogja5heex8.edgestore.click
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    short-id: 6ba85179e30d4fc2
+    spider-x: /
+- name: "\U0001F1E8\U0001F1FE ⚡FAST Кипр 1 ai"
+  type: vless
+  server: 31.184.218.139
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: asb1n8y7ajv.staticpool.store
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F1E8\U0001F1E6 ⚡FAST Канада 1 ai"
+  type: vless
+  server: 92.246.138.161
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: fmiql3cnn3qi.imgshelf.sbs
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: jFqwGpIrZSPqlvF4XglDWhsuHxljBLeiaMtESLsZsVk
+    short-id: 6ba85179e30d4fc2
+    spider-x: /
+- name: "\U0001F1FA\U0001F1F8 ⚡FAST США 1 xhttp"
+  type: vless
+  server: amerika.gigobingo.ru
+  port: 9443
+  uuid: 1df7801e-cbba-479d-8328-1d481f2cd621
+  udp: true
+  encryption: none
+  tls: true
+  servername: amerika.gigobingo.ru
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: Aj6Op88j_eYXxoBw095KS_NnKCBm5uwa874uumXdiDQ
+    short-id: ef7c4e4302bd52d7
+  network: xhttp
+  xhttp-opts:
+    path: /222041be3eaf
+    mode: auto
+- name: "\U0001F1FA\U0001F1F8 ⚡FAST США 2"
+  type: vless
+  server: amerika.gigobingo.ru
+  port: 443
+  uuid: 1df7801e-cbba-479d-8328-1d481f2cd621
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: amerika.gigobingo.ru
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: Aj6Op88j_eYXxoBw095KS_NnKCBm5uwa874uumXdiDQ
+    short-id: ef7c4e4302bd52d7
+- name: "\U0001F1FA\U0001F1F8 США 3 ai"
+  type: vless
+  server: 95.183.10.141
+  port: 443
+  uuid: 1df7801e-cbba-479d-8328-1d481f2cd621
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: 107.161.168.59.sslip.io
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: -l528XHJv8qmsNZrK2vQ_RiUwyF93kSh2iKujnYRmFk
+    short-id: ce317bd28173a1f7
+- name: "\U0001F1FA\U0001F1F8 ⚡FAST США 4 ai"
+  type: vless
+  server: 5.129.203.172
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: sl3w6islj6c.pixelcache.cyou
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    short-id: 6ba85179e30d4fc2
+    spider-x: /
+- name: "\U0001F1FA\U0001F1F8 ⚡FAST США 5 ai"
+  type: vless
+  server: 185.103.100.132
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: gzr54rifg.world-cdn.click
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F1EF\U0001F1F5 Япония 1"
+  type: vless
+  server: 185.135.82.166
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: axdhjso0.vaultcache.shop
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    short-id: 6ba85179e30d4fc2
+    spider-x: /
+- name: "\U0001F1EE\U0001F1F3 Индия 1 ai"
+  type: vless
+  server: 109.237.99.104
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: yxd4u4zs.img-assets.world
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: lR8BTY8XJ6qt9th7wR3ZnfwCiqRs2yosrONK-SuSsDo
+    short-id: 6ba85179e30d4fc2
+    spider-x: /
+- name: "\U0001F1F9\U0001F1ED ⚡FAST Таиланд 1"
+  type: vless
+  server: 109.237.99.106
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: xy4l6bpbjk.xeltrona-host26.sbs
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F1F0\U0001F1FF ⚡FAST Казахстан 1 ai"
+  type: vless
+  server: 201.34.136.78
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: dmto71i8dv9.cachefront.site
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    short-id: 6ba85179e30d4fc2
+    spider-x: /
+- name: "\U0001F1F0\U0001F1FF ⚡FAST Казахстан 2 ai"
+  type: vless
+  server: 94.228.175.24
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: t1jub746.dynarix-node41.sbs
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    short-id: 6ba85179e30d4fc2
+    spider-x: /
+- name: "\U0001F1E6\U0001F1F2 ⚡FAST Армения 1"
+  type: vless
+  server: 45.151.182.120
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: cbmpy8y5r8tu.staticpool.site
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    short-id: 6ba85179e30d4fc2
+    spider-x: /
+- name: "\U0001F1E6\U0001F1FF Азербайджан 1 ai"
+  type: vless
+  server: 45.151.182.102
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: sfo05f7uit28.static-origin.click
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F1E6\U0001F1EA ⚡FAST ОАЭ 1"
+  type: vless
+  server: 82.148.240.236
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: g9cgug7j.cloudpier.cyou
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    short-id: 6ba85179e30d4fc2
+    spider-x: /
+- name: "\U0001F1E8\U0001F1F1 Чили 1"
+  type: vless
+  server: 109.237.99.96
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: hsumivn3sgx8.edgecache.store
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F3F3️ \U0001F4F1 Неизвестный 1 | LTE grpc"
+  type: vless
+  server: 45.88.12.197
+  port: 6443
+  uuid: eebccf6f-4c3f-4b16-bb01-4d13d2a3504f
+  udp: true
+  encryption: none
+  tls: true
+  servername: rutube.ru
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: ivgTfLR13A6xBsicIA28OPoav2tXlsstTTmGuETfnSk
+    short-id: 5c766813929a1fdd
+  network: grpc
+  grpc-opts:
+    grpc-service-name: grpc
+- name: "\U0001F3F3️ ⚡FAST Неизвестный 2 ai"
+  type: vless
+  server: 83.217.200.155
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: xufe8azj.cdn-node.space
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    spider-x: /
+- name: "\U0001F3F3️ ⚡FAST Неизвестный 3"
+  type: vless
+  server: 45.151.182.165
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: pwmhct6k.staticzone.lol
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
+    short-id: 6ba85179e30d4fc2
+    spider-x: /
+- name: "\U0001F3F3️ ⚡FAST Неизвестный 4 ai"
+  type: vless
+  server: 91.206.14.204
+  port: 443
+  uuid: 25dcbe15-3d70-4f24-a8f2-3156e68f783e
+  udp: true
+  flow: xtls-rprx-vision
+  encryption: none
+  tls: true
+  servername: d7k4586wr2.edge-origin.space
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: xJZgy1PaEukFZ06H3VV64iLhA8nlAj2MYwC68BKA5Sc
+    short-id: 6ba85179e30d4fc2
+    spider-x: /
+proxy-groups:
+- name: PROXY
+  type: select
+  lazy: true
+  proxies:
+  - ⚡ Лучший AUTO
+  - "⚡ \U0001F30D Зарубежный LTE AUTO"
+  - "⚡ \U0001F1F7\U0001F1FA Россия LTE AUTO"
+  - "⚡ \U0001F1E9\U0001F1EA Германия AUTO"
+  - "⚡ \U0001F1F7\U0001F1FA Россия AUTO"
+  - "⚡ \U0001F1FA\U0001F1F8 США AUTO"
+  - "⚡ \U0001F1F3\U0001F1F1 Нидерланды AUTO"
+  - "⚡ \U0001F1EB\U0001F1EE Финляндия AUTO"
+  - "⚡ \U0001F1F5\U0001F1F1 Польша AUTO"
+  - "⚡ \U0001F3F3️ Неизвестный AUTO"
+  - "⚡ \U0001F1E8\U0001F1FF Чехия AUTO"
+  - "⚡ \U0001F1EB\U0001F1F7 Франция AUTO"
+  - "⚡ \U0001F1EC\U0001F1E7 Великобритания AUTO"
+  - "⚡ \U0001F1EA\U0001F1EA Эстония AUTO"
+  - "⚡ \U0001F1F0\U0001F1FF Казахстан AUTO"
+  - "⚡ \U0001F1EA\U0001F1FA Европа AUTO"
+  - "⚡ \U0001F1F1\U0001F1FB Латвия AUTO"
+  - "⚡ \U0001F1F8\U0001F1EA Швеция AUTO"
+  - "⚡ \U0001F1E7\U0001F1FE Беларусь AUTO"
+  - "⚡ \U0001F1EA\U0001F1F8 Испания AUTO"
+  - "⚡ \U0001F1F1\U0001F1F9 Литва AUTO"
+  - "⚡ \U0001F1EE\U0001F1F9 Италия AUTO"
+  - "⚡ \U0001F1F9\U0001F1F7 Турция AUTO"
+  - "⚡ \U0001F1E8\U0001F1FE Кипр AUTO"
+  - "⚡ \U0001F1E8\U0001F1E6 Канада AUTO"
+  - "⚡ \U0001F1EF\U0001F1F5 Япония AUTO"
+  - "⚡ \U0001F1EE\U0001F1F3 Индия AUTO"
+  - "⚡ \U0001F1F9\U0001F1ED Таиланд AUTO"
+  - "⚡ \U0001F1E6\U0001F1F2 Армения AUTO"
+  - "⚡ \U0001F1E6\U0001F1FF Азербайджан AUTO"
+  - "⚡ \U0001F1E6\U0001F1EA ОАЭ AUTO"
+  - "⚡ \U0001F1E8\U0001F1F1 Чили AUTO"
+  - "\U0001F1E9\U0001F1EA Германия 1 ws"
+  - "\U0001F1E9\U0001F1EA Германия 2"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 3 ws"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 4 | LTE grpc, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 5 xhttp"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 6 ws"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 7 | LTE xhttp"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 8 | LTE ws"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 Германия 9 | LTE xhttp"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 10 xhttp"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 11 ws"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 12 xhttp"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 13 ws, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 14 ws, ai"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 15 | LTE xhttp, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 16 ws, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 17 hy2, ai"
+  - "\U0001F1E9\U0001F1EA Германия 18 hy2, ai"
+  - "\U0001F1E9\U0001F1EA Германия 19 ws"
+  - "\U0001F1E9\U0001F1EA Германия 20 grpc, ai"
+  - "\U0001F1E9\U0001F1EA Германия 21 ws"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 22 ws"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 23 grpc"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 Германия 24 | LTE ws, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 25 ws, ai"
+  - "\U0001F1E9\U0001F1EA Германия 26 xhttp"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 Германия 27 | LTE grpc, ai"
+  - "\U0001F1E9\U0001F1EA Германия 28 ws, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 29 grpc, ai"
+  - "\U0001F1E9\U0001F1EA Германия 30 xhttp"
+  - "\U0001F1E9\U0001F1EA Германия 31 ws"
+  - "\U0001F1E9\U0001F1EA Германия 32 grpc, ai"
+  - "\U0001F1E9\U0001F1EA Германия 33 xhttp"
+  - "\U0001F1E9\U0001F1EA Германия 34 xhttp, ai"
+  - "\U0001F1E9\U0001F1EA Германия 35 grpc"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 36 xhttp, ai"
+  - "\U0001F1F3\U0001F1F1 Нидерланды 1 ai"
+  - "\U0001F1F3\U0001F1F1 ⚡FAST Нидерланды 2 ai"
+  - "\U0001F1F3\U0001F1F1 ⚡FAST Нидерланды 3 ws, ai"
+  - "\U0001F1F3\U0001F1F1 ⚡FAST Нидерланды 4 xhttp, ai"
+  - "\U0001F1EA\U0001F1FA \U0001F4F1 Европа 1 | LTE ws, ai"
+  - "\U0001F1F1\U0001F1FB ⚡FAST Латвия 1 ai"
+  - "\U0001F1EB\U0001F1EE ⚡FAST Финляндия 1 ws, ai"
+  - "\U0001F1EB\U0001F1EE ⚡FAST Финляндия 2 hy2, ai"
+  - "\U0001F1EB\U0001F1EE ⚡FAST Финляндия 3"
+  - "\U0001F1EB\U0001F1EE ⚡FAST Финляндия 4 ai"
+  - "\U0001F1F8\U0001F1EA ⚡FAST Швеция 1 ai"
+  - "\U0001F1F7\U0001F1FA ⚡FAST Россия 1 hy2"
+  - "\U0001F1F7\U0001F1FA \U0001F4F1 Россия 2 | LTE xhttp, ai"
+  - "\U0001F1F7\U0001F1FA ⚡FAST Россия 3 hy2, ai"
+  - "\U0001F1F7\U0001F1FA ⚡FAST Россия 4 ws, ai"
+  - "\U0001F1F7\U0001F1FA ⚡FAST Россия 5"
+  - "\U0001F1F7\U0001F1FA ⚡FAST Россия 6"
+  - "\U0001F1F7\U0001F1FA ⚡FAST Россия 7"
+  - "\U0001F1E7\U0001F1FE ⚡FAST Беларусь 1"
+  - "\U0001F1F5\U0001F1F1 ⚡FAST Польша 1 xhttp, ai"
+  - "\U0001F1F5\U0001F1F1 \U0001F4F1 ⚡FAST Польша 2 | LTE ws, ai"
+  - "\U0001F1F5\U0001F1F1 ⚡FAST Польша 3 ai"
+  - "\U0001F1F5\U0001F1F1 ⚡FAST Польша 4 ai"
+  - "\U0001F1EA\U0001F1F8 Испания 1 ws, ai"
+  - "\U0001F1E8\U0001F1FF Чехия 1"
+  - "\U0001F1E8\U0001F1FF Чехия 2"
+  - "\U0001F1F1\U0001F1F9 ⚡FAST Литва 1 xhttp"
+  - "\U0001F1EB\U0001F1F7 ⚡FAST Франция 1 ai"
+  - "\U0001F1EB\U0001F1F7 ⚡FAST Франция 2"
+  - "\U0001F1EE\U0001F1F9 ⚡FAST Италия 1"
+  - "\U0001F1EC\U0001F1E7 ⚡FAST Великобритания 1 ai"
+  - "\U0001F1EC\U0001F1E7 ⚡FAST Великобритания 2 ai"
+  - "\U0001F1EA\U0001F1EA ⚡FAST Эстония 1"
+  - "\U0001F1EA\U0001F1EA ⚡FAST Эстония 2"
+  - "\U0001F1F9\U0001F1F7 Турция 1 ai"
+  - "\U0001F1E8\U0001F1FE ⚡FAST Кипр 1 ai"
+  - "\U0001F1E8\U0001F1E6 ⚡FAST Канада 1 ai"
+  - "\U0001F1FA\U0001F1F8 ⚡FAST США 1 xhttp"
+  - "\U0001F1FA\U0001F1F8 ⚡FAST США 2"
+  - "\U0001F1FA\U0001F1F8 США 3 ai"
+  - "\U0001F1FA\U0001F1F8 ⚡FAST США 4 ai"
+  - "\U0001F1FA\U0001F1F8 ⚡FAST США 5 ai"
+  - "\U0001F1EF\U0001F1F5 Япония 1"
+  - "\U0001F1EE\U0001F1F3 Индия 1 ai"
+  - "\U0001F1F9\U0001F1ED ⚡FAST Таиланд 1"
+  - "\U0001F1F0\U0001F1FF ⚡FAST Казахстан 1 ai"
+  - "\U0001F1F0\U0001F1FF ⚡FAST Казахстан 2 ai"
+  - "\U0001F1E6\U0001F1F2 ⚡FAST Армения 1"
+  - "\U0001F1E6\U0001F1FF Азербайджан 1 ai"
+  - "\U0001F1E6\U0001F1EA ⚡FAST ОАЭ 1"
+  - "\U0001F1E8\U0001F1F1 Чили 1"
+  - "\U0001F3F3️ \U0001F4F1 Неизвестный 1 | LTE grpc"
+  - "\U0001F3F3️ ⚡FAST Неизвестный 2 ai"
+  - "\U0001F3F3️ ⚡FAST Неизвестный 3"
+  - "\U0001F3F3️ ⚡FAST Неизвестный 4 ai"
+- name: ⚡ Лучший AUTO
+  type: url-test
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  tolerance: 300
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 3 ws"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 4 | LTE grpc, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 5 xhttp"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 6 ws"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 7 | LTE xhttp"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 8 | LTE ws"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 10 xhttp"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 11 ws"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 12 xhttp"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 13 ws, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 14 ws, ai"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 15 | LTE xhttp, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 16 ws, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 17 hy2, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 22 ws"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 23 grpc"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 25 ws, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 29 grpc, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 36 xhttp, ai"
+  - "\U0001F1F3\U0001F1F1 ⚡FAST Нидерланды 2 ai"
+  - "\U0001F1F3\U0001F1F1 ⚡FAST Нидерланды 3 ws, ai"
+  - "\U0001F1F3\U0001F1F1 ⚡FAST Нидерланды 4 xhttp, ai"
+  - "\U0001F1F1\U0001F1FB ⚡FAST Латвия 1 ai"
+  - "\U0001F1EB\U0001F1EE ⚡FAST Финляндия 1 ws, ai"
+  - "\U0001F1EB\U0001F1EE ⚡FAST Финляндия 2 hy2, ai"
+  - "\U0001F1EB\U0001F1EE ⚡FAST Финляндия 3"
+  - "\U0001F1EB\U0001F1EE ⚡FAST Финляндия 4 ai"
+  - "\U0001F1F8\U0001F1EA ⚡FAST Швеция 1 ai"
+  - "\U0001F1E7\U0001F1FE ⚡FAST Беларусь 1"
+  - "\U0001F1F5\U0001F1F1 ⚡FAST Польша 1 xhttp, ai"
+  - "\U0001F1F5\U0001F1F1 \U0001F4F1 ⚡FAST Польша 2 | LTE ws, ai"
+  - "\U0001F1F5\U0001F1F1 ⚡FAST Польша 3 ai"
+  - "\U0001F1F5\U0001F1F1 ⚡FAST Польша 4 ai"
+  - "\U0001F1F1\U0001F1F9 ⚡FAST Литва 1 xhttp"
+  - "\U0001F1EB\U0001F1F7 ⚡FAST Франция 1 ai"
+  - "\U0001F1EB\U0001F1F7 ⚡FAST Франция 2"
+  - "\U0001F1EE\U0001F1F9 ⚡FAST Италия 1"
+  - "\U0001F1EC\U0001F1E7 ⚡FAST Великобритания 1 ai"
+  - "\U0001F1EC\U0001F1E7 ⚡FAST Великобритания 2 ai"
+  - "\U0001F1EA\U0001F1EA ⚡FAST Эстония 1"
+  - "\U0001F1EA\U0001F1EA ⚡FAST Эстония 2"
+  - "\U0001F1E8\U0001F1FE ⚡FAST Кипр 1 ai"
+  - "\U0001F1F0\U0001F1FF ⚡FAST Казахстан 1 ai"
+  - "\U0001F1F0\U0001F1FF ⚡FAST Казахстан 2 ai"
+  - "\U0001F1E6\U0001F1F2 ⚡FAST Армения 1"
+- name: "⚡ \U0001F30D Зарубежный LTE AUTO · FAST"
+  type: url-test
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  tolerance: 300
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 4 | LTE grpc, ai"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 7 | LTE xhttp"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 8 | LTE ws"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 15 | LTE xhttp, ai"
+  - "\U0001F1F5\U0001F1F1 \U0001F4F1 ⚡FAST Польша 2 | LTE ws, ai"
+- name: "⚡ \U0001F30D Зарубежный LTE AUTO · резерв"
+  type: url-test
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  tolerance: 300
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 Германия 9 | LTE xhttp"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 Германия 24 | LTE ws, ai"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 Германия 27 | LTE grpc, ai"
+  - "\U0001F1EA\U0001F1FA \U0001F4F1 Европа 1 | LTE ws, ai"
+  - "\U0001F3F3️ \U0001F4F1 Неизвестный 1 | LTE grpc"
+- name: "⚡ \U0001F30D Зарубежный LTE AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "⚡ \U0001F30D Зарубежный LTE AUTO · FAST"
+  - "⚡ \U0001F30D Зарубежный LTE AUTO · резерв"
+- name: "⚡ \U0001F1F7\U0001F1FA Россия LTE AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1F7\U0001F1FA \U0001F4F1 Россия 2 | LTE xhttp, ai"
+- name: "⚡ \U0001F1E9\U0001F1EA Германия AUTO · FAST"
+  type: url-test
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  tolerance: 300
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 3 ws"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 4 | LTE grpc, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 5 xhttp"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 6 ws"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 7 | LTE xhttp"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 8 | LTE ws"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 10 xhttp"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 11 ws"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 12 xhttp"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 13 ws, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 14 ws, ai"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 ⚡FAST Германия 15 | LTE xhttp, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 16 ws, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 17 hy2, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 22 ws"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 23 grpc"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 25 ws, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 29 grpc, ai"
+  - "\U0001F1E9\U0001F1EA ⚡FAST Германия 36 xhttp, ai"
+- name: "⚡ \U0001F1E9\U0001F1EA Германия AUTO · резерв"
+  type: url-test
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  tolerance: 300
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1E9\U0001F1EA Германия 1 ws"
+  - "\U0001F1E9\U0001F1EA Германия 2"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 Германия 9 | LTE xhttp"
+  - "\U0001F1E9\U0001F1EA Германия 18 hy2, ai"
+  - "\U0001F1E9\U0001F1EA Германия 19 ws"
+  - "\U0001F1E9\U0001F1EA Германия 20 grpc, ai"
+  - "\U0001F1E9\U0001F1EA Германия 21 ws"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 Германия 24 | LTE ws, ai"
+  - "\U0001F1E9\U0001F1EA Германия 26 xhttp"
+  - "\U0001F1E9\U0001F1EA \U0001F4F1 Германия 27 | LTE grpc, ai"
+  - "\U0001F1E9\U0001F1EA Германия 28 ws, ai"
+  - "\U0001F1E9\U0001F1EA Германия 30 xhttp"
+  - "\U0001F1E9\U0001F1EA Германия 31 ws"
+  - "\U0001F1E9\U0001F1EA Германия 32 grpc, ai"
+  - "\U0001F1E9\U0001F1EA Германия 33 xhttp"
+  - "\U0001F1E9\U0001F1EA Германия 34 xhttp, ai"
+  - "\U0001F1E9\U0001F1EA Германия 35 grpc"
+- name: "⚡ \U0001F1E9\U0001F1EA Германия AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "⚡ \U0001F1E9\U0001F1EA Германия AUTO · FAST"
+  - "⚡ \U0001F1E9\U0001F1EA Германия AUTO · резерв"
+- name: "⚡ \U0001F1F7\U0001F1FA Россия AUTO · FAST"
+  type: url-test
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  tolerance: 300
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1F7\U0001F1FA ⚡FAST Россия 1 hy2"
+  - "\U0001F1F7\U0001F1FA ⚡FAST Россия 3 hy2, ai"
+  - "\U0001F1F7\U0001F1FA ⚡FAST Россия 4 ws, ai"
+  - "\U0001F1F7\U0001F1FA ⚡FAST Россия 5"
+  - "\U0001F1F7\U0001F1FA ⚡FAST Россия 6"
+  - "\U0001F1F7\U0001F1FA ⚡FAST Россия 7"
+- name: "⚡ \U0001F1F7\U0001F1FA Россия AUTO · резерв"
+  type: url-test
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  tolerance: 300
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1F7\U0001F1FA \U0001F4F1 Россия 2 | LTE xhttp, ai"
+- name: "⚡ \U0001F1F7\U0001F1FA Россия AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "⚡ \U0001F1F7\U0001F1FA Россия AUTO · FAST"
+  - "⚡ \U0001F1F7\U0001F1FA Россия AUTO · резерв"
+- name: "⚡ \U0001F1FA\U0001F1F8 США AUTO · FAST"
+  type: url-test
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  tolerance: 300
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1FA\U0001F1F8 ⚡FAST США 1 xhttp"
+  - "\U0001F1FA\U0001F1F8 ⚡FAST США 2"
+  - "\U0001F1FA\U0001F1F8 ⚡FAST США 4 ai"
+  - "\U0001F1FA\U0001F1F8 ⚡FAST США 5 ai"
+- name: "⚡ \U0001F1FA\U0001F1F8 США AUTO · резерв"
+  type: url-test
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  tolerance: 300
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1FA\U0001F1F8 США 3 ai"
+- name: "⚡ \U0001F1FA\U0001F1F8 США AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "⚡ \U0001F1FA\U0001F1F8 США AUTO · FAST"
+  - "⚡ \U0001F1FA\U0001F1F8 США AUTO · резерв"
+- name: "⚡ \U0001F1F3\U0001F1F1 Нидерланды AUTO · FAST"
+  type: url-test
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  tolerance: 300
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1F3\U0001F1F1 ⚡FAST Нидерланды 2 ai"
+  - "\U0001F1F3\U0001F1F1 ⚡FAST Нидерланды 3 ws, ai"
+  - "\U0001F1F3\U0001F1F1 ⚡FAST Нидерланды 4 xhttp, ai"
+- name: "⚡ \U0001F1F3\U0001F1F1 Нидерланды AUTO · резерв"
+  type: url-test
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  tolerance: 300
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1F3\U0001F1F1 Нидерланды 1 ai"
+- name: "⚡ \U0001F1F3\U0001F1F1 Нидерланды AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "⚡ \U0001F1F3\U0001F1F1 Нидерланды AUTO · FAST"
+  - "⚡ \U0001F1F3\U0001F1F1 Нидерланды AUTO · резерв"
+- name: "⚡ \U0001F1EB\U0001F1EE Финляндия AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1EB\U0001F1EE ⚡FAST Финляндия 1 ws, ai"
+  - "\U0001F1EB\U0001F1EE ⚡FAST Финляндия 2 hy2, ai"
+  - "\U0001F1EB\U0001F1EE ⚡FAST Финляндия 3"
+  - "\U0001F1EB\U0001F1EE ⚡FAST Финляндия 4 ai"
+- name: "⚡ \U0001F1F5\U0001F1F1 Польша AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1F5\U0001F1F1 ⚡FAST Польша 1 xhttp, ai"
+  - "\U0001F1F5\U0001F1F1 \U0001F4F1 ⚡FAST Польша 2 | LTE ws, ai"
+  - "\U0001F1F5\U0001F1F1 ⚡FAST Польша 3 ai"
+  - "\U0001F1F5\U0001F1F1 ⚡FAST Польша 4 ai"
+- name: "⚡ \U0001F3F3️ Неизвестный AUTO · FAST"
+  type: url-test
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  tolerance: 300
+  max-failed-times: 3
+  proxies:
+  - "\U0001F3F3️ ⚡FAST Неизвестный 2 ai"
+  - "\U0001F3F3️ ⚡FAST Неизвестный 3"
+  - "\U0001F3F3️ ⚡FAST Неизвестный 4 ai"
+- name: "⚡ \U0001F3F3️ Неизвестный AUTO · резерв"
+  type: url-test
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  tolerance: 300
+  max-failed-times: 3
+  proxies:
+  - "\U0001F3F3️ \U0001F4F1 Неизвестный 1 | LTE grpc"
+- name: "⚡ \U0001F3F3️ Неизвестный AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "⚡ \U0001F3F3️ Неизвестный AUTO · FAST"
+  - "⚡ \U0001F3F3️ Неизвестный AUTO · резерв"
+- name: "⚡ \U0001F1E8\U0001F1FF Чехия AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1E8\U0001F1FF Чехия 1"
+  - "\U0001F1E8\U0001F1FF Чехия 2"
+- name: "⚡ \U0001F1EB\U0001F1F7 Франция AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1EB\U0001F1F7 ⚡FAST Франция 1 ai"
+  - "\U0001F1EB\U0001F1F7 ⚡FAST Франция 2"
+- name: "⚡ \U0001F1EC\U0001F1E7 Великобритания AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1EC\U0001F1E7 ⚡FAST Великобритания 1 ai"
+  - "\U0001F1EC\U0001F1E7 ⚡FAST Великобритания 2 ai"
+- name: "⚡ \U0001F1EA\U0001F1EA Эстония AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1EA\U0001F1EA ⚡FAST Эстония 1"
+  - "\U0001F1EA\U0001F1EA ⚡FAST Эстония 2"
+- name: "⚡ \U0001F1F0\U0001F1FF Казахстан AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1F0\U0001F1FF ⚡FAST Казахстан 1 ai"
+  - "\U0001F1F0\U0001F1FF ⚡FAST Казахстан 2 ai"
+- name: "⚡ \U0001F1EA\U0001F1FA Европа AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1EA\U0001F1FA \U0001F4F1 Европа 1 | LTE ws, ai"
+- name: "⚡ \U0001F1F1\U0001F1FB Латвия AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1F1\U0001F1FB ⚡FAST Латвия 1 ai"
+- name: "⚡ \U0001F1F8\U0001F1EA Швеция AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1F8\U0001F1EA ⚡FAST Швеция 1 ai"
+- name: "⚡ \U0001F1E7\U0001F1FE Беларусь AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1E7\U0001F1FE ⚡FAST Беларусь 1"
+- name: "⚡ \U0001F1EA\U0001F1F8 Испания AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1EA\U0001F1F8 Испания 1 ws, ai"
+- name: "⚡ \U0001F1F1\U0001F1F9 Литва AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1F1\U0001F1F9 ⚡FAST Литва 1 xhttp"
+- name: "⚡ \U0001F1EE\U0001F1F9 Италия AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1EE\U0001F1F9 ⚡FAST Италия 1"
+- name: "⚡ \U0001F1F9\U0001F1F7 Турция AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1F9\U0001F1F7 Турция 1 ai"
+- name: "⚡ \U0001F1E8\U0001F1FE Кипр AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1E8\U0001F1FE ⚡FAST Кипр 1 ai"
+- name: "⚡ \U0001F1E8\U0001F1E6 Канада AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1E8\U0001F1E6 ⚡FAST Канада 1 ai"
+- name: "⚡ \U0001F1EF\U0001F1F5 Япония AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1EF\U0001F1F5 Япония 1"
+- name: "⚡ \U0001F1EE\U0001F1F3 Индия AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1EE\U0001F1F3 Индия 1 ai"
+- name: "⚡ \U0001F1F9\U0001F1ED Таиланд AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1F9\U0001F1ED ⚡FAST Таиланд 1"
+- name: "⚡ \U0001F1E6\U0001F1F2 Армения AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1E6\U0001F1F2 ⚡FAST Армения 1"
+- name: "⚡ \U0001F1E6\U0001F1FF Азербайджан AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1E6\U0001F1FF Азербайджан 1 ai"
+- name: "⚡ \U0001F1E6\U0001F1EA ОАЭ AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1E6\U0001F1EA ⚡FAST ОАЭ 1"
+- name: "⚡ \U0001F1E8\U0001F1F1 Чили AUTO"
+  type: fallback
+  url: https://cp.cloudflare.com/generate_204/
+  interval: 120
+  lazy: true
+  hidden: true
+  timeout: 3000
+  max-failed-times: 3
+  proxies:
+  - "\U0001F1E8\U0001F1F1 Чили 1"
+rules:
+- GEOIP,PRIVATE,DIRECT,no-resolve
+- GEOSITE,category-ru,DIRECT
+- DOMAIN-REGEX,(^|\.)(ya|yandex|yastatic|yandexcloud|yandexcdn)\.(ru|net|com)$,DIRECT
+- DOMAIN-REGEX,(^|\.)(vk|vkvideo)\.(com|ru)$,DIRECT
+- DOMAIN-REGEX,(^|\.)(userapi|vkuseraudio|vkuserlive|vkuservideo)\.(com|net)$,DIRECT
+- DOMAIN-REGEX,(^|\.)(ok|odnoklassniki|mail|mycdn|imgsmail)\.(ru|me)$,DIRECT
+- DOMAIN-REGEX,(^|\.)(dzen|rutube|pikabu)\.ru$,DIRECT
+- DOMAIN-REGEX,(^|\.)(ozon|ozon[a-z0-9-]*)\.(ru|com|by|kz|pro|tech|travel|express)$,DIRECT
+- DOMAIN-REGEX,(^|\.)(ozonusercontent|ozonvideo|ozonstatics)\.(com|ru)$,DIRECT
+- DOMAIN-REGEX,(^|\.)(wildberries|wb|wbbasket|wbstatic)\.(ru|by|kz|am|net)$,DIRECT
+- DOMAIN-REGEX,(^|\.)(avito|avito-st|avitocdn|avitoimg)\.(ru|st|com)$,DIRECT
+- DOMAIN-REGEX,(^|\.)(gosuslugi|gu-st|esia\.gosuslugi)\.ru$,DIRECT
+- DOMAIN-REGEX,(^|\.)(mos|mosreg|gov|government|kremlin|nalog|fns)\.(ru|gov\.ru)$,DIRECT
+- DOMAIN-REGEX,(^|\.)(tbank|tinkoff|sber|sberbank|vtb|alfabank|gpb|gazprombank|sovcombank|psbank|rshb|mtsbank|banki|nspk|mironline|yoomoney|tochka)\.ru$,DIRECT
+- DOMAIN-REGEX,(^|\.)(2gis|dgis|gismeteo|rzd|tutu|drom|drive2|hh|superjob|zarplata)\.(ru|com)$,DIRECT
+- DOMAIN-REGEX,(^|\.)(mts|beeline|megafon|tele2|t2|rostelecom)\.ru$,DIRECT
+- DOMAIN-REGEX,(^|\.)(dns-shop|mvideo|eldorado|citilink|sportmaster|detmir|magnit|5ka|perekrestok|x5|lenta|auchan|samokat|kuper|vkusvill|fix-price)\.(ru|com)$,DIRECT
+- DOMAIN-REGEX,(^|\.)(kinopoisk|ivi|okko|more|wink|kion|premier|start|smotrim|1tv|ntv|sportbox|sports)\.(ru|tv|one)$,DIRECT
+- DOMAIN-REGEX,(^|\.)(rbc|ria|lenta|kp|tass|fontanka|kommersant|vedomosti|gazeta|interfax)\.ru$,DIRECT
+- DOMAIN-REGEX,(^|\.)(max|oneme)\.ru$,DIRECT
+- GEOIP,RU,DIRECT,no-resolve
+- MATCH,PROXY
+unified-delay: true
+tcp-concurrent: true
 dns:
   enable: true
+  ipv6: false
+  enhanced-mode: redir-host
   use-hosts: true
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
+  respect-rules: true
   default-nameserver:
-    - 1.1.1.1
-    - 8.8.8.8
+  - 9.9.9.9
+  - 8.8.8.8
   nameserver:
-    - 1.1.1.1
-    - 8.8.8.8
-  fake-ip-filter:
-    - "*.lan"
-    - stun.*.*.*
-    - stun.*.*
-    - time.windows.com
-    - time.nist.gov
-    - time.apple.com
-    - time.asia.apple.com
-    - "*.openwrt.pool.ntp.org"
-    - pool.ntp.org
-    - ntp.ubuntu.com
-    - time1.apple.com
-    - time2.apple.com
-    - time3.apple.com
-    - time4.apple.com
-    - time5.apple.com
-    - time6.apple.com
-    - time7.apple.com
-    - time1.google.com
-    - time2.google.com
-    - time3.google.com
-    - time4.google.com
-    - api.joox.com
-    - joox.com
-    - "*.xiami.com"
-    - "*.msftconnecttest.com"
-    - "*.msftncsi.com"
-    - +.xboxlive.com
-    - "*.*.stun.playstation.net"
-    - xbox.*.*.microsoft.com
-    - "*.ipv6.microsoft.com"
-    - speedtest.cros.wr.pvp.net
-proxies:
-  - name: 🇬🇧 ⚡️ Великобритания | 100 Gbit/s
-    type: vless
-    server: ONLYSERVERS-100GB
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: data.aimodelmega.org
-    reality-opts:
-      public-key: 0JawqIGAt7eduzwnJN9Tcyq3BjwpTmPnewpsWfpwtCU
-      short-id: a1ca1855a1b0eef0
-    grpc-opts:
-      grpc-service-name: rpc.v1.MetricsService
-    client-fingerprint: firefox
-  - name: 🇵🇱 Польша [1]
-    type: vless
-    server: MEVSPACE
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: tracker.happylumenplot.org
-    reality-opts:
-      public-key: 83nCPechXO--tzf6dAFWqD3fi2uPEU9PynjeqNq_ey4
-      short-id: 01386e927d1c781e
-    grpc-opts:
-      grpc-service-name: edge.v1.StreamService
-    client-fingerprint: chrome
-  - name: 🇸🇪 Швеция [1]
-    type: vless
-    server: "1"
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: live.on3ok.com
-    reality-opts:
-      public-key: _4x6mU7USpNESoYSD2qzwA2pdvq8f30m0UwALXAqqzY
-      short-id: 5877634632cd9b75
-    grpc-opts:
-      grpc-service-name: api.v1.StreamService
-    client-fingerprint: chrome
-  - name: 🇵🇱 Польша [2]
-    type: vless
-    server: MEVSPACE- 1
-    port: 10103
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: gw.v1.FeedService
-    client-fingerprint: chrome
-  - name: 🇸🇪 Швеция [2]
-    type: vless
-    server: cherry
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: live.on3ok.com
-    reality-opts:
-      public-key: _4x6mU7USpNESoYSD2qzwA2pdvq8f30m0UwALXAqqzY
-      short-id: 5877634632cd9b75
-    grpc-opts:
-      grpc-service-name: api.v1.StreamService
-    client-fingerprint: chrome
-  - name: 🇵🇱 Польша [3]
-    type: vless
-    server: MEVSPACE
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: rpc.v1.ObjectService
-    client-fingerprint: chrome
-  - name: 🇱🇹 Литва
-    type: vless
-    server: cherry
-    port: 10101
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: app.v1.SyncService
-    client-fingerprint: chrome
-  - name: 🇩🇪 Германия
-    type: vless
-    server: 31.58.182.4
-    port: 7443
-    network: tcp
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: stackoverflow.com
-    reality-opts:
-      public-key: 5QAO98ot2U7TcGs_f6EEaQjCzNOJLNHqPf6smYsdFVI
-      short-id: d82fb387
-    client-fingerprint: firefox
-  - name: 🇷🇺 Россия | Для тех кто за рубежом
-    type: vless
-    server: vps2.nemnogogo.com
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: vps2.nemnogogo.com
-    alpn:
-      - h2
-      - http/1.1
-    grpc-opts:
-      grpc-service-name: mobile.api.Event
-    client-fingerprint: ios
-  - name: 🇧🇬 Болгария
-    type: vless
-    server: BG
-    port: 10001
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: grpc-api
-    client-fingerprint: chrome
-  - name: 🇺🇸 США
-    type: vless
-    server: CHERRY
-    port: 10101
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: push.v2.FeedService
-    client-fingerprint: chrome
-  - name: 🇳🇱 Нидерланды [1]
-    type: vless
-    server: NOVOSERV
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: mobile.api.Event
-    client-fingerprint: chrome
-  - name: 🇳🇱 Нидерланды [2]
-    type: vless
-    server: NOVOSERV 2
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: mobile.api.Event
-    client-fingerprint: chrome
-  - name: 🇳🇱 Нидерланды [3]
-    type: vless
-    server: NOVO
-    port: 10101
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: media.v2.ObjectService
-    client-fingerprint: chrome
-  - name: 🇳🇱 Нидерланды [4]
-    type: vless
-    server: NOVO
-    port: 10101
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: media.v2.ObjectService
-    client-fingerprint: chrome
-  - name: 🇳🇱 Нидерланды [5]
-    type: vless
-    server: NOVOSERV 3
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: mobile.api.Event
-    client-fingerprint: chrome
-  - name: 🇳🇱 Нидерланды [1] | YouTube, Gemini
-    type: vless
-    server: NOVOSERV
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: mobile.api.Event
-    client-fingerprint: chrome
-  - name: 🇳🇱 Нидерланды [2] | YouTube, Gemini
-    type: vless
-    server: "1"
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: mobile.api.Event
-    client-fingerprint: chrome
-  - name: 🇳🇱 Нидерланды [3] | YouTube, Gemini
-    type: vless
-    server: NOVOSERV 3
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: mobile.api.Event
-    client-fingerprint: chrome
-  - name: 🇳🇱 Нидерланды [4] | YouTube, Gemini
-    type: vless
-    server: NOVOSERV 2
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: mobile.api.Event
-    client-fingerprint: chrome
-  - name: 🇮🇹 Италия
-    type: vless
-    server: vps
-    port: 10001
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: mobile.api.Event
-    client-fingerprint: chrome
-  - name: 🇷🇸 Сербия
-    type: vless
-    server: RS
-    port: 10001
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: grpc-api
-    client-fingerprint: chrome
-  - name: 🇲🇩 Молдова
-    type: vless
-    server: MD
-    port: 10001
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: grpc-api
-    client-fingerprint: chrome
-  - name: 🇭🇷 Хорватия
-    type: vless
-    server: HR
-    port: 10001
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    grpc-opts:
-      grpc-service-name: grpc-api
-    client-fingerprint: chrome
-  - name: 🇬🇧 Великобритания [1]
-    type: vless
-    server: ONLYSERVERS-X
-    port: 10207
-    network: xhttp
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: ""
-    xhttp-opts:
-      path: /static/v3/ingest/N8J6tGQ8TZ
-      mode: stream-up
-    client-fingerprint: firefox
-  - name: 🇬🇧 Великобритания [2]
-    type: vless
-    server: ONLYSERVERS-X
-    port: 443
-    network: xhttp
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: ""
-    xhttp-opts:
-      path: /cdn/v2/upload/ybpK2mXPpU
-      mode: stream-up
-    client-fingerprint: firefox
-  - name: 🇬🇧 ⚡️ Великобритания | Hysteria2
-    type: hysteria2
-    server: ONLYSERVERS-H-1
-    port: 443
-    udp: true
-    password: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    bbr-profile: conservative
-    sni: stream.hahaahhaah.com
-    client-fingerprint: chrome
-    alpn:
-      - h3
-  - name: 🇳🇱 LTE⚡мобильная связь 1
-    type: vless
-    server: lk.nehtar.online
-    port: 443
-    network: xhttp
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: lk.nehtar.online
-    alpn:
-      - h2
-    xhttp-opts:
-      path: /gateway/v1/ws/848ea1203a5a306ad0b1168b6354d5cb
-      host: lk.nehtar.online
-      mode: packet-up
-      x-padding-bytes: 100-1000
-      x-padding-obfs-mode: true
-      x-padding-key: xss
-      x-padding-header: api_v1
-      x-padding-placement: query
-      x-padding-method: tokenish
-      uplink-http-method: GET
-      session-placement: query
-      session-key: auth
-      session-table: alphabet
-      session-length: "20"
-      seq-placement: query
-      seq-key: id
-      uplink-data-placement: body
-      uplink-data-key: X-Ver
-      sc-max-each-post-bytes: "1000000"
-      sc-min-posts-interval-ms: 5-20
-      sc-stream-up-server-secs: 20-80
-      reuse-settings:
-        max-concurrency: 8-16
-        c-max-reuse-times: 64-128
-        h-max-request-times: 600-900
-        h-max-reusable-secs: 1800-3000
-        h-keep-alive-period: 30
-    client-fingerprint: firefox
-  - name: 🇳🇱 LTE⚡мобильная связь 2
-    type: vless
-    server: chat.gpt.prem-ai.shop
-    port: 443
-    network: ws
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: chat.gpt.prem-ai.shop
-    alpn:
-      - http/1.1
-    ws-opts:
-      path: /gateway/v1/ws/791f9a4d19f715c2ffaedfbaf99d88bd
-      headers:
-        Host: chat.gpt.prem-ai.shop
-    client-fingerprint: chrome
-  - name: 🇳🇱 LTE⚡мобильная связь 3
-    type: vless
-    server: d.nehtar.ru
-    port: 443
-    network: ws
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: d.nehtar.ru
-    alpn:
-      - http/1.1
-    ws-opts:
-      path: /gateway/v1/ws/ed538a1fa54bd54fb14352a847675357
-      headers:
-        Host: d.nehtar.ru
-    client-fingerprint: chrome
-  - name: 🇪🇺 LTE мобильная связь — Авто-выбор
-    type: vless
-    server: LTEM
-    port: 443
-    network: ws
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    ws-opts:
-      path: /api/v4/media/session
-      headers: {}
-    client-fingerprint: chrome
-  - name: 🇬🇧 Обход Великобритания 1
-    type: vless
-    server: rpc.casc2.nemnogogo.com
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: rpc.casc2.nemnogogo.com
-    alpn:
-      - h2
-      - http/1.1
-    grpc-opts:
-      grpc-service-name: stats.v1.FeedService
-    client-fingerprint: firefox
-  - name: 🇬🇧 Обход Великобритания 2
-    type: vless
-    server: main.3.nemnogogo.com
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: main.3.nemnogogo.com
-    alpn:
-      - h2
-      - http/1.1
-    grpc-opts:
-      grpc-service-name: gw.v1.StreamService
-    client-fingerprint: firefox
-  - name: 🇬🇧 Обход Великобритания 3
-    type: vless
-    server: img.n1.casc.nemnogogo.com
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: img.n1.casc.nemnogogo.com
-    alpn:
-      - h2
-      - http/1.1
-    grpc-opts:
-      grpc-service-name: node.v1.ApiService
-    client-fingerprint: firefox
-  - name: 🇳🇱 Обход Нидерланды 1
-    type: vless
-    server: img.n1.casc.nemnogogo.com
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: img.n1.casc.nemnogogo.com
-    alpn:
-      - h2
-      - http/1.1
-    grpc-opts:
-      grpc-service-name: node.v1.ApiService
-    client-fingerprint: firefox
-  - name: 🇳🇱 Обход Нидерланды 2
-    type: vless
-    server: rpc.casc2.nemnogogo.com
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: rpc.casc2.nemnogogo.com
-    alpn:
-      - h2
-      - http/1.1
-    grpc-opts:
-      grpc-service-name: stats.v1.FeedService
-    client-fingerprint: firefox
-  - name: 🇳🇱 Обход Нидерланды 3
-    type: vless
-    server: main.3.nemnogogo.com
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: main.3.nemnogogo.com
-    alpn:
-      - h2
-      - http/1.1
-    grpc-opts:
-      grpc-service-name: gw.v1.StreamService
-    client-fingerprint: firefox
-  - name: 🇳🇱 Обход Нидерланды 4
-    type: vless
-    server: main.3.nemnogogo.com
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: main.3.nemnogogo.com
-    alpn:
-      - h2
-      - http/1.1
-    grpc-opts:
-      grpc-service-name: gw.v1.StreamService
-    client-fingerprint: firefox
-  - name: 🇳🇱 Обход Нидерланды
-    type: vless
-    server: 185.229.9.121
-    port: 2053
-    network: tcp
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: data.dgmasterai.org
-    reality-opts:
-      public-key: 4rQWJxehWlUl1_KUWvcViR5xCsIAnYVov6eajNhPRVM
-      short-id: 305439b213bc392b
-    client-fingerprint: firefox
-  - name: 🇸🇪 Обход Швеция 1
-    type: vless
-    server: rpc.casc2.nemnogogo.com
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: rpc.casc2.nemnogogo.com
-    alpn:
-      - h2
-      - http/1.1
-    grpc-opts:
-      grpc-service-name: stats.v1.FeedService
-    client-fingerprint: firefox
-  - name: 🇸🇪 Обход Швеция 2
-    type: vless
-    server: main.3.nemnogogo.com
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: main.3.nemnogogo.com
-    alpn:
-      - h2
-      - http/1.1
-    grpc-opts:
-      grpc-service-name: gw.v1.StreamService
-    client-fingerprint: firefox
-  - name: 🇸🇪 Обход Швеция 3
-    type: vless
-    server: img.n1.casc.nemnogogo.com
-    port: 443
-    network: grpc
-    udp: true
-    uuid: 0d78ae85-2241-4cc0-b185-93ac6c3b5b8f
-    packet-encoding: xudp
-    tls: true
-    servername: img.n1.casc.nemnogogo.com
-    alpn:
-      - h2
-      - http/1.1
-    grpc-opts:
-      grpc-service-name: node.v1.ApiService
-    client-fingerprint: firefox
-proxy-groups:
-  - name: → Remnawave
-    type: select
-    proxies:
-      - 🇬🇧 ⚡️ Великобритания | 100 Gbit/s
-      - 🇵🇱 Польша [1]
-      - 🇸🇪 Швеция [1]
-      - 🇵🇱 Польша [2]
-      - 🇸🇪 Швеция [2]
-      - 🇵🇱 Польша [3]
-      - 🇱🇹 Литва
-      - 🇩🇪 Германия
-      - 🇷🇺 Россия | Для тех кто за рубежом
-      - 🇧🇬 Болгария
-      - 🇺🇸 США
-      - 🇳🇱 Нидерланды [1]
-      - 🇳🇱 Нидерланды [2]
-      - 🇳🇱 Нидерланды [3]
-      - 🇳🇱 Нидерланды [4]
-      - 🇳🇱 Нидерланды [5]
-      - 🇳🇱 Нидерланды [1] | YouTube, Gemini
-      - 🇳🇱 Нидерланды [2] | YouTube, Gemini
-      - 🇳🇱 Нидерланды [3] | YouTube, Gemini
-      - 🇳🇱 Нидерланды [4] | YouTube, Gemini
-      - 🇮🇹 Италия
-      - 🇷🇸 Сербия
-      - 🇲🇩 Молдова
-      - 🇭🇷 Хорватия
-      - 🇬🇧 Великобритания [1]
-      - 🇬🇧 Великобритания [2]
-      - 🇬🇧 ⚡️ Великобритания | Hysteria2
-      - 🇳🇱 LTE⚡мобильная связь 1
-      - 🇳🇱 LTE⚡мобильная связь 2
-      - 🇳🇱 LTE⚡мобильная связь 3
-      - 🇪🇺 LTE мобильная связь — Авто-выбор
-      - 🇬🇧 Обход Великобритания 1
-      - 🇬🇧 Обход Великобритания 2
-      - 🇬🇧 Обход Великобритания 3
-      - 🇳🇱 Обход Нидерланды 1
-      - 🇳🇱 Обход Нидерланды 2
-      - 🇳🇱 Обход Нидерланды 3
-      - 🇳🇱 Обход Нидерланды 4
-      - 🇳🇱 Обход Нидерланды
-      - 🇸🇪 Обход Швеция 1
-      - 🇸🇪 Обход Швеция 2
-      - 🇸🇪 Обход Швеция 3
-rules:
-  - MATCH,→ Remnawave
+  - 9.9.9.9
+  - 208.67.222.222
+  - 8.8.8.8
+  proxy-server-nameserver:
+  - 77.88.8.8
+  - 77.88.8.1
