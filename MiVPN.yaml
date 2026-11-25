@@ -1,851 +1,812 @@
-mixed-port: 7890
-mode: rule
-log-level: silent
+port: 10809
+socks-port: 10808
 allow-lan: false
-ipv6: true
-unified-delay: true
-tcp-concurrent: true
-tun:
-  enable: true
-  stack: system
-  auto-route: true
-  auto-detect-interface: true
-  dns-hijack:
-    - any:53
-  strict-route: true
-  route-exclude-address:
-    - 224.0.0.0/3
-    - 10.0.0.0/8
-    - 127.0.0.0/8
-    - 100.64.0.0/10
-    - 172.16.0.0/12
-    - 169.254.0.0/16
-    - 192.168.0.0/16
-    - 192.0.0.0/24
-    - 192.0.2.0/24
-    - 192.88.99.0/24
-    - 198.51.100.0/24
-    - 203.0.113.0/24
-    - fc00::/7
-    - ff00::/8
-    - fe80::/10
-    - ::/127
-dns:
-  enable: true
-  ipv6: false
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  fake-ip-filter:
-    - rule-set:private-domains
-  default-nameserver:
-    - https://77.88.8.8/dns-query
-    - https://8.8.8.8/dns-query
-  proxy-server-nameserver:
-    - https://77.88.8.8/dns-query
-    - https://8.8.8.8/dns-query
-  direct-nameserver:
-    - https://77.88.8.8/dns-query
-    - https://8.8.8.8/dns-query
-  nameserver:
-    - https://8.8.8.8/dns-query#PROXY
-sniffer:
-  enable: true
-  override-destination: false
-  parse-pure-ip: true
-  sniff:
-    HTTP:
-      ports:
-        - 80
-        - 8080-8880
-    TLS:
-      ports:
-        - 443
-        - 8443
-  skip-dst-address:
-    - 224.0.0.0/3
-    - 10.0.0.0/8
-    - 127.0.0.0/8
-    - 100.64.0.0/10
-    - 172.16.0.0/12
-    - 198.18.0.0/15
-    - 169.254.0.0/16
-    - 192.168.0.0/16
-    - 192.0.0.0/24
-    - 192.0.2.0/24
-    - 192.88.99.0/24
-    - 198.51.100.0/24
-    - 203.0.113.0/24
-    - fc00::/7
-    - ff00::/8
-    - fe80::/10
-    - ::/127
+bind-address: 127.0.0.1
+mode: rule
+log-level: warning
+ipv6: false
 find-process-mode: strict
 profile:
   store-selected: true
-  store-fake-ip: true
+hosts:
+  common.dot.dns.yandex.net:
+    - 77.88.8.8
+    - 77.88.8.1
+dns:
+  enable: true
+  listen: 127.0.0.1:1053
+  ipv6: false
+  enhanced-mode: redir-host
+  use-hosts: true
+  use-system-hosts: false
+  respect-rules: false
+  default-nameserver:
+    - 77.88.8.8
+  proxy-server-nameserver:
+    - 77.88.8.8#DIRECT
+  direct-nameserver:
+    - 77.88.8.8#DIRECT
+  nameserver:
+    - https://8.8.4.4/dns-query#proxy
+  nameserver-policy:
+    +.snowdnvpno4.com: 77.88.8.8#DIRECT
+    +.ru: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.su: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.xn--p1ai: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.yandex: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.vk.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.userapi.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.vk-cdn.net: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.vk-portal.net: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.vkuseraudio.net: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.vkuservideo.net: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.mycdn.me: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.mvk.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.mradx.net: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.ok.ru: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.yandex.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.yandex.net: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.yandex.by: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.yandex.kz: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.yandex.cloud: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.yandexcloud.net: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.yastatic.net: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.yastat.net: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.yadi.sk: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.yandexmetrica.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.yandexadexchange.net: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.yandexwebcache.net: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.yads.tech: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.sberbank.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.sbercloud.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.tinkoff.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.tbank.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.tbank-online.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.alfabank.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.alfa-bank.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.alfaprivate.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.vtb.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.vtb24.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.vtb.digital: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.vtbrussia.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.gazprombank.tech: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.moex.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.tochka.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.tochka-tech.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.1cfresh.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.kontur.host: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.2gis.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.2gis.by: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.avito.st: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.youla.io: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.lenta.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.megamarket.tech: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.ozonusercontent.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.wbstatic.net: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.wbbasket.net: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.wildberries.by: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.okko.tv: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.premier.one: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.gismeteo.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.lmru.tech: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    +.tildaapi.com: https://common.dot.dns.yandex.net/dns-query#DIRECT
+    rule-set:geosite-category-ru: https://common.dot.dns.yandex.net/dns-query#DIRECT
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+        - 1-65535
+    TLS:
+      ports:
+        - 1-65535
+    QUIC:
+      ports:
+        - 1-65535
 proxies:
-  - name: '🇷🇺 YouTube #1📺'
+  - name: dns-out
+    type: dns
+  - name: '🇳🇱 Нидерланды '
     type: vless
-    server: yt1.stich.my
+    server: 45.91.193.186
     port: 443
     network: tcp
     udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    encryption: mlkem768x25519plus.native.0rtt.6sbkP344veAsVv1u8KGrHFa1k1RUM2PK8FJ6qOrqqyA
-    tls: true
-    servername: yt1.stich.my
-    reality-opts:
-      public-key: zCMJBKpqG_yuHK-g3Cc4YWbTDUO7R-2PwHYjkRgXtHg
-      short-id: ''
-    client-fingerprint: qq
-  - name: '🇷🇺 YouTube #2📺 '
-    type: vless
-    server: yt2.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    encryption: mlkem768x25519plus.native.0rtt.6sbkP344veAsVv1u8KGrHFa1k1RUM2PK8FJ6qOrqqyA
-    tls: true
-    servername: yt2.stich.my
-    reality-opts:
-      public-key: zCMJBKpqG_yuHK-g3Cc4YWbTDUO7R-2PwHYjkRgXtHg
-      short-id: ''
-    client-fingerprint: qq
-  - name: '🇷🇺 YouTube #3📺 '
-    type: vless
-    server: yt3.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    encryption: mlkem768x25519plus.native.0rtt.6sbkP344veAsVv1u8KGrHFa1k1RUM2PK8FJ6qOrqqyA
-    tls: true
-    servername: yt3.stich.my
-    reality-opts:
-      public-key: zCMJBKpqG_yuHK-g3Cc4YWbTDUO7R-2PwHYjkRgXtHg
-      short-id: ''
-    client-fingerprint: qq
-  - name: 🇩🇪 Германия 1
-    type: vless
-    server: de1.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
     packet-encoding: xudp
     flow: xtls-rprx-vision
     tls: true
-    servername: de1.stich.my
+    servername: source.android.com
     reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
-    client-fingerprint: firefox
-  - name: 🇩🇪 Германия 2
-    type: vless
-    server: de2.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: de2.stich.my
-    reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
-    client-fingerprint: firefox
-  - name: 🇩🇪 Германия 3
-    type: vless
-    server: de3.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: de3.stich.my
-    reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
-    client-fingerprint: firefox
-  - name: 🇳🇱 Нидерланды
-    type: vless
-    server: nl1.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: nl1.stich.my
-    reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
-    client-fingerprint: firefox
-  - name: 🇸🇪 Швеция
-    type: vless
-    server: se1.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: se1.stich.my
-    reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
-    client-fingerprint: firefox
-  - name: 🇩🇪 Германия FF
-    type: vless
-    server: rf.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-000b-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: rf.stich.my
-    reality-opts:
-      public-key: H9fcn9PYzwPVE1egy37sbK04CCXE0dn4goOfiFFsIEs
-      short-id: acc22b7b5ba9dbf2
-    client-fingerprint: qq
-  - name: 🇸🇪 Швеция FF
-    type: vless
-    server: rf.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-000c-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: rf.stich.my
-    reality-opts:
-      public-key: H9fcn9PYzwPVE1egy37sbK04CCXE0dn4goOfiFFsIEs
-      short-id: acc22b7b5ba9dbf2
-    client-fingerprint: qq
-  - name: 🇪🇪 Эстония FF
-    type: vless
-    server: rf.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-000e-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: rf.stich.my
-    reality-opts:
-      public-key: H9fcn9PYzwPVE1egy37sbK04CCXE0dn4goOfiFFsIEs
-      short-id: acc22b7b5ba9dbf2
-    client-fingerprint: qq
-  - name: 🇫🇮 Финляндия FF
-    type: vless
-    server: rf.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-000d-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: rf.stich.my
-    reality-opts:
-      public-key: H9fcn9PYzwPVE1egy37sbK04CCXE0dn4goOfiFFsIEs
-      short-id: acc22b7b5ba9dbf2
-    client-fingerprint: qq
-  - name: 🇨🇭 Швейцария
-    type: vless
-    server: ch1.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: ch1.stich.my
-    reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
-    client-fingerprint: firefox
-  - name: 🇨🇿 Чехия
-    type: vless
-    server: cz1.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: cz1.stich.my
-    reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
-    client-fingerprint: firefox
-  - name: 🇳🇬 Нигерия
-    type: vless
-    server: ng1.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: ng1.stich.my
-    reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
-    client-fingerprint: firefox
-  - name: 🇰🇿 Казахстан
-    type: vless
-    server: kz1.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: kz1.stich.my
-    reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
-    client-fingerprint: firefox
-  - name: 🇸🇬 Сингапур
-    type: vless
-    server: sg1.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: sg1.stich.my
-    reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
-    client-fingerprint: firefox
-  - name: 🇮🇳 Индия
-    type: vless
-    server: in1.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: in1.stich.my
-    reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
-    client-fingerprint: firefox
-  - name: 🇭🇰 Гонконг
-    type: vless
-    server: hk1.stich.my
-    port: 443
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: hk1.stich.my
-    reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
+      public-key: HT4jzIK85ISMcT_ZiezpGESyG1V1u06nTjnNqYnulUA
+      short-id: a903c18d6d274f37
     client-fingerprint: firefox
   - name: 🇵🇱 Польша
     type: vless
-    server: pl1.stich.my
+    server: 31.59.158.83
+    port: 443
+    network: xhttp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    tls: true
+    servername: trty.filestartmasters.com
+    reality-opts:
+      public-key: 7rgII8D18SFHRHbzrqyjCdNPKJQy_vHklxBcyR8FiBM
+      short-id: 53c5f58dcfe879c9
+    xhttp-opts:
+      path: /api/v1/stream/
+      mode: auto
+    client-fingerprint: firefox
+  - name: 🇵🇱 Польша 2
+    type: vless
+    server: 31.59.158.83
     port: 443
     network: tcp
     udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
     packet-encoding: xudp
     flow: xtls-rprx-vision
     tls: true
-    servername: pl1.stich.my
+    servername: ghf4.filestartmasters.com
     reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
+      public-key: 5EsuxobUbiKeGYkuZPnaseu5ey8f7LMhtmVcutUhVzQ
+      short-id: 9e8a6cd8fc167bc2
+    client-fingerprint: firefox
+  - name: 🇵🇱 Польша 3
+    type: vless
+    server: 185.138.90.193
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: pl100.filestartmasters.com
+    reality-opts:
+      public-key: 2INvU5GdXdlx9cmts-Btlra04wb_RBU5eVROdc0ymA4
+      short-id: 589c573bbf6589e8
+    client-fingerprint: firefox
+  - name: '🇩🇪 Германия '
+    type: vless
+    server: 217.60.30.136
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: jjax.filestartmasters.com
+    reality-opts:
+      public-key: b0Ulm17ZA29CvhBmEXx9c8_4I-2Kbe5MZLW1c0Jv2k8
+      short-id: 8e659df6de748ea8
+    client-fingerprint: firefox
+  - name: 🇩🇪 Германия 2
+    type: vless
+    server: 217.60.30.136
+    port: 443
+    network: xhttp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    tls: true
+    servername: naxx.filestartmasters.com
+    reality-opts:
+      public-key: sg_yC6QXQSQ-5M2T0_RcEgliDcSBuOYkpfdoFrJTMn0
+      short-id: 83554fe8c6e28a31
+    xhttp-opts:
+      path: /api/v1/stream/
+      mode: auto
+    client-fingerprint: firefox
+  - name: 🇩🇪 Германия 3
+    type: vless
+    server: 93.152.217.66
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: failover-test.invalid
+    reality-opts:
+      public-key: uGQux7Fo4MiU7QzUGjqgcqy992skBxO8AlDCU475BWs
+      short-id: 199b02b7be3b0c89
     client-fingerprint: firefox
   - name: 🇪🇪 Эстония
     type: vless
-    server: ee1.stich.my
+    server: 145.249.109.138
     port: 443
     network: tcp
     udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
     packet-encoding: xudp
     flow: xtls-rprx-vision
     tls: true
-    servername: ee1.stich.my
+    servername: ee2.filestartmasters.com
     reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
+      public-key: tjfaCMPrL-3oH4oa8CvU8mFb6iOzvbndSdSWf90San8
+      short-id: 99bc807849f12432
     client-fingerprint: firefox
-  - name: '🇫🇮 Финляндия #2'
+  - name: 🇬🇧 Великобритания
     type: vless
-    server: fi2.stich.my
+    server: 45.150.66.82
     port: 443
     network: tcp
     udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
     packet-encoding: xudp
     flow: xtls-rprx-vision
     tls: true
-    servername: fi2.stich.my
+    servername: uk18.filestartmasters.com
     reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
+      public-key: s0oBHawVpIs-bPjoJcHfXeSb80T5B-3H4N9dQv_oSGY
+      short-id: fad089dfd988f159
     client-fingerprint: firefox
-  - name: '🇫🇮 Gaming #2'
+  - name: '🇳🇱 Netherlands '
     type: vless
-    server: game2.stich.my
-    port: 8444
-    network: tcp
-    udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
-    packet-encoding: xudp
-    flow: xtls-rprx-vision
-    tls: true
-    servername: game2.stich.my
-    reality-opts:
-      public-key: h16vbQ_IBohiTlEVzz1oEZBf63peHSTbhQ3sJuQO-Vw
-      short-id: eab3935b74dd7756
-    client-fingerprint: qq
-  - name: 🇪🇸 Испания
-    type: vless
-    server: es1.stich.my
+    server: 48.103.202.60
     port: 443
     network: tcp
     udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
     packet-encoding: xudp
     flow: xtls-rprx-vision
     tls: true
-    servername: es1.stich.my
+    servername: nl-60.snowdnvpno4.com
     reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
+      public-key: Jzcj1EmBa45ImBv3mz4imVeHwTT55aX_C5RH0STEXwk
+      short-id: 5bb627792d0a9036
     client-fingerprint: firefox
-  - name: 🇺🇸 Gemini
+  - name: 🇳🇱 Netherlands 3
     type: vless
-    server: us1.stich.my
+    server: 48.103.202.60
     port: 443
-    network: tcp
+    network: xhttp
     udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
     packet-encoding: xudp
-    flow: xtls-rprx-vision
     tls: true
-    servername: mia1.stich.my
+    servername: 2-nl-60.snowdnvpno4.com
     reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
+      public-key: oaVIznq8bsIg_ti2E-Zr4OgzxFCNTR4R61ZOed91ITU
+      short-id: c86fd2ea710aa743
+    xhttp-opts:
+      path: /api/v1/stream/
+      host: nl-60.snowdnvpno4.com
+      mode: auto
     client-fingerprint: firefox
-  - name: 'ОБХОД БЕЛЫХ СПИСКОВ '
+  - name: 🇳🇱 Netherlands 4
     type: vless
-    server: 45.22.22.222
+    server: 62.50.146.231
     port: 443
     network: tcp
     udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
     packet-encoding: xudp
     flow: xtls-rprx-vision
-    encryption: mlkem768x25519plus.native.0rtt.l2qZG4iCaI0BeIj6auKDyfE_Xb7OT3JNUe8TtmDkEzs
     tls: true
-    servername: ads.x5.ru:443
+    servername: n-neth.snowdnvpno4.com
     reality-opts:
-      public-key: VHr0PENbWhp5cP_V60zOlChr5AEuDzpsesB4Z0EVsBI
-      short-id: ''
+      public-key: 56QUSkgaBUAruo4LoZnfo6z6Y4CGZRTx1zdNLYKKGRk
+      short-id: 530db35e324c3aa5
+      support-x25519mlkem768: true
     client-fingerprint: chrome
-  - name: 'ДОСТУПЕН ТОЛЬКО '
+  - name: 🇳🇱 Netherlands 6
     type: vless
-    server: 2.22.22.222
+    server: 62.50.146.231
     port: 443
-    network: tcp
+    network: xhttp
     udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
     packet-encoding: xudp
-    flow: xtls-rprx-vision
-    encryption: mlkem768x25519plus.native.0rtt.l2qZG4iCaI0BeIj6auKDyfE_Xb7OT3JNUe8TtmDkEzs
     tls: true
-    servername: ads.x5.ru:443
+    servername: 2-n-neth.snowdnvpno4.com
     reality-opts:
-      public-key: VHr0PENbWhp5cP_V60zOlChr5AEuDzpsesB4Z0EVsBI
-      short-id: ''
+      public-key: 56QUSkgaBUAruo4LoZnfo6z6Y4CGZRTx1zdNLYKKGRk
+      short-id: 530db35e324c3aa5
+      support-x25519mlkem768: true
+    xhttp-opts:
+      path: /snowdn-xhttp
+      host: n-neth.snowdnvpno4.com
+      mode: auto
+      reuse-settings:
+        max-connections: '3'
+        h-max-request-times: 600-900
+        h-max-reusable-secs: 1800-3000
+        h-keep-alive-period: 20
     client-fingerprint: chrome
-  - name: В ПЛАТНОЙ ПОДПИСКЕ
+  - name: '🇫🇷 France '
     type: vless
-    server: 22.22.222.2
+    server: fr-155.filestartmasters.com
     port: 443
     network: tcp
     udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
     packet-encoding: xudp
     flow: xtls-rprx-vision
-    encryption: mlkem768x25519plus.native.0rtt.l2qZG4iCaI0BeIj6auKDyfE_Xb7OT3JNUe8TtmDkEzs
     tls: true
-    servername: ads.x5.ru:443
+    servername: fr-155.filestartmasters.com
     reality-opts:
-      public-key: VHr0PENbWhp5cP_V60zOlChr5AEuDzpsesB4Z0EVsBI
-      short-id: ''
+      public-key: Us_eozeue7Cqz1DMPqNCa5sncJ2ObpdvU3wiA23SYRA
+      short-id: ad7d62e629e2d986
+    client-fingerprint: firefox
+  - name: 🇫🇷 France 2
+    type: vless
+    server: fr-155.filestartmasters.com
+    port: 443
+    network: xhttp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    tls: true
+    servername: 2-fr-155.filestartmasters.com
+    reality-opts:
+      public-key: w2kvhKJ-SC0d4IZI-DnloSfwCxWACLrNk4kf3-fmd1w
+      short-id: 86548fcfc15ec19a
+    xhttp-opts:
+      path: /api/v1/stream/
+      host: 2-fr-155.filestartmasters.com
+      mode: auto
+    client-fingerprint: firefox
+  - name: 🇺🇸 USA 2
+    type: vless
+    server: us-40.filestartmasters.com
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: us-40.filestartmasters.com
+    reality-opts:
+      public-key: 1Eil61Ijx_vZGLHLnTH3WTA0USt2PnLo_FEB7pzuxm8
+      short-id: 9f51712442b11c8e
+    client-fingerprint: firefox
+  - name: 🇺🇸 USA 3
+    type: vless
+    server: us-40.filestartmasters.com
+    port: 443
+    network: xhttp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    tls: true
+    servername: 2-us-40.filestartmasters.com
+    reality-opts:
+      public-key: zhdMMkgYGAUArFfbtTlwc5T5S64IC_UyA2hMDOiGxT4
+      short-id: 49b016a82fc3a922
+    xhttp-opts:
+      path: /api/v1/stream/
+      host: us-40.filestartmasters.com
+      mode: auto
+    client-fingerprint: firefox
+  - name: '🇳🇱 Rus→ Netherlands '
+    type: vless
+    server: 31.58.191.187
+    port: 24443
+    network: tcp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: n-neth.snowdnvpno4.com
+    reality-opts:
+      public-key: 56QUSkgaBUAruo4LoZnfo6z6Y4CGZRTx1zdNLYKKGRk
+      short-id: 530db35e324c3aa5
+      support-x25519mlkem768: true
     client-fingerprint: chrome
-  - name: 🇯🇵 Япония
+  - name: 🇫🇷Rus→France
     type: vless
-    server: jp1.stich.my
+    server: 31.58.191.187
     port: 443
     network: tcp
     udp: true
-    uuid: bc5ff7a2-27da-4b35-b646-18dabcc1daef
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
     packet-encoding: xudp
     flow: xtls-rprx-vision
     tls: true
-    servername: jp1.stich.my
+    servername: fr-155.filestartmasters.com
     reality-opts:
-      public-key: Y07ggJqQKTBrqbeLvMqqX2FwR4bsYaC16qtMA1x4QhU
-      short-id: 305321c34191f1f3
+      public-key: Us_eozeue7Cqz1DMPqNCa5sncJ2ObpdvU3wiA23SYRA
+      short-id: ad7d62e629e2d986
+    client-fingerprint: firefox
+  - name: ' 🇵🇱Poland '
+    type: vless
+    server: pl-236.filestartmasters.com
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: pl-236.filestartmasters.com
+    reality-opts:
+      public-key: tE9HSRh-hHlzDUlhVZscwNDQdWp15Qk1ae1cWgnlGHk
+      short-id: 0e0972032d5ba5b7
+    client-fingerprint: firefox
+  - name: 🇵🇱 Poland 2
+    type: vless
+    server: 31.58.213.77
+    port: 443
+    network: tcp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: poland-77.snowdnvpno4.com
+    reality-opts:
+      public-key: b9NHaMjYm0CdAHSzAp0CDvgPUTKNwoXsNQ_zTqLxMDg
+      short-id: f0f09f87fd488be9
+      support-x25519mlkem768: true
+    client-fingerprint: chrome
+  - name: 🇵🇱Poland 3
+    type: vless
+    server: pl-236.filestartmasters.com
+    port: 443
+    network: xhttp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    tls: true
+    servername: 2-pl-236.filestartmasters.com
+    reality-opts:
+      public-key: q6PMOY6mgm4tQ1BE98YnVhF7HlgSRfP1Bj0LH5mjliU
+      short-id: bdce2ae400f43e4a
+    xhttp-opts:
+      path: /pl236/stream/
+      host: pl-236.filestartmasters.com
+      mode: auto
+    client-fingerprint: firefox
+  - name: 🇵🇱 Poland 4
+    type: vless
+    server: 31.58.213.77
+    port: 443
+    network: xhttp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    tls: true
+    servername: 2-poland-77.snowdnvpno4.com
+    reality-opts:
+      public-key: ckEdZf_oGaDJ5wRv_iITT08eSIr9UGmnZESicuNAVUQ
+      short-id: 015e6800c3799bd7
+      support-x25519mlkem768: true
+    xhttp-opts:
+      path: /api/v1/stream/
+      host: poland-77.snowdnvpno4.com
+      mode: auto
+    client-fingerprint: chrome
+  - name: '🇩🇪 Germany '
+    type: vless
+    server: 193.202.10.105
+    port: 18443
+    network: xhttp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    tls: true
+    servername: 2-germ57.snowdnvpno4.com
+    reality-opts:
+      public-key: vRd8ikOJQ2HXKtqprL3-33_cDt67vyWrBs0-TVyILmM
+      short-id: 4cf858ba2e029f88
+    xhttp-opts:
+      path: /stream/de61/a6960893133aa85d/
+      mode: auto
+    client-fingerprint: chrome
+  - name: 🇩🇪 Germany 2
+    type: vless
+    server: germ57.snowdnvpno4.com
+    port: 18443
+    network: tcp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    flow: xtls-rprx-vision
+    tls: true
+    servername: germ57.snowdnvpno4.com
+    reality-opts:
+      public-key: ulfjdJGzy7zVIaUZZFi5Rg3Pd2qV-OZsD--s29dS7Tk
+      short-id: 3379a30a9aebb4b2
+      support-x25519mlkem768: true
+    client-fingerprint: chrome
+  - name: 🇳🇱 [1] Универсальный LTE+
+    type: vless
+    server: grob.snowdnvpno4.com
+    port: 443
+    network: xhttp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    tls: true
+    servername: grob.snowdnvpno4.com
+    alpn:
+      - h2
+      - http/1.1
+    xhttp-opts:
+      path: /storage/bucket/v2/upload/
+      host: grob.snowdnvpno4.com
+      mode: packet-up
+      x-padding-bytes: 100-1000
+      x-padding-obfs-mode: true
+      x-padding-key: _dc
+      x-padding-header: X-Cache
+      x-padding-placement: queryInHeader
+      x-padding-method: tokenish
+      uplink-http-method: GET
+      uplink-data-placement: header
+      uplink-data-key: X-Data
+      uplink-chunk-size: 1024-2048
+      sc-max-each-post-bytes: 4096
+    client-fingerprint: firefox
+  - name: 🇫🇷 [2] Универсальный LTE+
+    type: vless
+    server: fr-lte.snowdnvpno4.com
+    port: 443
+    network: xhttp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    tls: true
+    servername: fr-lte.snowdnvpno4.com
+    alpn:
+      - h2
+      - http/1.1
+    xhttp-opts:
+      path: /storage/bucket/v2/upload/
+      host: fr-lte.snowdnvpno4.com
+      mode: packet-up
+      x-padding-bytes: 100-1000
+      x-padding-obfs-mode: true
+      x-padding-key: _dc
+      x-padding-header: X-Cache
+      x-padding-placement: queryInHeader
+      x-padding-method: tokenish
+      uplink-http-method: GET
+      session-table: Base62
+      session-length: 16-32
+      uplink-data-placement: header
+      uplink-data-key: X-Data
+      uplink-chunk-size: 1024-2048
+      sc-max-each-post-bytes: 4096
+    client-fingerprint: firefox
+  - name: 🇩🇪 [3] Универсальный LTE+
+    type: vless
+    server: de-128-lte.snowdnvpno4.com
+    port: 443
+    network: xhttp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    tls: true
+    servername: de-128-lte.snowdnvpno4.com
+    alpn:
+      - h2
+      - http/1.1
+    xhttp-opts:
+      path: /storage/bucket/v2/upload/
+      host: de-128-lte.snowdnvpno4.com
+      mode: packet-up
+      x-padding-bytes: 100-1000
+      x-padding-obfs-mode: true
+      x-padding-key: _dc
+      x-padding-header: X-Cache
+      x-padding-placement: queryInHeader
+      x-padding-method: tokenish
+      uplink-http-method: GET
+      uplink-data-placement: header
+      uplink-data-key: X-Data
+      uplink-chunk-size: 1024-2048
+      sc-max-each-post-bytes: 4096
+    client-fingerprint: firefox
+  - name: 🇵🇱 [4] Универсальный LTE+
+    type: vless
+    server: poland-77-lte.snowdnvpno4.com
+    port: 443
+    network: xhttp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    tls: true
+    servername: poland-77-lte.snowdnvpno4.com
+    alpn:
+      - h2
+      - http/1.1
+    xhttp-opts:
+      path: /storage/bucket/v2/upload/
+      host: poland-77-lte.snowdnvpno4.com
+      mode: packet-up
+      x-padding-bytes: 100-1000
+      x-padding-obfs-mode: true
+      x-padding-key: _dc
+      x-padding-header: X-Cache
+      x-padding-placement: queryInHeader
+      x-padding-method: tokenish
+      uplink-http-method: GET
+      uplink-data-placement: header
+      uplink-data-key: X-Data
+      uplink-chunk-size: 1024-2048
+      sc-max-each-post-bytes: 4096
+    client-fingerprint: firefox
+  - name: 🇺🇸 [5] Универсальный LTE+
+    type: vless
+    server: us-40-lte.snowdnvpno4.com
+    port: 443
+    network: xhttp
+    udp: true
+    uuid: 59464778-5ce6-4b98-9af4-42bd7da17774
+    packet-encoding: xudp
+    tls: true
+    servername: us-40-lte.snowdnvpno4.com
+    alpn:
+      - h2
+      - http/1.1
+    xhttp-opts:
+      path: /storage/bucket/v2/upload/
+      host: us-40-lte.snowdnvpno4.com
+      mode: packet-up
+      x-padding-bytes: 100-1000
+      x-padding-obfs-mode: true
+      x-padding-key: _dc
+      x-padding-header: X-Cache
+      x-padding-placement: queryInHeader
+      x-padding-method: tokenish
+      uplink-http-method: GET
+      uplink-data-placement: header
+      uplink-data-key: X-Data
+      uplink-chunk-size: 1024-2048
+      sc-max-each-post-bytes: 4096
     client-fingerprint: firefox
 proxy-groups:
-  - name: 🛡️ VPN
-    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png
+  - name: proxy
     type: select
     proxies:
-      - ⚡️ Авто
-      - '🇷🇺 YouTube #1📺'
-      - '🇷🇺 YouTube #2📺 '
-      - '🇷🇺 YouTube #3📺 '
-      - 🇩🇪 Германия 1
+      - '🇳🇱 Нидерланды '
+      - 🇵🇱 Польша
+      - 🇵🇱 Польша 2
+      - 🇵🇱 Польша 3
+      - '🇩🇪 Германия '
       - 🇩🇪 Германия 2
       - 🇩🇪 Германия 3
-      - 🇳🇱 Нидерланды
-      - 🇸🇪 Швеция
-      - 🇩🇪 Германия FF
-      - 🇸🇪 Швеция FF
-      - 🇪🇪 Эстония FF
-      - 🇫🇮 Финляндия FF
-      - 🇨🇭 Швейцария
-      - 🇨🇿 Чехия
-      - 🇳🇬 Нигерия
-      - 🇰🇿 Казахстан
-      - 🇸🇬 Сингапур
-      - 🇮🇳 Индия
-      - 🇭🇰 Гонконг
-      - 🇵🇱 Польша
       - 🇪🇪 Эстония
-      - '🇫🇮 Финляндия #2'
-      - '🇫🇮 Gaming #2'
-      - 🇪🇸 Испания
-      - 🇺🇸 Gemini
-      - 'ОБХОД БЕЛЫХ СПИСКОВ '
-      - 'ДОСТУПЕН ТОЛЬКО '
-      - В ПЛАТНОЙ ПОДПИСКЕ
-      - 🇯🇵 Япония
-    url: https://www.gstatic.com/generate_204
-  - name: 📺 Youtube
-    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png
-    type: select
-    include-all: true
-    proxies:
-      - 🛡️ VPN
-  - name: 💬 Discord.exe
-    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Discord.png
-    type: select
-    include-all: true
-    proxies:
-      - 🛡️ VPN
-  - name: 🎮 Игры
-    icon: https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Game.png
-    type: select
-    include-all: true
-    proxies:
-      - 🔓 Без VPN
-      - 🛡️ VPN
-  - name: ⚡️ Авто
-    type: url-test
-    tolerance: 150
-    url: https://www.gstatic.com/generate_204
-    interval: 300
-    include-all: true
-    hidden: true
-    proxies: []
-  - name: PROXY
-    type: select
-    hidden: true
-    proxies:
-      - 🛡️ VPN
-  - name: 🔓 Без VPN
-    type: select
-    hidden: true
-    proxies:
-      - DIRECT
-  - name: ⛔ Блок
-    type: select
-    hidden: true
-    proxies:
-      - REJECT
-  - name: ⏭️ Пропуск
-    type: select
-    hidden: true
-    proxies:
-      - PASS
+      - 🇬🇧 Великобритания
+      - '🇳🇱 Netherlands '
+      - 🇳🇱 Netherlands 3
+      - 🇳🇱 Netherlands 4
+      - 🇳🇱 Netherlands 6
+      - '🇫🇷 France '
+      - 🇫🇷 France 2
+      - 🇺🇸 USA 2
+      - 🇺🇸 USA 3
+      - '🇳🇱 Rus→ Netherlands '
+      - 🇫🇷Rus→France
+      - ' 🇵🇱Poland '
+      - 🇵🇱 Poland 2
+      - 🇵🇱Poland 3
+      - 🇵🇱 Poland 4
+      - '🇩🇪 Germany '
+      - 🇩🇪 Germany 2
+      - 🇳🇱 [1] Универсальный LTE+
+      - 🇫🇷 [2] Универсальный LTE+
+      - 🇩🇪 [3] Универсальный LTE+
+      - 🇵🇱 [4] Универсальный LTE+
+      - 🇺🇸 [5] Универсальный LTE+
 rule-providers:
-  private-domains:
+  ru-custom:
+    type: inline
+    behavior: domain
+    payload:
+      - +.snowdnvpno4.com
+      - +.ru
+      - +.su
+      - +.xn--p1ai
+      - +.yandex
+      - +.vk.com
+      - +.userapi.com
+      - +.vk-cdn.net
+      - +.vk-portal.net
+      - +.vkuseraudio.net
+      - +.vkuservideo.net
+      - +.mycdn.me
+      - +.mvk.com
+      - +.mradx.net
+      - +.ok.ru
+      - +.yandex.com
+      - +.yandex.net
+      - +.yandex.by
+      - +.yandex.kz
+      - +.yandex.cloud
+      - +.yandexcloud.net
+      - +.yastatic.net
+      - +.yastat.net
+      - +.yadi.sk
+      - +.yandexmetrica.com
+      - +.yandexadexchange.net
+      - +.yandexwebcache.net
+      - +.yads.tech
+      - +.sberbank.com
+      - +.sbercloud.com
+      - +.tinkoff.com
+      - +.tbank.com
+      - +.tbank-online.com
+      - +.alfabank.com
+      - +.alfa-bank.com
+      - +.alfaprivate.com
+      - +.vtb.com
+      - +.vtb24.com
+      - +.vtb.digital
+      - +.vtbrussia.com
+      - +.gazprombank.tech
+      - +.moex.com
+      - +.tochka.com
+      - +.tochka-tech.com
+      - +.1cfresh.com
+      - +.kontur.host
+      - +.2gis.com
+      - +.2gis.by
+      - +.avito.st
+      - +.youla.io
+      - +.lenta.com
+      - +.megamarket.tech
+      - +.ozonusercontent.com
+      - +.wbstatic.net
+      - +.wbbasket.net
+      - +.wildberries.by
+      - +.okko.tv
+      - +.premier.one
+      - +.gismeteo.com
+      - +.lmru.tech
+      - +.tildaapi.com
+  geosite-category-ru:
     type: http
     behavior: domain
     format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/private.mrs
-    path: ./ruleset/geosite-private.mrs
-    proxy: ⚡️ Авто
-    interval: 2592000
-  category-ru:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/category-ru.mrs
-    path: ./ruleset/category-ru.mrs
-    proxy: ⚡️ Авто
+    path: ./rules/geosite-category-ru.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ru.mrs
     interval: 86400
-  whitelist:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/whitelist.mrs
-    path: ./ruleset/whitelist.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  microsoft:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/microsoft.mrs
-    path: ./ruleset/microsoft.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  apple:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/apple.mrs
-    path: ./ruleset/apple.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  google-play:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/google-play.mrs
-    path: ./ruleset/google-play.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  epicgames:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/epicgames.mrs
-    path: ./ruleset/epicgames.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  origin:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/origin.mrs
-    path: ./ruleset/origin.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  riot:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/riot.mrs
-    path: ./ruleset/riot.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  escapefromtarkov:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/escapefromtarkov.mrs
-    path: ./ruleset/escapefromtarkov.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  steam:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/steam.mrs
-    path: ./ruleset/steam.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  twitch:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/twitch.mrs
-    path: ./ruleset/twitch.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  pinterest:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/pinterest.mrs
-    path: ./ruleset/pinterest.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  faceit:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/faceit.mrs
-    path: ./ruleset/faceit.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  private-ips:
+    proxy: DIRECT
+  geoip-ru:
     type: http
     behavior: ipcidr
     format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geoip/release/mihomo/private.mrs
-    path: ./ruleset/geoip-private.mrs
-    proxy: ⚡️ Авто
-    interval: 2592000
-  direct-ips:
-    type: http
-    behavior: ipcidr
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geoip/release/mihomo/direct.mrs
-    path: ./ruleset/direct-ips.mrs
-    proxy: ⚡️ Авто
+    path: ./rules/geoip-ru.mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/ru.mrs
     interval: 86400
-  github:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/github.mrs
-    path: ./ruleset/github.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  twitch-ads:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/twitch-ads.mrs
-    path: ./ruleset/twitch-ads.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  youtube:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/youtube.mrs
-    path: ./ruleset/youtube.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  telegram:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/telegram.mrs
-    path: ./ruleset/telegram.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  win-spy:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/win-spy.mrs
-    path: ./ruleset/win-spy.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  torrent-domains:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/torrent.mrs
-    path: ./ruleset/torrent-domains.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  category-ads:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/category-ads.mrs
-    path: ./ruleset/category-ads.mrs
-    proxy: ⚡️ Авто
-    interval: 86400
-  torrent-clients:
-    type: http
-    behavior: classical
-    format: yaml
-    url: https://raw.githubusercontent.com/legiz-ru/mihomo-rule-sets/main/other/torrent-clients.yaml
-    path: ./ruleset/torrent-clients.yaml
-    proxy: ⚡️ Авто
-    interval: 86400
-  games:
-    type: http
-    behavior: classical
-    format: yaml
-    url: https://raw.githubusercontent.com/roscomvpn/custom-category/release/mihomo/games.yaml
-    path: ./ruleset/games.yaml
-    proxy: ⚡️ Авто
-    interval: 86400
-  ru-apps:
-    type: http
-    behavior: classical
-    format: yaml
-    url: https://raw.githubusercontent.com/roscomvpn/custom-category/release/mihomo/ru-apps.yaml
-    path: ./ruleset/ru-apps.yaml
-    proxy: ⚡️ Авто
-    interval: 86400
+    proxy: DIRECT
 rules:
-  - RULE-SET,private-ips,DIRECT,no-resolve
-  - IP-CIDR,::/0,REJECT-DROP,no-resolve
-  - AND,((NETWORK,UDP),(DST-PORT,443)),REJECT-DROP
-  - RULE-SET,private-domains,DIRECT
-  - RULE-SET,category-ads,REJECT-DROP
-  - RULE-SET,win-spy,REJECT-DROP
-  - RULE-SET,torrent-domains,DIRECT
-  - RULE-SET,google-play,PROXY
-  - RULE-SET,twitch-ads,PROXY
-  - RULE-SET,youtube,📺 Youtube
-  - RULE-SET,telegram,PROXY
-  - RULE-SET,github,PROXY
-  - RULE-SET,epicgames,🎮 Игры
-  - RULE-SET,origin,🎮 Игры
-  - RULE-SET,riot,🎮 Игры
-  - RULE-SET,escapefromtarkov,🎮 Игры
-  - RULE-SET,steam,🎮 Игры
-  - RULE-SET,faceit,🎮 Игры
-  - RULE-SET,twitch,DIRECT
-  - RULE-SET,microsoft,DIRECT
-  - RULE-SET,apple,DIRECT
-  - RULE-SET,pinterest,DIRECT
-  - RULE-SET,category-ru,DIRECT
-  - RULE-SET,whitelist,DIRECT
-  - RULE-SET,torrent-clients,DIRECT
-  - PROCESS-NAME-REGEX,discord,💬 Discord.exe
-  - PROCESS-NAME-REGEX,vesktop,💬 Discord.exe
-  - RULE-SET,games,🎮 Игры
-  - RULE-SET,ru-apps,DIRECT
-  - RULE-SET,direct-ips,DIRECT
-  - MATCH,PROXY
+  - DST-PORT,53,dns-out
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT
+  - IP-CIDR,172.16.0.0/12,DIRECT
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - IP-CIDR,169.254.0.0/16,DIRECT
+  - IP-CIDR,224.0.0.0/4,DIRECT
+  - IP-CIDR6,::1/128,DIRECT
+  - IP-CIDR6,fc00::/7,DIRECT
+  - IP-CIDR6,fe80::/10,DIRECT
+  - PROCESS-NAME,qbittorrent.exe,DIRECT
+  - PROCESS-NAME,qbittorrent,DIRECT
+  - PROCESS-NAME,qBittorrent,DIRECT
+  - PROCESS-NAME,transmission-daemon,DIRECT
+  - PROCESS-NAME,transmission-gtk,DIRECT
+  - PROCESS-NAME,transmission-qt,DIRECT
+  - PROCESS-NAME,Transmission,DIRECT
+  - PROCESS-NAME,deluge.exe,DIRECT
+  - PROCESS-NAME,deluged,DIRECT
+  - PROCESS-NAME,deluge,DIRECT
+  - PROCESS-NAME,uTorrent.exe,DIRECT
+  - PROCESS-NAME,BitTorrent.exe,DIRECT
+  - RULE-SET,ru-custom,DIRECT
+  - RULE-SET,geosite-category-ru,DIRECT
+  - RULE-SET,geoip-ru,DIRECT
+  - AND,((NETWORK,UDP),(DST-PORT,443)),REJECT
+  - MATCH,proxy
